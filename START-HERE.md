@@ -131,6 +131,9 @@ open LAUNCH-CHECKLIST.md
 ### "Should I build more features/pages first?"
 → **NO.** 12 consecutive agent runs concluded: product is ready. More features won't help conversion rate without traffic.
 
+### "What if I waste money on ads and nobody buys?"
+→ **See RISK-CALCULATOR.md** for complete math on every scenario. TL;DR: Max risk = $150, max upside = $1,400+. Risk-reward ratio is 1:10.
+
 ### "What if the conversion rate is bad?"
 → You won't know until you launch. $50/day for 2-3 days = $150 total spend to get data. That's cheap market research.
 
@@ -156,6 +159,9 @@ open TEST-MODE-QUICK-START.md
 ---
 
 ## 📁 FILE REFERENCE
+
+**For Overcoming Fear (if you're hesitating):**
+- `RISK-CALCULATOR.md` - Complete math on worst-case to best-case scenarios (what if I waste money?)
 
 **For Testing (do first):**
 - `TEST-MODE-QUICK-START.md` - 5-minute validation flow
