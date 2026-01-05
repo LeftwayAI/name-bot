@@ -21,6 +21,7 @@ export default function Home() {
   const [checkingDomains, setCheckingDomains] = useState(false);
   const [error, setError] = useState('');
   const [checkoutLoading, setCheckoutLoading] = useState<string | null>(null);
+  const [celebrating, setCelebrating] = useState<string | null>(null);
 
   const handleGenerate = async () => {
     if (!description.trim()) {
@@ -86,6 +87,10 @@ export default function Home() {
   };
 
   const handleClaimName = async (nameName: string, domain: string) => {
+    // Trigger "raise a glass" celebration moment
+    setCelebrating(nameName);
+    setTimeout(() => setCelebrating(null), 600);
+
     setCheckoutLoading(nameName);
 
     try {
@@ -115,25 +120,35 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center p-8">
-      <div className="max-w-4xl w-full">
-        <h1 className="text-5xl font-bold text-center mb-4">
-          AI Name Generator
-        </h1>
-        <p className="text-xl text-center text-gray-600 dark:text-gray-400 mb-8">
-          Generate perfect names for your business, startup, or brand
-        </p>
+    <main className="min-h-screen bg-rose-gradient flex flex-col items-center justify-center p-6 md:p-12">
+      <div className="max-w-5xl w-full">
+        {/* Header with rose logo */}
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-3 mb-6">
+            <span className="text-6xl">🌹</span>
+            <h1 className="text-6xl md:text-7xl font-bold bg-clip-text text-transparent bg-rose-accent">
+              rose.glass
+            </h1>
+          </div>
+          <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto font-light">
+            Generate elegant names for luxury brands
+          </p>
+          <p className="text-sm text-gray-500 mt-2">
+            AI-powered · Instant domain checking · Premium packages
+          </p>
+        </div>
 
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
+        {/* Generator card with glassmorphism */}
+        <div className="glass-card rounded-3xl p-8 md:p-10 mb-8">
           <div className="mb-6">
-            <label htmlFor="description" className="block text-sm font-medium mb-2">
-              Describe your project
+            <label htmlFor="description" className="block text-sm font-semibold mb-3 text-gray-700 dark:text-gray-300">
+              Describe your vision
             </label>
             <textarea
               id="description"
               rows={4}
-              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700"
-              placeholder="E.g., A sustainable fashion brand for eco-conscious millennials..."
+              className="w-full px-5 py-4 glass-input rounded-2xl text-base focus:outline-none resize-none"
+              placeholder="A sustainable luxury fashion brand for conscious consumers..."
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               disabled={loading}
@@ -141,7 +156,7 @@ export default function Home() {
           </div>
 
           {error && (
-            <div className="mb-4 p-3 bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-200 rounded">
+            <div className="mb-4 p-4 bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-300 rounded-xl text-sm">
               {error}
             </div>
           )}
@@ -149,19 +164,19 @@ export default function Home() {
           <button
             onClick={handleGenerate}
             disabled={loading}
-            className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+            className="w-full glass-button text-white font-bold py-4 px-8 rounded-2xl text-lg disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {loading ? 'Generating...' : 'Generate Names'}
+            {loading ? 'Generating...' : '✨ Generate Names'}
           </button>
         </div>
 
         {names.length > 0 && (
-          <div className="mt-8 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold mb-4">Generated Names</h2>
+          <div className="glass-card rounded-3xl p-8 md:p-10">
+            <h2 className="text-3xl font-bold mb-2 text-gray-800 dark:text-gray-100">Your Names</h2>
             {checkingDomains && (
-              <p className="text-sm text-gray-500 mb-4">Checking domain availability...</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">Checking domain availability...</p>
             )}
-            <div className="grid grid-cols-1 gap-6">
+            <div className="grid grid-cols-1 gap-5 mt-6">
               {names.map((name, index) => {
                 const nameData = namesWithDomains.find(n => n.name === name);
                 const availableDomain = nameData?.domains.find(d => d.available && d.checked);
@@ -169,37 +184,44 @@ export default function Home() {
                 return (
                   <div
                     key={index}
-                    className="p-6 border border-gray-200 dark:border-gray-700 rounded-lg"
+                    className={`glass-card rounded-2xl p-6 md:p-8 hover:shadow-xl transition-all duration-300 ${
+                      celebrating === name ? 'celebrate' : ''
+                    }`}
                   >
-                    <div className="flex items-start justify-between mb-3">
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                       <div className="flex-1">
-                        <p className="font-bold text-2xl mb-2">{name}</p>
+                        <p className="name-mono text-3xl md:text-4xl font-bold mb-3 text-gray-900 dark:text-white">
+                          {name}
+                        </p>
                         {availableDomain && (
-                          <p className="text-green-600 dark:text-green-400 text-sm font-medium">
-                            ✓ {availableDomain.domain} is available!
-                          </p>
+                          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-green-50 dark:bg-green-900/20 rounded-lg mb-3">
+                            <span className="text-green-600 dark:text-green-400 text-lg">✓</span>
+                            <p className="text-green-700 dark:text-green-300 text-sm font-semibold">
+                              {availableDomain.domain} available
+                            </p>
+                          </div>
                         )}
                       </div>
                       {availableDomain && (
                         <button
                           onClick={() => handleClaimName(name, availableDomain.domain)}
                           disabled={checkoutLoading === name}
-                          className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold rounded-lg transition-all transform hover:scale-105 shadow-lg"
+                          className="glass-button px-8 py-4 text-white font-bold rounded-xl text-base disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
                         >
-                          {checkoutLoading === name ? 'Loading...' : 'Claim for $49'}
+                          {checkoutLoading === name ? 'Loading...' : '🥂 Claim for $49'}
                         </button>
                       )}
                     </div>
                     {nameData && (
-                      <div className="mt-3 flex flex-wrap gap-2">
+                      <div className="mt-4 flex flex-wrap gap-2">
                         {nameData.domains.map((domain, idx) => (
                           <span
                             key={idx}
-                            className={`text-xs px-2 py-1 rounded ${
+                            className={`text-xs px-3 py-1.5 rounded-lg font-medium ${
                               domain.checked
                                 ? domain.available
-                                  ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
-                                  : 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200'
+                                  ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300'
+                                  : 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300'
                                 : 'bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-400'
                             }`}
                           >
@@ -215,25 +237,34 @@ export default function Home() {
           </div>
         )}
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-          <div>
-            <h3 className="font-semibold mb-2">AI-Powered</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400">
-              Advanced AI creates unique, memorable names
+        {/* Features section */}
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div className="glass-card rounded-2xl p-6 hover:shadow-lg transition-all">
+            <div className="text-4xl mb-3">✨</div>
+            <h3 className="font-bold text-lg mb-2 text-gray-800 dark:text-gray-100">AI-Powered</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+              Advanced AI creates unique, memorable names tailored to your brand
             </p>
           </div>
-          <div>
-            <h3 className="font-semibold mb-2">Instant Results</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400">
-              Get dozens of name ideas in seconds
+          <div className="glass-card rounded-2xl p-6 hover:shadow-lg transition-all">
+            <div className="text-4xl mb-3">⚡</div>
+            <h3 className="font-bold text-lg mb-2 text-gray-800 dark:text-gray-100">Instant Domains</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+              Real-time domain availability across .com, .io, .app, and more
             </p>
           </div>
-          <div>
-            <h3 className="font-semibold mb-2">100% Free</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400">
-              No signup required, completely free
+          <div className="glass-card rounded-2xl p-6 hover:shadow-lg transition-all">
+            <div className="text-4xl mb-3">🎁</div>
+            <h3 className="font-bold text-lg mb-2 text-gray-800 dark:text-gray-100">Premium Package</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+              Complete brand strategy guide with every name purchase
             </p>
           </div>
+        </div>
+
+        {/* Footer */}
+        <div className="mt-12 text-center text-sm text-gray-500">
+          <p>Made with precision and care · <a href="https://rose.glass" className="hover:text-rose-red transition-colors">rose.glass</a></p>
         </div>
       </div>
     </main>

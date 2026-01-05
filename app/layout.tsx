@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
-  title: "AI Name Generator | Generate Perfect Business & Brand Names",
-  description: "Free AI-powered name generator for businesses, startups, brands, and products. Get creative, memorable names in seconds.",
+  title: "rose.glass | AI Name Generator for Luxury Brands",
+  description: "Premium AI-powered name generator for businesses, startups, and brands. Generate memorable names with instant domain availability checking.",
+  keywords: "name generator, business name, brand name, startup name, AI naming, domain availability",
+  openGraph: {
+    title: "rose.glass | AI Name Generator",
+    description: "Generate perfect names for your luxury brand with AI",
+    url: "https://rose.glass",
+    siteName: "rose.glass",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -16,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
