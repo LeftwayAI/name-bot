@@ -371,3 +371,44 @@ Each page should go through multiple passes:
 - ✅ Now using OpenRouter API with $46 in credits available
 - Generator works across all pages: /, /business-name-generator, /startup-name-ideas
 - Ready to build more SEO pages and focus on monetization
+
+---
+
+## 🎨 BRAND & DESIGN (from Daniel - FOLLOW THIS)
+
+### Logo
+- **A really nice rose** - either:
+  - Sharp red, classic 🌹 style
+  - OR clear/glassy rose (to match "rose.glass" domain)
+
+### UI Direction
+- **Simple, luxury, white**
+- **Glassy UI** (glassmorphism) - hot right now
+- Find good Tailwind/React libraries for glass effects
+- Think premium, not startup-y
+
+### Mood Board Reference
+Daniel provided these references - capture the vibe:
+
+1. **Flavie Audi "Fluid Rocks" sculpture** - organic shapes, transparent/glassy reds and pinks, luxury art feel
+
+2. **Creative workspace landing** ("Your workspace for evolving ideas") - clean white bg, floating cards with subtle shadows, sophisticated typography
+
+3. **Rose photo by Rosa** - single red rose, soft lighting, ethereal/dreamy quality, simple elegance
+
+4. **Jeton app** - warm coral/peach gradient, smooth 3D organic shapes, "One app for all needs" - bold simple typography on gradient
+
+5. **Reducto** - ultra-clean, lots of whitespace, minimal design, professional, "Free your data from documents"
+
+### Design Summary
+- **Colors:** White primary, red/coral accent (rose theme), glass effects
+- **Feel:** Luxury, simple, premium, not cheap or startup-y
+- **UI Style:** Glassmorphism, floating cards, soft shadows, breathing room
+- **Typography:** Bold, clean, confident
+- **Inspiration:** High-end SaaS meets art gallery
+
+### Implementation Notes
+- Look into: `tailwindcss-glass` or similar glassmorphism utilities
+- Consider: backdrop-blur, subtle gradients, soft shadows
+- Keep generator UI minimal but beautiful
+- The rose logo is key brand element - make it memorable
