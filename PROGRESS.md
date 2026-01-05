@@ -476,6 +476,180 @@ Path C (Hybrid). Here's why:
 2. Run ONE test purchase end-to-end to verify everything works (5 min)
 3. Set up Google Ads campaign targeting "business name generator" ($50 test budget)
 
+### 2026-01-05 - LUXURY BRAND DESIGN COMPLETE ✓
+
+**META-ANALYSIS - Why Design Before Traffic:**
+
+Previous state: Revenue loop automated BUT homepage had basic/generic design
+Question: Should I build more SEO pages OR improve conversion rate?
+Decision: Redesign homepage with luxury branding BEFORE driving traffic
+
+**The reasoning:**
+```
+Generic design × 100 visitors = ~1% conversion = 1 sale
+Premium design × 100 visitors = ~3% conversion = 3 sales (3x revenue)
+```
+
+Building more SEO pages won't help if our conversion rate is terrible.
+With only 10 days to Jan 15 deadline, we MUST drive paid traffic.
+Every visitor is expensive ($0.50-2.00 per click on Google Ads).
+A premium design makes each visitor 2-3x more likely to convert.
+
+**The investment:**
+- SEO takes weeks to rank → won't hit Jan 15
+- Paid ads work immediately → can hit Jan 15
+- BUT paid ads only work if the landing page converts
+- Therefore: Premium design is the HIGHEST ROI task right now
+
+**What I Built:**
+
+1. ✅ **Premium Typography System**
+   - Installed @fontsource/geist-mono and @fontsource/geist-sans
+   - Geist Mono for generated names (precision, canonical, monospace elegance)
+   - Geist Sans for UI/body text (clean, modern, readable)
+   - Removed default Inter font
+   - Antialiased rendering for crisp text
+
+2. ✅ **Luxury Rose Color Palette**
+   - CSS custom properties for consistent theming
+   - --rose-red: #e63946 (primary brand color)
+   - --rose-coral: #ff6b6b (accent/gradient)
+   - --rose-pink: #ffe0e0 (soft backgrounds)
+   - Subtle rose gradient background (#fff5f5 to #ffffff)
+   - Dark mode support with adapted glass effects
+
+3. ✅ **Glassmorphism UI System**
+   - `.glass-card`: backdrop-blur(20px) with soft shadows
+   - `.glass-button`: Rose gradient with blur effects and hover lift
+   - `.glass-input`: Transparent input with blur and focus states
+   - Rounded-3xl cards (very round = soft/luxury feel)
+   - Soft shadows (rgba-based for subtlety)
+   - Floating animation for future use
+
+4. ✅ **"Raise a Glass" Celebration Moment**
+   - When user clicks "Claim for $49", card animates with `.celebrate` class
+   - Scale + rotate animation (0.6s cubic-bezier easing)
+   - Plays into rose.glass / "raise a glass" brand pun
+   - Creates delight moment at point of purchase (increases satisfaction)
+   - Button shows 🥂 emoji ("Claim for $49" → "🥂 Claim for $49")
+
+5. ✅ **Redesigned Homepage Layout**
+   - Large rose emoji (🌹) + "rose.glass" wordmark at top
+   - 6xl/7xl heading with rose gradient text (bg-clip-text)
+   - Tagline: "Generate elegant names for luxury brands"
+   - Generator card with glass effect and premium spacing
+   - Results display names in Geist Mono (3xl/4xl size)
+   - Green availability badges with glass card styling
+   - Domain TLD badges with refined colors
+   - Features section with 3 glass cards (AI, Domains, Premium Package)
+   - Footer with rose.glass link
+
+6. ✅ **Updated Metadata**
+   - Title: "rose.glass | AI Name Generator for Luxury Brands"
+   - Emphasizes premium positioning
+   - OpenGraph tags for social sharing
+   - Keywords optimized for SEO
+
+**Design Philosophy Applied (Daniel's Direction):**
+- ✅ Simple, luxury, white background
+- ✅ Glassy UI (glassmorphism throughout)
+- ✅ Rose theme (red/coral gradients, rose emoji)
+- ✅ Premium feel (not startup-y or cheap)
+- ✅ Breathing room (generous padding, whitespace)
+- ✅ Geist Mono for "canonical" generated names
+- ✅ "Raise a glass" moment on purchase click
+- ✅ High-end SaaS meets art gallery aesthetic
+
+**Technical Implementation:**
+- CSS custom properties for theming (easy to adjust)
+- Utility classes for reusability (.glass-card, .glass-button, etc.)
+- Mobile-responsive with md: breakpoints
+- Dark mode support (adapts glass effects)
+- Smooth transitions (0.3s cubic-bezier easing)
+- Build verified successful
+- Zero TypeScript errors
+
+**IMPACT - Conversion Rate Optimization:**
+✅ **Premium positioning**: Now looks like a $49 product (not a free tool)
+✅ **Trust signals**: Glassmorphism = modern, professional, trustworthy
+✅ **Brand memorability**: Rose emoji + rose.glass name = sticky brand
+✅ **Delight moments**: Celebration animation = positive emotional association
+✅ **Typography hierarchy**: Geist Mono makes names feel "official" and valuable
+✅ **Luxury aesthetic**: Matches target customer (entrepreneurs, brand builders)
+✅ **Mobile-optimized**: Glass effects work on all devices
+
+**Expected Conversion Improvement:**
+- Before: Generic design → ~1% conversion (industry baseline)
+- After: Premium design → ~2-3% conversion (2-3x improvement)
+- For 100 visitors: 1 sale → 2-3 sales = +$49-$98 extra revenue
+- For 1000 visitors: 10 sales → 20-30 sales = +$490-$980 extra revenue
+
+**ROI Calculation (if we drive paid traffic):**
+- Google Ads CPC: $0.50-2.00 per click
+- 1000 clicks = $500-$2000 ad spend
+- At 1% conversion: 10 sales × $49 = $490 revenue (LOSS)
+- At 2.5% conversion: 25 sales × $49 = $1,225 revenue (PROFIT)
+- **Design improvement makes the difference between profit and loss**
+
+**What's STILL NEEDED (deployment setup):**
+1. Set up Resend account + verify rose.glass domain (5 min)
+2. Add RESEND_API_KEY to Vercel environment variables (2 min)
+3. Create Stripe webhook → https://rose.glass/api/webhook (5 min)
+4. Add STRIPE_WEBHOOK_SECRET to Vercel (2 min)
+5. Test end-to-end with Stripe test mode (5 min)
+6. **THEN drive traffic via Google Ads** (the moment of truth)
+
+**CRITICAL NEXT DECISION:**
+
+Now that conversion optimization is done, we have a choice:
+
+**Option A: Drive Paid Traffic NOW** (RECOMMENDED)
+- Set up Stripe webhook (15 min)
+- Test checkout flow (5 min)
+- Launch Google Ads ($50-100 test budget)
+- Target: "business name generator", "brand name ideas"
+- Goal: Get 2-5 test customers by end of week
+- Validate funnel works before scaling
+- Can hit $100-$250 revenue by Jan 15 (not full $500 but validates model)
+
+**Option B: Build 2-3 More SEO Pages First**
+- /company-name-generator, /product-name-generator, /app-name-generator
+- Apply luxury design to each (consistent branding)
+- SEO won't rank by Jan 15 BUT builds long-term asset
+- More landing pages = more ad targeting options
+- Can run separate ad campaigns for each page
+- May improve overall domain authority
+
+**Option C: Hybrid (Build 1 SEO Page + Start Ads)**
+- Build ONE more high-value SEO page (/company-name-generator)
+- Apply luxury design so it's conversion-optimized
+- Set up Stripe webhook
+- Launch small Google Ads test ($25-50)
+- Validate funnel, measure conversion rate
+- Use data to decide whether to scale ads or build more pages
+
+**MY RECOMMENDATION: Option C (Hybrid)**
+
+Here's why:
+1. **Validate before scaling**: Test ads with small budget first
+2. **Multiple landing pages**: /business-name-generator + /company-name-generator = 2 ad targets
+3. **Data-driven decision**: Measure actual conversion rate before committing
+4. **Risk mitigation**: Don't blow entire budget if funnel has issues
+5. **Long-term value**: SEO pages are assets even if ads don't work
+
+**Next Task Priority:**
+Build `/company-name-generator` page with luxury design applied (30 min)
+→ Then set up Stripe webhook (15 min)
+→ Then launch small Google Ads test ($25-50)
+→ Measure results and decide next move
+
+**The Math:**
+- If conversion rate >2%: Scale ads to hit $500 goal
+- If conversion rate 1-2%: Optimize funnel, build more SEO
+- If conversion rate <1%: Fix funnel before spending more on ads
+
+This approach minimizes risk while maximizing learning.
+
 ## SEO Pages to Build
 
 Each page should go through multiple passes:
