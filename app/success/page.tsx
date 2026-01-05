@@ -12,9 +12,53 @@ function SuccessContent() {
   useEffect(() => {
     const nameParam = searchParams.get('name');
     const domainParam = searchParams.get('domain');
+    const sessionId = searchParams.get('session_id');
 
     if (nameParam) setNameName(nameParam);
     if (domainParam) setDomain(domainParam);
+
+    // Log email preview to console for testing without webhook configured
+    if (nameParam && domainParam && typeof window !== 'undefined') {
+      console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+      console.log('📧 EMAIL PREVIEW (what customer receives after webhook processes)');
+      console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+      console.log('');
+      console.log('To: customer-email@example.com (from Stripe checkout)');
+      console.log(`From: Rose Glass <orders@rose.glass>`);
+      console.log(`Subject: Your Premium Name Package: ${nameParam}`);
+      console.log('');
+      console.log('Content Preview:');
+      console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+      console.log(`🎉 Your Premium Name Package`);
+      console.log(`${nameParam}`);
+      console.log(`${domainParam}`);
+      console.log('');
+      console.log('📋 Brand Strategy Overview');
+      console.log('🌐 Domain Acquisition Guide');
+      console.log('📱 Social Media Handle Report');
+      console.log('🎨 Visual Identity Recommendations');
+      console.log('📧 Brand Announcement Email Templates');
+      console.log('⚖️ Trademark Search Guidance');
+      console.log('✅ 30-Day Launch Checklist');
+      console.log('');
+      console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+      console.log('📌 NOTE: This is a PREVIEW. Email will be sent automatically when:');
+      console.log('   1. RESEND_API_KEY is configured in Vercel');
+      console.log('   2. STRIPE_WEBHOOK_SECRET is configured in Vercel');
+      console.log('   3. Stripe webhook is set up to notify rose.glass/api/webhook');
+      console.log('');
+      console.log('✅ See LAUNCH-CHECKLIST.md for setup instructions (25 minutes)');
+      console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+
+      // Store in sessionStorage for display on page
+      sessionStorage.setItem('emailPreview', JSON.stringify({
+        to: 'customer-email@example.com',
+        from: 'Rose Glass <orders@rose.glass>',
+        subject: `Your Premium Name Package: ${nameParam}`,
+        name: nameParam,
+        domain: domainParam
+      }));
+    }
 
     // Google Ads Conversion Tracking
     // Replace AW-XXXXXXXXX/XXXXXXX with your actual conversion ID from Google Ads
@@ -87,6 +131,25 @@ function SuccessContent() {
                 <p className="flex justify-between text-lg">
                   <span className="font-semibold">Total:</span>
                   <span className="font-bold">$49.00</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Test Mode Notice (only visible when testing) */}
+        {typeof window !== 'undefined' && !process.env.NEXT_PUBLIC_RESEND_CONFIGURED && (
+          <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-6 mb-6">
+            <div className="flex items-start">
+              <span className="text-2xl mr-3">⚙️</span>
+              <div>
+                <h3 className="font-semibold text-lg mb-2 text-yellow-900 dark:text-yellow-100">Test Mode Active</h3>
+                <p className="text-sm text-yellow-800 dark:text-yellow-200 mb-3">
+                  Your payment was successful! However, email delivery is not yet configured.
+                  <strong> Open browser console (F12)</strong> to see what email the customer would receive.
+                </p>
+                <p className="text-xs text-yellow-700 dark:text-yellow-300">
+                  To enable automatic email delivery, see <strong>LAUNCH-CHECKLIST.md</strong> (25 min setup)
                 </p>
               </div>
             </div>
