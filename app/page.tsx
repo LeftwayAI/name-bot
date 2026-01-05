@@ -2,10 +2,23 @@
 
 import { useState } from 'react';
 
+type DomainResult = {
+  domain: string;
+  available: boolean;
+  checked: boolean;
+};
+
+type NameWithDomains = {
+  name: string;
+  domains: DomainResult[];
+};
+
 export default function Home() {
   const [description, setDescription] = useState('');
   const [names, setNames] = useState<string[]>([]);
+  const [namesWithDomains, setNamesWithDomains] = useState<NameWithDomains[]>([]);
   const [loading, setLoading] = useState(false);
+  const [checkingDomains, setCheckingDomains] = useState(false);
   const [error, setError] = useState('');
 
   const handleGenerate = async () => {
@@ -17,6 +30,7 @@ export default function Home() {
     setLoading(true);
     setError('');
     setNames([]);
+    setNamesWithDomains([]);
 
     try {
       const response = await fetch('/api/generate', {
@@ -33,11 +47,40 @@ export default function Home() {
 
       const data = await response.json();
       setNames(data.names);
+
+      // Automatically check domain availability
+      await checkDomains(data.names);
     } catch (err) {
       setError('Failed to generate names. Please try again.');
       console.error(err);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const checkDomains = async (namesToCheck: string[]) => {
+    setCheckingDomains(true);
+
+    try {
+      const response = await fetch('/api/check-domain', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ names: namesToCheck }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to check domains');
+      }
+
+      const data = await response.json();
+      setNamesWithDomains(data.results);
+    } catch (err) {
+      console.error('Domain check error:', err);
+      // Don't show error to user, domain checking is a nice-to-have
+    } finally {
+      setCheckingDomains(false);
     }
   };
 
@@ -85,15 +128,55 @@ export default function Home() {
         {names.length > 0 && (
           <div className="mt-8 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
             <h2 className="text-2xl font-bold mb-4">Generated Names</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {names.map((name, index) => (
-                <div
-                  key={index}
-                  className="p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-500 transition-colors cursor-pointer"
-                >
-                  <p className="font-semibold text-lg">{name}</p>
-                </div>
-              ))}
+            {checkingDomains && (
+              <p className="text-sm text-gray-500 mb-4">Checking domain availability...</p>
+            )}
+            <div className="grid grid-cols-1 gap-6">
+              {names.map((name, index) => {
+                const nameData = namesWithDomains.find(n => n.name === name);
+                const availableDomain = nameData?.domains.find(d => d.available && d.checked);
+
+                return (
+                  <div
+                    key={index}
+                    className="p-6 border border-gray-200 dark:border-gray-700 rounded-lg"
+                  >
+                    <div className="flex items-start justify-between mb-3">
+                      <div className="flex-1">
+                        <p className="font-bold text-2xl mb-2">{name}</p>
+                        {availableDomain && (
+                          <p className="text-green-600 dark:text-green-400 text-sm font-medium">
+                            ✓ {availableDomain.domain} is available!
+                          </p>
+                        )}
+                      </div>
+                      {availableDomain && (
+                        <button className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold rounded-lg transition-all transform hover:scale-105 shadow-lg">
+                          Claim for $49
+                        </button>
+                      )}
+                    </div>
+                    {nameData && (
+                      <div className="mt-3 flex flex-wrap gap-2">
+                        {nameData.domains.map((domain, idx) => (
+                          <span
+                            key={idx}
+                            className={`text-xs px-2 py-1 rounded ${
+                              domain.checked
+                                ? domain.available
+                                  ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
+                                  : 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200'
+                                : 'bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-400'
+                            }`}
+                          >
+                            {domain.domain}: {domain.checked ? (domain.available ? 'Available' : 'Taken') : 'Error'}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
         )}
