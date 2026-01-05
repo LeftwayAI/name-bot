@@ -80,10 +80,24 @@ Build an SEO-optimized AI name generator site that ranks for queries like:
 2. Eventually: Add ANTHROPIC_API_KEY to Vercel (currently blocked on Daniel)
 
 ## SEO Pages to Build
-- [x] / - Main landing page with generator (basic UI created)
-- [x] /business-name-generator - COMPLETE
-- [x] /startup-name-ideas - COMPLETE
+
+Each page should go through multiple passes:
+1. **Research** - What do people actually search? What questions do they have?
+2. **Draft** - Write initial content (1500+ words)
+3. **Enrich** - Add examples, FAQs, comparisons to competitors
+4. **Polish** - Improve readability, add internal links, optimize metadata
+
+### Completed
+- [x] / - Main landing page with generator
+- [x] /business-name-generator - v1 complete (could use enrichment pass)
+- [x] /startup-name-ideas - v1 complete (could use enrichment pass)
+
+### Next Up
 - [ ] /brand-name-generator
+  - [ ] Research pass
+  - [ ] Draft pass
+  - [ ] Enrich pass
+  - [ ] Polish pass
 - [ ] /company-name-generator
 - [ ] /app-name-generator
 - [ ] /product-name-generator
