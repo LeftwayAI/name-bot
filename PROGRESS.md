@@ -62,14 +62,27 @@ Build an SEO-optimized AI name generator site that ranks for queries like:
 - Build verified successfully
 - Page accessible at: rose.glass/business-name-generator
 
+### 2026-01-05 - Second SEO Page Built ✓
+- Created `/startup-name-ideas` page with:
+  - Full AI name generator functionality
+  - Rich SEO content (1,800+ words)
+  - Sections: What Makes Great Names, Why Use AI, Naming Strategies, 2026 Trends, Validation Steps
+  - Startup-focused content and examples
+  - SEO metadata optimized for "startup name ideas" keywords
+  - OpenGraph and Twitter card tags
+  - Responsive 3-column grid layout
+- Build verified successfully
+- Page accessible at: rose.glass/startup-name-ideas
+- Committed and pushed to GitHub
+
 ### Next Task
-1. Build second SEO page: /startup-name-ideas
+1. Build third SEO page: /brand-name-generator
 2. Eventually: Add ANTHROPIC_API_KEY to Vercel (currently blocked on Daniel)
 
 ## SEO Pages to Build
 - [x] / - Main landing page with generator (basic UI created)
 - [x] /business-name-generator - COMPLETE
-- [ ] /startup-name-ideas
+- [x] /startup-name-ideas - COMPLETE
 - [ ] /brand-name-generator
 - [ ] /company-name-generator
 - [ ] /app-name-generator
