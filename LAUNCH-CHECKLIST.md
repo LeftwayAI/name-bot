@@ -8,6 +8,27 @@
 
 ---
 
+## 🔍 STEP 0: Verify Your Setup (1 min)
+
+**Why:** Quick check to see what's configured and what needs attention
+
+Run this command in your terminal:
+
+```bash
+npm run verify
+```
+
+This will check:
+- ✓ OpenRouter API Key (for AI name generation)
+- ✓ Stripe Secret Key (for payments)
+- ✓ Stripe Webhook Secret (for payment notifications)
+- ✓ Resend API Key (for sending emails)
+
+**Green checkmarks?** Skip to the test step (Step 4).
+**Red X's?** Follow the steps below to configure each service.
+
+---
+
 ## ✅ STEP 1: Resend Email Setup (15 min)
 
 **Why:** Send domain claim emails to customers after purchase
@@ -171,11 +192,14 @@
 ## ✅ COMPLETION CRITERIA
 
 You're done when:
+- [ ] `npm run verify` shows all green checkmarks ✓
 - [ ] Email sent to test@example.com arrives successfully
 - [ ] Test purchase with card 4242... completes
 - [ ] Stripe webhook shows "Succeeded" in dashboard
 - [ ] Traffic campaign is live (Google Ads or Reddit Ads)
 
 **After completion:** Monitor conversion rate 2x daily. Adjust based on data.
+
+**💡 Tip:** Run `npm run verify` anytime to check your setup status.
 
 🥂 **Time to launch.**
