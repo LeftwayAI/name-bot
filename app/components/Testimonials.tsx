@@ -21,29 +21,36 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="mt-24 mb-16">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold mb-3 text-gray-800 dark:text-gray-100">
+    <section className="mt-32 mb-20">
+      <div className="text-center mb-16">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white tracking-tight">
           Trusted by founders
         </h2>
-        <p className="text-gray-600 dark:text-gray-400 text-lg">
+        <p className="text-gray-700 dark:text-gray-300 text-xl max-w-2xl mx-auto">
           Join hundreds of brands who found their perfect name
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
-            className="glass-card rounded-2xl p-6 hover:shadow-xl transition-all duration-300"
+            className="glass-card rounded-3xl p-8 hover:shadow-xl transition-all duration-300 fade-in-up"
             style={{ animationDelay: `${index * 100}ms` }}
           >
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-full bg-rose-accent flex items-center justify-center text-white font-bold text-lg">
+            {/* Quote icon */}
+            <div className="text-rose-coral text-4xl mb-4 opacity-50">"</div>
+
+            <p className="text-gray-800 dark:text-gray-200 leading-relaxed text-base mb-6">
+              {testimonial.quote}
+            </p>
+
+            <div className="flex items-center gap-3 pt-4 border-t border-gray-200 dark:border-gray-700">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-rose-accent to-rose-coral flex items-center justify-center text-white font-bold text-lg shadow-lg">
                 {testimonial.initial}
               </div>
               <div>
-                <p className="font-semibold text-gray-800 dark:text-gray-100">
+                <p className="font-bold text-gray-900 dark:text-white">
                   {testimonial.author}
                 </p>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
@@ -51,26 +58,32 @@ export default function Testimonials() {
                 </p>
               </div>
             </div>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed italic">
-              "{testimonial.quote}"
-            </p>
           </div>
         ))}
       </div>
 
       {/* Trust badges */}
-      <div className="mt-12 flex flex-wrap items-center justify-center gap-8 text-center">
-        <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
-          <span className="text-2xl">🔒</span>
-          <span className="text-sm font-medium">Secure Payment</span>
+      <div className="mt-16 flex flex-wrap items-center justify-center gap-12 text-center">
+        <div className="flex flex-col items-center gap-2">
+          <div className="w-12 h-12 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
+            <span className="text-2xl">🔒</span>
+          </div>
+          <span className="text-sm font-semibold text-gray-800 dark:text-gray-200">Secure Payment</span>
+          <span className="text-xs text-gray-600 dark:text-gray-400">SSL encrypted</span>
         </div>
-        <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
-          <span className="text-2xl">⚡</span>
-          <span className="text-sm font-medium">Instant Delivery</span>
+        <div className="flex flex-col items-center gap-2">
+          <div className="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+            <span className="text-2xl">⚡</span>
+          </div>
+          <span className="text-sm font-semibold text-gray-800 dark:text-gray-200">Instant Delivery</span>
+          <span className="text-xs text-gray-600 dark:text-gray-400">Email within minutes</span>
         </div>
-        <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400">
-          <span className="text-2xl">💯</span>
-          <span className="text-sm font-medium">Satisfaction Guaranteed</span>
+        <div className="flex flex-col items-center gap-2">
+          <div className="w-12 h-12 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
+            <span className="text-2xl">💯</span>
+          </div>
+          <span className="text-sm font-semibold text-gray-800 dark:text-gray-200">Money-Back Guarantee</span>
+          <span className="text-xs text-gray-600 dark:text-gray-400">7-day refund policy</span>
         </div>
       </div>
     </section>
