@@ -19,10 +19,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #050505;
     --foreground: #ededed;
-    --rose-glass: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.08);
+    --rose-glass: rgba(255, 255, 255, 0.02);
+    --glass-border: rgba(255, 255, 255, 0.06);
     --shadow-soft: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
     --shadow-large: 0 50px 100px -20px rgba(0, 0, 0, 0.5);
     --shadow-inset: inset 0 1px 1px 0 hsla(0, 0%, 100%, 0.05);
@@ -140,11 +140,11 @@ body {
   @media (prefers-color-scheme: dark) {
     .bg-rose-gradient {
       background:
-        radial-gradient(ellipse at top left, rgba(230, 57, 70, 0.2) 0%, transparent 50%),
-        radial-gradient(ellipse at top right, rgba(255, 107, 107, 0.15) 0%, transparent 50%),
-        radial-gradient(ellipse at bottom center, rgba(193, 18, 31, 0.1) 0%, transparent 60%),
-        radial-gradient(circle at 70% 30%, rgba(255, 107, 107, 0.08) 0%, transparent 40%),
-        linear-gradient(135deg, #0a0a0a 0%, #1a0a0a 50%, #0a0a0a 100%);
+        radial-gradient(ellipse at top left, rgba(230, 57, 70, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at top right, rgba(255, 107, 107, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom center, rgba(193, 18, 31, 0.04) 0%, transparent 60%),
+        radial-gradient(circle at 70% 30%, rgba(255, 107, 107, 0.03) 0%, transparent 40%),
+        linear-gradient(135deg, #050505 0%, #0a0505 50%, #050505 100%);
       background-attachment: fixed;
     }
   }

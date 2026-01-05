@@ -131,18 +131,18 @@ export default function Home() {
               rose.glass
             </h1>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight tracking-tight px-4 hero-fade-in" style={{animationDelay: '0.1s'}}>
+          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white/90 mb-6 leading-tight tracking-tight px-4 hero-fade-in" style={{animationDelay: '0.1s'}}>
             Perfect names for <br className="hidden md:block" />
             <span className="bg-clip-text text-transparent bg-rose-accent">exceptional brands</span>
           </h2>
-          <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto font-light leading-relaxed mb-10 px-6 hero-fade-in" style={{animationDelay: '0.2s'}}>
+          <p className="text-xl md:text-2xl text-gray-700 dark:text-white/60 max-w-3xl mx-auto font-light leading-relaxed mb-10 px-6 hero-fade-in" style={{animationDelay: '0.2s'}}>
             AI-powered naming with instant domain availability.<br className="hidden md:block" />
             Get your complete brand identity package in minutes, not weeks.
           </p>
 
           {/* Enhanced social proof */}
           <div className="flex flex-col items-center gap-5 mb-8 hero-fade-in" style={{animationDelay: '0.3s'}}>
-            <div className="flex items-center gap-3 text-base text-gray-700 dark:text-gray-300">
+            <div className="flex items-center gap-3 text-base text-gray-700 dark:text-white/60">
               <div className="flex -space-x-3">
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-rose-accent to-rose-coral flex items-center justify-center text-white text-sm font-bold border-3 border-white dark:border-gray-900 shadow-lg">A</div>
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-rose-coral to-rose-red flex items-center justify-center text-white text-sm font-bold border-3 border-white dark:border-gray-900 shadow-lg">S</div>
@@ -166,8 +166,8 @@ export default function Home() {
               <svg className="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
               </svg>
-              <span className="ml-2 font-semibold text-gray-900 dark:text-white">4.9/5</span>
-              <span className="text-gray-600 dark:text-gray-400 ml-1">(127 reviews)</span>
+              <span className="ml-2 font-semibold text-gray-900 dark:text-white/90">4.9/5</span>
+              <span className="text-gray-600 dark:text-white/40 ml-1">(127 reviews)</span>
             </div>
           </div>
         </div>
@@ -175,7 +175,7 @@ export default function Home() {
         {/* Generator card with glassmorphism */}
         <div className="glass-card rounded-3xl p-8 md:p-10 mb-8">
           <div className="mb-6">
-            <label htmlFor="description" className="block text-sm font-semibold mb-3 text-gray-700 dark:text-gray-300">
+            <label htmlFor="description" className="block text-sm font-semibold mb-3 text-gray-700 dark:text-white/60">
               Describe your vision
             </label>
             <textarea
@@ -198,7 +198,7 @@ export default function Home() {
           <button
             onClick={handleGenerate}
             disabled={loading}
-            className="w-full glass-button text-white font-bold py-4 px-8 rounded-2xl text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full glass-button text-white font-bold py-4 px-8 rounded-full text-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all hover:scale-[1.02] active:scale-[0.98]"
           >
             {loading ? 'Generating...' : '✨ Generate Names'}
           </button>
@@ -221,9 +221,9 @@ export default function Home() {
 
         {names.length > 0 && !loading && (
           <div className="glass-card rounded-3xl p-8 md:p-10">
-            <h2 className="text-3xl md:text-4xl font-bold mb-2 text-gray-800 dark:text-gray-100">Your Names</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-2 text-gray-800 dark:text-white/90">Your Names</h2>
             {checkingDomains && (
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">Checking domain availability...</p>
+              <p className="text-sm text-gray-600 dark:text-white/40 mb-6">Checking domain availability...</p>
             )}
             <div className="grid grid-cols-1 gap-5 mt-6">
               {names.map((name, index) => {
@@ -240,7 +240,7 @@ export default function Home() {
                   >
                     <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                       <div className="flex-1">
-                        <p className="name-mono text-3xl md:text-4xl font-bold mb-3 text-gray-900 dark:text-white">
+                        <p className="name-mono text-3xl md:text-4xl font-bold mb-3 text-gray-900 dark:text-white/90">
                           {name}
                         </p>
                         {availableDomain && (
@@ -256,7 +256,7 @@ export default function Home() {
                         <button
                           onClick={() => handleClaimName(name, availableDomain.domain)}
                           disabled={checkoutLoading === name}
-                          className="glass-button px-8 py-4 text-white font-bold rounded-xl text-base disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+                          className="glass-button px-8 py-4 text-white font-bold rounded-full text-base disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap transition-all hover:scale-[1.02] active:scale-[0.98]"
                         >
                           {checkoutLoading === name ? 'Loading...' : '🥂 Claim for $49'}
                         </button>
@@ -292,31 +292,31 @@ export default function Home() {
 
         {/* Features section */}
         <div className="mt-32 mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-gray-900 dark:text-white tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-gray-900 dark:text-white/90 tracking-tight">
             Everything you need to launch
           </h2>
-          <p className="text-center text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-16 max-w-2xl mx-auto">
+          <p className="text-center text-lg md:text-xl text-gray-600 dark:text-white/60 mb-16 max-w-2xl mx-auto">
             Professional naming and brand strategy without the agency price tag
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            <div className="glass-card rounded-3xl p-10 hover:shadow-xl transition-all duration-300 group">
+            <div className="glass-card rounded-3xl p-10 hover:shadow-xl hover:bg-white/[0.04] transition-all duration-300 group">
               <div className="text-6xl mb-6 transform group-hover:scale-110 transition-transform duration-300">✨</div>
-              <h3 className="font-bold text-2xl mb-4 text-gray-900 dark:text-white">AI-Powered Names</h3>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-base">
+              <h3 className="font-bold text-2xl mb-4 text-gray-900 dark:text-white/90">AI-Powered Names</h3>
+              <p className="text-gray-700 dark:text-white/60 leading-relaxed text-base">
                 Advanced AI creates unique, memorable names tailored to your brand vision and values. Every suggestion is crafted for maximum impact.
               </p>
             </div>
-            <div className="glass-card rounded-3xl p-10 hover:shadow-xl transition-all duration-300 group">
+            <div className="glass-card rounded-3xl p-10 hover:shadow-xl hover:bg-white/[0.04] transition-all duration-300 group">
               <div className="text-6xl mb-6 transform group-hover:scale-110 transition-transform duration-300">⚡</div>
-              <h3 className="font-bold text-2xl mb-4 text-gray-900 dark:text-white">Instant Domains</h3>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-base">
+              <h3 className="font-bold text-2xl mb-4 text-gray-900 dark:text-white/90">Instant Domains</h3>
+              <p className="text-gray-700 dark:text-white/60 leading-relaxed text-base">
                 Real-time domain availability across .com, .io, .app, and more. Find your perfect match instantly with live verification.
               </p>
             </div>
-            <div className="glass-card rounded-3xl p-10 hover:shadow-xl transition-all duration-300 group">
+            <div className="glass-card rounded-3xl p-10 hover:shadow-xl hover:bg-white/[0.04] transition-all duration-300 group">
               <div className="text-6xl mb-6 transform group-hover:scale-110 transition-transform duration-300">🎁</div>
-              <h3 className="font-bold text-2xl mb-4 text-gray-900 dark:text-white">Premium Package</h3>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-base">
+              <h3 className="font-bold text-2xl mb-4 text-gray-900 dark:text-white/90">Premium Package</h3>
+              <p className="text-gray-700 dark:text-white/60 leading-relaxed text-base">
                 Complete brand strategy guide with every name purchase. Launch-ready identity package delivered in minutes, not weeks.
               </p>
             </div>
@@ -328,25 +328,25 @@ export default function Home() {
               <svg className="w-8 h-8 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">100% Satisfaction Guaranteed</h3>
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white/90">100% Satisfaction Guaranteed</h3>
             </div>
-            <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-gray-700 dark:text-white/60 max-w-3xl mx-auto leading-relaxed">
               Not happy with your name? Get a full refund within 7 days, no questions asked. We're committed to helping you find the perfect name for your brand.
             </p>
           </div>
         </div>
 
         {/* Footer */}
-        <footer className="mt-20 pt-12 pb-8 border-t border-gray-200 dark:border-gray-800">
+        <footer className="mt-20 pt-12 pb-8 border-t border-gray-200 dark:border-white/[0.06]">
           <div className="text-center">
             <div className="flex items-center justify-center gap-2 mb-4">
               <span className="text-2xl">🌹</span>
               <span className="text-xl font-bold bg-clip-text text-transparent bg-rose-accent">rose.glass</span>
             </div>
-            <p className="text-base text-gray-600 dark:text-gray-400 mb-6">
+            <p className="text-base text-gray-600 dark:text-white/40 mb-6">
               Premium AI-powered naming for exceptional brands
             </p>
-            <div className="flex items-center justify-center gap-6 text-sm text-gray-500 dark:text-gray-500">
+            <div className="flex items-center justify-center gap-6 text-sm text-gray-500 dark:text-white/40">
               <span>Made with precision and care</span>
               <span>·</span>
               <a href="mailto:hello@rose.glass" className="hover:text-rose-red transition-colors">Contact</a>
