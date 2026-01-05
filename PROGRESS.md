@@ -36,8 +36,17 @@ TBD - Daniel is picking
 - Created .gitignore for Next.js
 - Build verified successfully
 
+### 2026-01-05 - AI Name Generation Added ✓
+- Installed @anthropic-ai/sdk package
+- Created API route at `/api/generate` that uses Claude 3.5 Sonnet
+- Updated landing page to be interactive with client-side state management
+- Added form validation and error handling
+- Displays generated names in a responsive grid layout
+- Created .env.example for API key configuration
+- Build verified successfully
+
 ### Next Task
-Add AI name generation functionality with Claude API
+Deploy to Vercel and add environment variable
 
 ## SEO Pages to Build
 - [x] / - Main landing page with generator (basic UI created)
