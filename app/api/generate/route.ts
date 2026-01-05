@@ -1,8 +1,9 @@
-import Anthropic from '@anthropic-ai/sdk';
+import OpenAI from 'openai';
 import { NextResponse } from 'next/server';
 
-const anthropic = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY,
+const openai = new OpenAI({
+  apiKey: process.env.OPENROUTER_API_KEY,
+  baseURL: 'https://openrouter.ai/api/v1',
 });
 
 export async function POST(request: Request) {
@@ -16,9 +17,8 @@ export async function POST(request: Request) {
       );
     }
 
-    const message = await anthropic.messages.create({
-      model: 'claude-3-5-sonnet-20241022',
-      max_tokens: 1024,
+    const completion = await openai.chat.completions.create({
+      model: 'anthropic/claude-3.5-sonnet',
       messages: [
         {
           role: 'user',
@@ -29,14 +29,15 @@ Project description: ${description}
 Return ONLY the names, one per line, without numbering or additional explanation. Make them creative and professional.`,
         },
       ],
+      max_tokens: 1024,
     });
 
-    const content = message.content[0];
-    if (content.type !== 'text') {
-      throw new Error('Unexpected response type');
+    const content = completion.choices[0]?.message?.content;
+    if (!content) {
+      throw new Error('No content in response');
     }
 
-    const names = content.text
+    const names = content
       .split('\n')
       .map((name) => name.trim())
       .filter((name) => name.length > 0);
