@@ -125,4 +125,8 @@ Each page should go through multiple passes:
 - [ ] /youtube-channel-name-generator
 
 ## Blockers
-- None currently
+- Generator needs API key - **USE OPENROUTER_API_KEY** (already in Vercel env vars, $46 credits available)
+
+## Notes
+- OPENROUTER_API_KEY is available - can use any model via OpenRouter
+- Consider switching from Anthropic SDK to OpenRouter for name generation
