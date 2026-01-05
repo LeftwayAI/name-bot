@@ -407,8 +407,19 @@ Daniel provided these references - capture the vibe:
 - **Typography:** Bold, clean, confident
 - **Inspiration:** High-end SaaS meets art gallery
 
+### Typography
+- **Geist Mono** for generated names - the precision matches "these are the canonical thing"
+- **Satoshi** for body/UI text - clean, modern, premium feel
+
+### "Raise a Glass" Moment
+When user selects a name or completes purchase, create a celebratory moment:
+- Play into the "rose.glass" / "raise a glass" pun
+- Could be: confetti, glass clink sound, elegant animation
+- Make it feel like a toast to their new brand
+
 ### Implementation Notes
 - Look into: `tailwindcss-glass` or similar glassmorphism utilities
 - Consider: backdrop-blur, subtle gradients, soft shadows
 - Keep generator UI minimal but beautiful
 - The rose logo is key brand element - make it memorable
+- Fonts: Install @fontsource/geist-mono and Satoshi (from fontshare.com)
