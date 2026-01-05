@@ -1,4 +1,23 @@
-# Name Generator Project Progress
+# rose.glass Progress
+
+## 🎯 THE GOAL: $500 revenue by January 15, 2025
+
+That's ~10 days. Every task should move toward PAYING CUSTOMERS.
+
+**The customer journey:**
+```
+Google search → Land on SEO page → Generate names FREE → Check domain availability → "Claim this name" bundle ($49)
+```
+
+## Meta-Level Thinking (for every agent, every run)
+
+Before picking a task, ask:
+1. **Is this the highest-impact thing?** SEO pages bring traffic, but domain availability is the upsell hook.
+2. **Am I building toward the journey above?** If not, why?
+3. **What would make this FAIL?** (Broken generator? No payment flow? Bad content?)
+4. **Should I pivot?** If something feels wrong, document it and suggest alternatives.
+
+---
 
 ## Project Goal
 Build an SEO-optimized AI name generator site that ranks for queries like:
