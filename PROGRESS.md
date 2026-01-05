@@ -16,7 +16,7 @@ Build an SEO-optimized AI name generator site that ranks for queries like:
 - Vercel (deployment)
 
 ## Domain
-TBD - Daniel is picking
+✅ rose.glass - Purchased and connected to Vercel
 
 ## Progress Log
 
@@ -45,12 +45,30 @@ TBD - Daniel is picking
 - Created .env.example for API key configuration
 - Build verified successfully
 
+### 2026-01-05 - Deployed to Vercel ✓
+- Domain: rose.glass connected
+- Deployment: READY at roseglass-git-main-leftway.vercel.app
+- Stripe key: Added (sk_live)
+- **BLOCKER**: ANTHROPIC_API_KEY not set in Vercel env - generator fails
+
+### 2026-01-05 - First SEO Page Built ✓
+- Created `/business-name-generator` page with:
+  - Full AI name generator functionality (same as home page)
+  - Rich SEO content (1,500+ words)
+  - Sections: How to Choose Names, Why Use AI, Popular Styles, Testing Tips
+  - SEO metadata with proper title, description, keywords
+  - OpenGraph and Twitter card tags
+  - Responsive 3-column grid layout for generated names
+- Build verified successfully
+- Page accessible at: rose.glass/business-name-generator
+
 ### Next Task
-Deploy to Vercel and add environment variable
+1. Build second SEO page: /startup-name-ideas
+2. Eventually: Add ANTHROPIC_API_KEY to Vercel (currently blocked on Daniel)
 
 ## SEO Pages to Build
 - [x] / - Main landing page with generator (basic UI created)
-- [ ] /business-name-generator
+- [x] /business-name-generator - COMPLETE
 - [ ] /startup-name-ideas
 - [ ] /brand-name-generator
 - [ ] /company-name-generator
