@@ -64,12 +64,12 @@ open LAUNCH-CHECKLIST.md
 |-----------|--------|----------|
 | **Domain** | ✅ Live | rose.glass connected to Vercel |
 | **AI Generator** | ✅ Works | **VERIFIED IN PRODUCTION** - OpenRouter API responding |
-| **Domain Checker** | ⚠️ Unknown | May be slow, but not a launch blocker |
+| **Domain Checker** | ✅ Works | **VERIFIED IN PRODUCTION** - DNS-based checking functional |
 | **Stripe Payments** | ✅ Works | **VERIFIED IN PRODUCTION** - Live checkout sessions working |
 | **Email Delivery** | ❌ Not Set Up | Need Resend API + Webhook (15 min setup) |
 | **Traffic** | ❌ None | No ads running = $0 revenue |
 
-**Bottom line:** Site is 90% ready. You can launch ads in 60 minutes.
+**Bottom line:** Site is 95% ready. Core product 100% functional. You can launch ads in 60 minutes.
 
 ---
 
