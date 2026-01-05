@@ -137,6 +137,13 @@ body {
     background: linear-gradient(135deg, var(--rose-red), var(--rose-coral));
   }
 
+  .text-rose-gradient {
+    background: linear-gradient(135deg, var(--rose-red), var(--rose-coral));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
   @media (prefers-color-scheme: dark) {
     .bg-rose-gradient {
       background:
