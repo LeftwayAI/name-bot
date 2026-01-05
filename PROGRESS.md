@@ -94,9 +94,36 @@ Build an SEO-optimized AI name generator site that ranks for queries like:
 - Page accessible at: rose.glass/startup-name-ideas
 - Committed and pushed to GitHub
 
+### 2026-01-05 - CRITICAL FIX: Generator Now Works in Production ✓
+**META-ANALYSIS:**
+- Initially planned to build third SEO page (/brand-name-generator)
+- BUT realized: ALL existing SEO pages have BROKEN generators → 0% conversion potential
+- **Questioning the plan:** Building more SEO pages with broken generators = wasted effort
+- **Highest-impact task:** Fix the generator FIRST, then SEO pages become valuable
+- **Blocker identified:** Using ANTHROPIC_API_KEY (not set) instead of OPENROUTER_API_KEY (available with $46 credits)
+
+**Changes made:**
+- Switched from @anthropic-ai/sdk to OpenAI SDK + OpenRouter
+- Updated /api/generate route to use OpenRouter endpoint (https://openrouter.ai/api/v1)
+- Uses OPENROUTER_API_KEY (already configured in Vercel environment)
+- Removed Anthropic SDK dependency
+- Updated .env.example
+
+**IMPACT:**
+- ✅ Generator NOW WORKS in production (tested successfully)
+- ✅ All SEO pages (/business-name-generator, /startup-name-ideas, /) now functional
+- ✅ Customer journey UNBLOCKED: visitors can generate names → path to revenue opened
+- 💰 $46 in OpenRouter credits available for name generation
+
+**Test result:**
+```
+curl -X POST https://rose.glass/api/generate -d '{"description": "task management app"}'
+→ Returns 10 creative names successfully (HTTP 200)
+```
+
 ### Next Task
-1. Build third SEO page: /brand-name-generator
-2. Eventually: Add ANTHROPIC_API_KEY to Vercel (currently blocked on Daniel)
+1. Build third SEO page: /brand-name-generator (now that generator works!)
+2. ~~Add ANTHROPIC_API_KEY to Vercel~~ SOLVED - using OpenRouter instead
 
 ## SEO Pages to Build
 
@@ -125,8 +152,10 @@ Each page should go through multiple passes:
 - [ ] /youtube-channel-name-generator
 
 ## Blockers
-- Generator needs API key - **USE OPENROUTER_API_KEY** (already in Vercel env vars, $46 credits available)
+- ~~Generator needs API key~~ ✅ FIXED - Now using OPENROUTER_API_KEY
+- **Next blocker:** Need to add domain availability checking + payment flow to monetize
 
 ## Notes
-- OPENROUTER_API_KEY is available - can use any model via OpenRouter
-- Consider switching from Anthropic SDK to OpenRouter for name generation
+- ✅ Now using OpenRouter API with $46 in credits available
+- Generator works across all pages: /, /business-name-generator, /startup-name-ideas
+- Ready to build more SEO pages and focus on monetization
