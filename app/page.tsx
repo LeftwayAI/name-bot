@@ -20,6 +20,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [checkingDomains, setCheckingDomains] = useState(false);
   const [error, setError] = useState('');
+  const [checkoutLoading, setCheckoutLoading] = useState<string | null>(null);
 
   const handleGenerate = async () => {
     if (!description.trim()) {
@@ -81,6 +82,35 @@ export default function Home() {
       // Don't show error to user, domain checking is a nice-to-have
     } finally {
       setCheckingDomains(false);
+    }
+  };
+
+  const handleClaimName = async (nameName: string, domain: string) => {
+    setCheckoutLoading(nameName);
+
+    try {
+      const response = await fetch('/api/create-checkout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ nameName, domain }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to create checkout session');
+      }
+
+      const data = await response.json();
+
+      // Redirect to Stripe checkout
+      if (data.url) {
+        window.location.href = data.url;
+      }
+    } catch (err) {
+      console.error('Checkout error:', err);
+      setError('Failed to start checkout. Please try again.');
+      setCheckoutLoading(null);
     }
   };
 
@@ -151,8 +181,12 @@ export default function Home() {
                         )}
                       </div>
                       {availableDomain && (
-                        <button className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold rounded-lg transition-all transform hover:scale-105 shadow-lg">
-                          Claim for $49
+                        <button
+                          onClick={() => handleClaimName(name, availableDomain.domain)}
+                          disabled={checkoutLoading === name}
+                          className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold rounded-lg transition-all transform hover:scale-105 shadow-lg"
+                        >
+                          {checkoutLoading === name ? 'Loading...' : 'Claim for $49'}
                         </button>
                       )}
                     </div>
