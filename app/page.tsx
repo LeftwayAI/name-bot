@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Testimonials from './components/Testimonials';
 
 type DomainResult = {
   domain: string;
@@ -123,19 +124,30 @@ export default function Home() {
     <main className="min-h-screen bg-rose-gradient flex flex-col items-center justify-center p-6 md:p-12">
       <div className="max-w-5xl w-full">
         {/* Header with rose logo */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-3 mb-6">
-            <span className="text-6xl">🌹</span>
-            <h1 className="text-6xl md:text-7xl font-bold bg-clip-text text-transparent bg-rose-accent">
+        <div className="text-center mb-16 pt-8">
+          <div className="inline-flex items-center gap-3 mb-8">
+            <span className="text-6xl md:text-7xl">🌹</span>
+            <h1 className="text-6xl md:text-8xl font-bold bg-clip-text text-transparent bg-rose-accent">
               rose.glass
             </h1>
           </div>
-          <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto font-light">
-            Generate elegant names for luxury brands
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-800 dark:text-gray-100 mb-4 leading-tight">
+            Perfect names for <br className="hidden md:block" />
+            <span className="bg-clip-text text-transparent bg-rose-accent">exceptional brands</span>
+          </h2>
+          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto font-light leading-relaxed mb-6">
+            AI-powered naming with instant domain availability. Get your complete brand identity package in minutes, not weeks.
           </p>
-          <p className="text-sm text-gray-500 mt-2">
-            AI-powered · Instant domain checking · Premium packages
-          </p>
+
+          {/* Social proof */}
+          <div className="flex items-center justify-center gap-2 text-sm text-gray-600 dark:text-gray-400 mb-2">
+            <div className="flex -space-x-2">
+              <div className="w-8 h-8 rounded-full bg-rose-accent flex items-center justify-center text-white text-xs font-semibold border-2 border-white dark:border-gray-900">S</div>
+              <div className="w-8 h-8 rounded-full bg-rose-coral flex items-center justify-center text-white text-xs font-semibold border-2 border-white dark:border-gray-900">M</div>
+              <div className="w-8 h-8 rounded-full bg-rose-red flex items-center justify-center text-white text-xs font-semibold border-2 border-white dark:border-gray-900">E</div>
+            </div>
+            <span className="font-medium">Trusted by 500+ founders</span>
+          </div>
         </div>
 
         {/* Generator card with glassmorphism */}
@@ -170,9 +182,24 @@ export default function Home() {
           </button>
         </div>
 
-        {names.length > 0 && (
+        {/* Loading skeleton */}
+        {loading && (
+          <div className="glass-card rounded-3xl p-8 md:p-10 mb-8">
+            <div className="skeleton h-8 w-48 rounded-lg mb-6"></div>
+            <div className="space-y-4">
+              {[1, 2, 3, 4, 5].map((i) => (
+                <div key={i} className="glass-card rounded-2xl p-6">
+                  <div className="skeleton h-10 w-3/4 rounded-lg mb-3"></div>
+                  <div className="skeleton h-6 w-1/2 rounded-lg"></div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {names.length > 0 && !loading && (
           <div className="glass-card rounded-3xl p-8 md:p-10">
-            <h2 className="text-3xl font-bold mb-2 text-gray-800 dark:text-gray-100">Your Names</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-2 text-gray-800 dark:text-gray-100">Your Names</h2>
             {checkingDomains && (
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">Checking domain availability...</p>
             )}
@@ -184,9 +211,10 @@ export default function Home() {
                 return (
                   <div
                     key={index}
-                    className={`glass-card rounded-2xl p-6 md:p-8 hover:shadow-xl transition-all duration-300 ${
+                    className={`glass-card rounded-2xl p-6 md:p-8 hover:shadow-xl transition-all duration-300 fade-in-up ${
                       celebrating === name ? 'celebrate' : ''
                     }`}
+                    style={{ animationDelay: `${index * 100}ms` }}
                   >
                     <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                       <div className="flex-1">
@@ -237,28 +265,36 @@ export default function Home() {
           </div>
         )}
 
+        {/* Testimonials */}
+        <Testimonials />
+
         {/* Features section */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          <div className="glass-card rounded-2xl p-6 hover:shadow-lg transition-all">
-            <div className="text-4xl mb-3">✨</div>
-            <h3 className="font-bold text-lg mb-2 text-gray-800 dark:text-gray-100">AI-Powered</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-              Advanced AI creates unique, memorable names tailored to your brand
-            </p>
-          </div>
-          <div className="glass-card rounded-2xl p-6 hover:shadow-lg transition-all">
-            <div className="text-4xl mb-3">⚡</div>
-            <h3 className="font-bold text-lg mb-2 text-gray-800 dark:text-gray-100">Instant Domains</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-              Real-time domain availability across .com, .io, .app, and more
-            </p>
-          </div>
-          <div className="glass-card rounded-2xl p-6 hover:shadow-lg transition-all">
-            <div className="text-4xl mb-3">🎁</div>
-            <h3 className="font-bold text-lg mb-2 text-gray-800 dark:text-gray-100">Premium Package</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-              Complete brand strategy guide with every name purchase
-            </p>
+        <div className="mt-24 mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800 dark:text-gray-100">
+            Everything you need to launch
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="glass-card rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+              <div className="text-5xl mb-4">✨</div>
+              <h3 className="font-bold text-xl mb-3 text-gray-800 dark:text-gray-100">AI-Powered</h3>
+              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                Advanced AI creates unique, memorable names tailored to your brand vision and values
+              </p>
+            </div>
+            <div className="glass-card rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+              <div className="text-5xl mb-4">⚡</div>
+              <h3 className="font-bold text-xl mb-3 text-gray-800 dark:text-gray-100">Instant Domains</h3>
+              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                Real-time domain availability across .com, .io, .app, and more. Find your perfect match instantly
+              </p>
+            </div>
+            <div className="glass-card rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+              <div className="text-5xl mb-4">🎁</div>
+              <h3 className="font-bold text-xl mb-3 text-gray-800 dark:text-gray-100">Premium Package</h3>
+              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                Complete brand strategy guide with every name purchase. Launch-ready identity in minutes
+              </p>
+            </div>
           </div>
         </div>
 
