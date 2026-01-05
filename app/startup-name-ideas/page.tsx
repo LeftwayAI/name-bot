@@ -2,11 +2,26 @@
 
 import { useState } from 'react';
 
+type DomainResult = {
+  domain: string;
+  available: boolean;
+  checked: boolean;
+};
+
+type NameWithDomains = {
+  name: string;
+  domains: DomainResult[];
+};
+
 export default function StartupNameIdeas() {
   const [description, setDescription] = useState('');
   const [names, setNames] = useState<string[]>([]);
+  const [namesWithDomains, setNamesWithDomains] = useState<NameWithDomains[]>([]);
   const [loading, setLoading] = useState(false);
+  const [checkingDomains, setCheckingDomains] = useState(false);
   const [error, setError] = useState('');
+  const [checkoutLoading, setCheckoutLoading] = useState<string | null>(null);
+  const [celebrating, setCelebrating] = useState<string | null>(null);
 
   const handleGenerate = async () => {
     if (!description.trim()) {
@@ -17,6 +32,7 @@ export default function StartupNameIdeas() {
     setLoading(true);
     setError('');
     setNames([]);
+    setNamesWithDomains([]);
 
     try {
       const response = await fetch('/api/generate', {
@@ -33,6 +49,9 @@ export default function StartupNameIdeas() {
 
       const data = await response.json();
       setNames(data.names);
+
+      // Automatically check domain availability
+      await checkDomains(data.names);
     } catch (err) {
       setError('Failed to generate names. Please try again.');
       console.error(err);
@@ -41,30 +60,95 @@ export default function StartupNameIdeas() {
     }
   };
 
+  const checkDomains = async (namesToCheck: string[]) => {
+    setCheckingDomains(true);
+
+    try {
+      const response = await fetch('/api/check-domain', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ names: namesToCheck }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to check domains');
+      }
+
+      const data = await response.json();
+      setNamesWithDomains(data.results);
+    } catch (err) {
+      console.error('Domain check error:', err);
+      // Don't show error to user, domain checking is a nice-to-have
+    } finally {
+      setCheckingDomains(false);
+    }
+  };
+
+  const handleClaimName = async (nameName: string, domain: string) => {
+    // Trigger "raise a glass" celebration moment
+    setCelebrating(nameName);
+    setTimeout(() => setCelebrating(null), 600);
+
+    setCheckoutLoading(nameName);
+
+    try {
+      const response = await fetch('/api/create-checkout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ nameName, domain }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to create checkout session');
+      }
+
+      const data = await response.json();
+
+      // Redirect to Stripe checkout
+      if (data.url) {
+        window.location.href = data.url;
+      }
+    } catch (err) {
+      console.error('Checkout error:', err);
+      setError('Failed to start checkout. Please try again.');
+      setCheckoutLoading(null);
+    }
+  };
+
   return (
-    <main className="min-h-screen p-8">
-      <div className="max-w-6xl mx-auto">
-        {/* Hero Section */}
+    <main className="min-h-screen bg-rose-gradient flex flex-col items-center p-6 md:p-12">
+      <div className="max-w-5xl w-full">
+        {/* Header with rose logo */}
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold mb-4">
+          <div className="inline-flex items-center gap-3 mb-6">
+            <span className="text-5xl">🌹</span>
+            <h1 className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-rose-accent">
+              rose.glass
+            </h1>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800 dark:text-gray-100">
             Startup Name Ideas Generator
-          </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+          </h2>
+          <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto font-light">
             Get creative, memorable startup name ideas powered by AI. Perfect for tech startups,
             SaaS companies, and innovative ventures looking to make their mark.
           </p>
         </div>
 
-        {/* Generator Tool */}
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 mb-16">
+        {/* Generator card with glassmorphism */}
+        <div className="glass-card rounded-3xl p-8 md:p-10 mb-8">
           <div className="mb-6">
-            <label htmlFor="description" className="block text-sm font-medium mb-2">
+            <label htmlFor="description" className="block text-sm font-semibold mb-3 text-gray-700 dark:text-gray-300">
               Describe your startup idea
             </label>
             <textarea
               id="description"
               rows={4}
-              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700"
+              className="w-full px-5 py-4 glass-input rounded-2xl text-base focus:outline-none resize-none"
               placeholder="E.g., A SaaS platform that helps remote teams collaborate on design projects in real-time..."
               value={description}
               onChange={(e) => setDescription(e.target.value)}
@@ -73,7 +157,7 @@ export default function StartupNameIdeas() {
           </div>
 
           {error && (
-            <div className="mb-4 p-3 bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-200 rounded">
+            <div className="mb-4 p-4 bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-300 rounded-xl text-sm">
               {error}
             </div>
           )}
@@ -81,180 +165,155 @@ export default function StartupNameIdeas() {
           <button
             onClick={handleGenerate}
             disabled={loading}
-            className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+            className="w-full glass-button text-white font-bold py-4 px-8 rounded-2xl text-lg disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {loading ? 'Generating Startup Names...' : 'Generate Startup Name Ideas'}
+            {loading ? 'Generating...' : '✨ Generate Startup Names'}
           </button>
         </div>
 
         {names.length > 0 && (
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 mb-16">
-            <h2 className="text-2xl font-bold mb-4">Your Startup Name Ideas</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {names.map((name, index) => (
-                <div
-                  key={index}
-                  className="p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-blue-500 transition-colors cursor-pointer"
-                >
-                  <p className="font-semibold text-lg">{name}</p>
-                </div>
-              ))}
+          <div className="glass-card rounded-3xl p-8 md:p-10 mb-8">
+            <h2 className="text-3xl font-bold mb-2 text-gray-800 dark:text-gray-100">Your Startup Names</h2>
+            {checkingDomains && (
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">Checking domain availability...</p>
+            )}
+            <div className="grid grid-cols-1 gap-5 mt-6">
+              {names.map((name, index) => {
+                const nameData = namesWithDomains.find(n => n.name === name);
+                const availableDomain = nameData?.domains.find(d => d.available && d.checked);
+
+                return (
+                  <div
+                    key={index}
+                    className={`glass-card rounded-2xl p-6 md:p-8 hover:shadow-xl transition-all duration-300 ${
+                      celebrating === name ? 'celebrate' : ''
+                    }`}
+                  >
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                      <div className="flex-1">
+                        <p className="name-mono text-3xl md:text-4xl font-bold mb-3 text-gray-900 dark:text-white">
+                          {name}
+                        </p>
+                        {availableDomain && (
+                          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-green-50 dark:bg-green-900/20 rounded-lg mb-3">
+                            <span className="text-green-600 dark:text-green-400 text-lg">✓</span>
+                            <p className="text-green-700 dark:text-green-300 text-sm font-semibold">
+                              {availableDomain.domain} available
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                      {availableDomain && (
+                        <button
+                          onClick={() => handleClaimName(name, availableDomain.domain)}
+                          disabled={checkoutLoading === name}
+                          className="glass-button px-8 py-4 text-white font-bold rounded-xl text-base disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+                        >
+                          {checkoutLoading === name ? 'Loading...' : '🥂 Claim for $49'}
+                        </button>
+                      )}
+                    </div>
+                    {nameData && (
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {nameData.domains.map((domain, idx) => (
+                          <span
+                            key={idx}
+                            className={`text-xs px-3 py-1.5 rounded-lg font-medium ${
+                              domain.checked
+                                ? domain.available
+                                  ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300'
+                                  : 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300'
+                                : 'bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-400'
+                            }`}
+                          >
+                            {domain.domain}: {domain.checked ? (domain.available ? 'Available' : 'Taken') : 'Error'}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
         )}
 
-        {/* SEO Content Section */}
-        <div className="prose dark:prose-invert max-w-none">
-          <h2 className="text-3xl font-bold mb-6">What Makes a Great Startup Name?</h2>
+        {/* SEO Content - Keeping existing content with glass styling */}
+        <div className="glass-card rounded-3xl p-8 md:p-10 mb-8">
+          <h2 className="text-3xl font-bold mb-6 text-gray-800 dark:text-gray-100">What Makes a Great Startup Name?</h2>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div>
-              <h3 className="text-xl font-semibold mb-3">Short and Punchy</h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                The best startup names are typically short (1-2 words), easy to remember, and quick
-                to type. Think Stripe, Slack, or Zoom - simple, powerful, memorable.
+          <div className="space-y-6 mb-8 text-gray-700 dark:text-gray-300">
+            <p className="leading-relaxed">
+              Your startup's name is often the first impression potential customers, investors, and partners
+              will have of your company. A great startup name should be memorable, pronounceable, and
+              convey something about your brand's personality or mission.
+            </p>
+
+            <div className="glass-card rounded-2xl p-6">
+              <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-100">Key Characteristics</h3>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <span className="text-rose-red mr-2 text-lg">✓</span>
+                  <span><strong>Short and Simple:</strong> Easy to spell, say, and remember</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-rose-red mr-2 text-lg">✓</span>
+                  <span><strong>Unique:</strong> Stands out from competitors and avoids trademark issues</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-rose-red mr-2 text-lg">✓</span>
+                  <span><strong>Scalable:</strong> Works as your startup grows and potentially pivots</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-rose-red mr-2 text-lg">✓</span>
+                  <span><strong>Domain Available:</strong> Matching .com or modern TLD is available</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <h2 className="text-3xl font-bold mb-6 text-gray-800 dark:text-gray-100">Why Use AI for Startup Naming?</h2>
+
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            <div className="glass-card rounded-2xl p-6">
+              <h3 className="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-100">Speed</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                Generate hundreds of creative options in seconds instead of weeks of brainstorming
               </p>
             </div>
-
-            <div>
-              <h3 className="text-xl font-semibold mb-3">Globally Scalable</h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                Choose a name that works internationally. Avoid cultural references or words that
-                might have negative meanings in other languages if you plan to expand globally.
+            <div className="glass-card rounded-2xl p-6">
+              <h3 className="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-100">Creativity</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                AI explores naming patterns and combinations you might never think of
               </p>
             </div>
-
-            <div>
-              <h3 className="text-xl font-semibold mb-3">Domain Available</h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                In today's digital world, having a matching .com domain is crucial. Your startup name
-                should have an available domain that matches or closely aligns with your brand.
+            <div className="glass-card rounded-2xl p-6">
+              <h3 className="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-100">Data-Driven</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                Trained on successful startup names across industries and markets
               </p>
             </div>
-
-            <div>
-              <h3 className="text-xl font-semibold mb-3">Future-Proof</h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                Avoid names that are too specific to your current product. Your startup will evolve,
-                and your name should allow room for growth and pivots without becoming outdated.
+            <div className="glass-card rounded-2xl p-6">
+              <h3 className="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-100">Context-Aware</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                Understands your industry, target market, and brand positioning
               </p>
             </div>
           </div>
 
-          <h2 className="text-3xl font-bold mb-6">Why Use AI for Startup Name Ideas?</h2>
-
-          <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-6 mb-8">
-            <ul className="space-y-3">
-              <li className="flex items-start">
-                <span className="text-blue-600 mr-2">✓</span>
-                <span><strong>Instant Creativity:</strong> Generate dozens of unique name ideas in seconds, not days of brainstorming</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-blue-600 mr-2">✓</span>
-                <span><strong>Context-Aware:</strong> AI understands your startup's mission and creates names that fit your industry and vision</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-blue-600 mr-2">✓</span>
-                <span><strong>Modern & Trendy:</strong> Get names that sound current and align with today's tech startup naming trends</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-blue-600 mr-2">✓</span>
-                <span><strong>Unlimited Options:</strong> Keep generating until you find the perfect name - no limits, completely free</span>
-              </li>
-            </ul>
-          </div>
-
-          <h2 className="text-3xl font-bold mb-6">Popular Startup Naming Strategies</h2>
-
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-6">
-              <h3 className="text-lg font-semibold mb-2">Invented Words</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
-                Create completely new words that are unique and brandable
-              </p>
-              <p className="text-xs text-gray-500">Examples: Spotify, Etsy, Venmo</p>
-            </div>
-
-            <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-6">
-              <h3 className="text-lg font-semibold mb-2">Real Words</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
-                Use common words in unexpected ways or new contexts
-              </p>
-              <p className="text-xs text-gray-500">Examples: Apple, Amazon, Notion</p>
-            </div>
-
-            <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-6">
-              <h3 className="text-lg font-semibold mb-2">Compound Words</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
-                Combine two words to create something memorable
-              </p>
-              <p className="text-xs text-gray-500">Examples: LinkedIn, Snapchat, Airbnb</p>
-            </div>
-          </div>
-
-          <h2 className="text-3xl font-bold mb-6">Startup Name Trends in 2026</h2>
-
-          <div className="space-y-4 mb-8">
-            <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6">
-              <h3 className="text-lg font-semibold mb-2">Short & Brandable</h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                Modern startups favor ultra-short names (4-6 letters) that are easy to remember and type.
-                Think of recent unicorns like Figma, Canva, or Linear - short, punchy, and memorable.
-              </p>
-            </div>
-
-            <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6">
-              <h3 className="text-lg font-semibold mb-2">Abstract & Evocative</h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                Rather than describing what the product does, successful startups choose names that evoke
-                feelings or imagery. This allows the brand to evolve beyond its initial product.
-              </p>
-            </div>
-
-            <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6">
-              <h3 className="text-lg font-semibold mb-2">Tech-Forward Sound</h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                Names ending in -ly, -fy, or -io continue to be popular in the tech startup world,
-                signaling innovation and modernity while maintaining simplicity.
-              </p>
-            </div>
-          </div>
-
-          <h2 className="text-3xl font-bold mb-6">Steps to Validate Your Startup Name</h2>
-
-          <ol className="space-y-3 mb-8">
-            <li className="pl-4">
-              <strong>1. Check domain availability:</strong> Search for .com domains first, then consider alternatives like .io, .ai, or .co
-            </li>
-            <li className="pl-4">
-              <strong>2. Search for trademarks:</strong> Use USPTO.gov or similar services to ensure the name isn't already trademarked
-            </li>
-            <li className="pl-4">
-              <strong>3. Verify social media:</strong> Check if handles are available on Twitter, Instagram, LinkedIn, and TikTok
-            </li>
-            <li className="pl-4">
-              <strong>4. Google it thoroughly:</strong> Make sure there are no negative associations or competing brands
-            </li>
-            <li className="pl-4">
-              <strong>5. Test pronunciation:</strong> Say it out loud and ask others to spell it - it should be intuitive
-            </li>
-            <li className="pl-4">
-              <strong>6. Get team feedback:</strong> Share top choices with cofounders, advisors, and potential customers
-            </li>
-            <li className="pl-4">
-              <strong>7. Sleep on it:</strong> The best names grow on you but also feel right from day one
-            </li>
-          </ol>
-
-          <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-6">
-            <h3 className="text-xl font-semibold mb-3">Ready to Name Your Startup?</h3>
-            <p className="text-gray-700 dark:text-gray-300">
-              Our AI-powered startup name generator creates unique, memorable names tailored to your
-              vision. Whether you're building the next SaaS unicorn, launching a mobile app, or
-              disrupting an industry, find the perfect name that captures your startup's essence.
-              Generate unlimited name ideas above - completely free!
+          <div className="glass-card rounded-2xl p-6 bg-gradient-to-br from-rose-pink/30 to-white/30 dark:from-rose-red/10 dark:to-gray-800/30">
+            <h3 className="text-xl font-semibold mb-3 text-gray-800 dark:text-gray-100">Ready to Launch?</h3>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              Our AI analyzes your startup concept and generates names that resonate with your vision.
+              Start generating above and find the perfect name that will help your startup stand out
+              and succeed in 2026 and beyond.
             </p>
           </div>
+        </div>
+
+        {/* Footer */}
+        <div className="mt-12 text-center text-sm text-gray-500">
+          <p>Made with precision and care · <a href="https://rose.glass" className="hover:text-rose-red transition-colors">rose.glass</a></p>
         </div>
       </div>
     </main>
