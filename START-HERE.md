@@ -165,7 +165,9 @@ open TEST-MODE-QUICK-START.md
 - `.env.local.example` - Environment variable template
 
 **For Marketing (after you're live):**
-- `GOOGLE-ADS-SETUP.md` - Ad campaign guide
+- `SETUP-CONVERSION-TRACKING.md` - Add Google Ads tracking (5 min)
+- `GOOGLE-ADS-SETUP.md` - Create ad campaigns (30 min)
+- `LAUNCH-DAY-OPERATIONS.md` - What to do after ads go live (Day 1-10 playbook)
 - `docs/CONVERSION-OPTIMIZATION.md` - Tips to improve sales rate
 
 ---
