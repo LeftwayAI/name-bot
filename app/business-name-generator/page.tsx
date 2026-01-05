@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import PricingTransparency from '../components/PricingTransparency';
+import SampleNames from '../components/SampleNames';
 
 type DomainResult = {
   domain: string;
@@ -237,6 +239,22 @@ export default function BusinessNameGenerator() {
             </div>
           </div>
         )}
+
+        {/* Sample Names Showcase */}
+        <SampleNames
+          industry="businesses like yours"
+          examples={[
+            { name: 'PrismCraft', style: 'Modern compound name' },
+            { name: 'Elevaire', style: 'Sophisticated invented word' },
+            { name: 'TrueNorth Consulting', style: 'Descriptive & trustworthy' },
+            { name: 'Luminate', style: 'Action-oriented brand' },
+            { name: 'CoreVista', style: 'Professional compound' },
+            { name: 'SwiftEdge', style: 'Dynamic & memorable' },
+          ]}
+        />
+
+        {/* Pricing Transparency */}
+        <PricingTransparency />
 
         {/* SEO Content Section */}
         <div className="glass-card rounded-3xl p-8 md:p-10 mb-8">

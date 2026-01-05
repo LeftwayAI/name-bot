@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import PricingTransparency from '../components/PricingTransparency';
+import SampleNames from '../components/SampleNames';
 
 type DomainResult = {
   domain: string;
@@ -651,6 +653,22 @@ export default function BrandNameGenerator() {
             </div>
           </div>
         </section>
+
+        {/* Sample Names Showcase */}
+        <SampleNames
+          industry="brands like yours"
+          examples={[
+            { name: 'Lumière', style: 'Elegant French-inspired' },
+            { name: 'VelvetPeak', style: 'Luxurious compound' },
+            { name: 'Astralis', style: 'Premium invented name' },
+            { name: 'SilkVault', style: 'High-end descriptive' },
+            { name: 'Meridian Co.', style: 'Sophisticated & timeless' },
+            { name: 'Opulent', style: 'Single-word power brand' },
+          ]}
+        />
+
+        {/* Pricing Transparency */}
+        <PricingTransparency />
 
         {/* FAQs */}
         <section className="glass-card rounded-3xl p-8 md:p-10 mb-16">

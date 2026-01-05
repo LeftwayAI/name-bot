@@ -1,6 +1,8 @@
 'use client'
 
 import { useState } from 'react'
+import PricingTransparency from '../components/PricingTransparency'
+import SampleNames from '../components/SampleNames'
 
 interface DomainResult {
   domain: string
@@ -215,6 +217,22 @@ export default function CompanyNameGenerator() {
             </div>
           </div>
         )}
+
+        {/* Sample Names Showcase */}
+        <SampleNames
+          industry="companies like yours"
+          examples={[
+            { name: 'Titanium Solutions', style: 'Strong & professional' },
+            { name: 'PrimeCore', style: 'Essential & reliable' },
+            { name: 'Vertex Group', style: 'Leadership-focused' },
+            { name: 'Catalyst Corp', style: 'Change-driven' },
+            { name: 'Cornerstone Partners', style: 'Foundational & trustworthy' },
+            { name: 'Momentum Industries', style: 'Forward-moving energy' },
+          ]}
+        />
+
+        {/* Pricing Transparency */}
+        <PricingTransparency />
 
         {/* SEO Content */}
         <div className="mt-16 space-y-12">

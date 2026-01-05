@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import PricingTransparency from '../components/PricingTransparency';
+import SampleNames from '../components/SampleNames';
 
 type DomainResult = {
   domain: string;
@@ -237,6 +239,22 @@ export default function StartupNameIdeas() {
             </div>
           </div>
         )}
+
+        {/* Sample Names Showcase */}
+        <SampleNames
+          industry="startups like yours"
+          examples={[
+            { name: 'Synthara', style: 'Tech-forward invented name' },
+            { name: 'RocketFlow', style: 'Dynamic compound name' },
+            { name: 'Zephyr AI', style: 'Modern & lightweight' },
+            { name: 'NexusHub', style: 'Connectivity-focused' },
+            { name: 'Valtrix', style: 'Unique & memorable' },
+            { name: 'StreamForge', style: 'Action-oriented tech' },
+          ]}
+        />
+
+        {/* Pricing Transparency */}
+        <PricingTransparency />
 
         {/* SEO Content - Keeping existing content with glass styling */}
         <div className="glass-card rounded-3xl p-8 md:p-10 mb-8">
