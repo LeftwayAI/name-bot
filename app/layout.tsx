@@ -3,6 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://rose.glass"),
   title: "rose.glass | AI Name Generator for Luxury Brands",
   description: "Premium AI-powered name generator for businesses, startups, and brands. Generate memorable names with instant domain availability checking.",
   keywords: "name generator, business name, brand name, startup name, AI naming, domain availability",

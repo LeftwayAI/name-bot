@@ -45,7 +45,7 @@
    - **Value:** (leave empty for now)
    - **Environment:** Production, Preview, Development (check all)
 
-**Note:** Don't worry about `ANTHROPIC_API_KEY` - it's already set
+**Note:** Don't worry about `OPENROUTER_API_KEY` - it's already set (the app uses OpenRouter to access Claude)
 
 **Result:** RESEND_API_KEY is configured
 
