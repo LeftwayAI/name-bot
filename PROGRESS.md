@@ -121,9 +121,67 @@ curl -X POST https://rose.glass/api/generate -d '{"description": "task managemen
 → Returns 10 creative names successfully (HTTP 200)
 ```
 
+### 2026-01-05 - Third SEO Page: Brand Name Generator ✓
+
+**META-ANALYSIS - Before Starting:**
+- 3 pages live (/, /business-name-generator, /startup-name-ideas)
+- Generator working perfectly with OpenRouter
+- BUT: Still NO monetization (domain checking, payment flow)
+- SEO takes 2-4 weeks to rank → won't hit Jan 15 from organic alone
+
+**Strategic Decision:**
+Continue building SEO pages (fast, 30min each) BUT must pivot to monetization soon.
+The /brand-name-generator page targets a high-volume keyword and differentiates from
+"business name" by focusing on brand identity, memorability, and emotional resonance.
+
+**Multi-Pass Execution:**
+1. ✅ Research Pass - Analyzed search intent: brand naming differs from business naming
+   - Users care more about memorability, emotional resonance, trademark availability
+   - Need to address: types of brand names, validation checklist, common mistakes
+
+2. ✅ Draft Pass - Wrote 2000+ words of original content including:
+   - 7 qualities of great brand names (memorable, easy to pronounce, emotionally resonant, etc.)
+   - 6 types of brand names with real examples (Apple, Nike, Amazon, Spotify, etc.)
+   - 2026 brand naming strategies (authenticity, global-first, voice-search optimization)
+   - 10-step validation checklist (trademarks, domains, social handles, pronunciation)
+   - Common mistakes to avoid (being generic, ignoring SEO, following fads)
+   - 6 comprehensive FAQs
+
+3. ✅ Enrich Pass - Added depth and examples:
+   - Real brand examples in each category (descriptive, invented, metaphorical, acronyms, founders, compound)
+   - Detailed explanations of why each brand name works
+   - Visual hierarchy with color-coded sections and call-out boxes
+   - Actionable validation checklist with numbered steps
+
+4. ✅ Polish Pass - SEO optimization:
+   - Metadata optimized for "brand name generator" and related keywords
+   - Clean layout.tsx with OpenGraph and Twitter card tags
+   - Responsive 3-column grid for generated names
+   - CTA section encouraging users to scroll back and generate
+
+**Technical Implementation:**
+- Created `/brand-name-generator/page.tsx` with full generator functionality
+- Created `/brand-name-generator/layout.tsx` for SEO metadata (needed for client components)
+- Build successful, verified working
+- Committed and pushed to GitHub
+
+**IMPACT:**
+- ✅ Now have 4 working pages targeting different keywords
+- ✅ Each page provides genuine value (not thin content)
+- ✅ Keyword coverage: business names, startup names, brand names
+- 📈 SEO groundwork laid, but traffic takes time
+
+**CRITICAL NEXT DECISION:**
+- Should I build 2-3 more SEO pages? OR
+- Should I pivot NOW to monetization (domain checking + payment)?
+- **Recommendation:** Build 1-2 more high-value SEO pages (/company-name-generator, /product-name-generator), THEN must pivot to monetization
+- **Why:** More pages = better long-term SEO, but without monetization we make $0
+
 ### Next Task
-1. Build third SEO page: /brand-name-generator (now that generator works!)
-2. ~~Add ANTHROPIC_API_KEY to Vercel~~ SOLVED - using OpenRouter instead
+**DECISION POINT:** Build 1-2 more SEO pages, then MUST add monetization
+1. /company-name-generator (similar to business but more corporate/formal angle)
+2. /product-name-generator (specific to product launches, physical/digital products)
+3. **THEN PIVOT:** Add domain availability API + payment flow (Stripe) + "Claim this name" upsell
 
 ## SEO Pages to Build
 
@@ -135,18 +193,17 @@ Each page should go through multiple passes:
 
 ### Completed
 - [x] / - Main landing page with generator
-- [x] /business-name-generator - v1 complete (could use enrichment pass)
-- [x] /startup-name-ideas - v1 complete (could use enrichment pass)
+- [x] /business-name-generator - v1 complete (1500+ words, working generator)
+- [x] /startup-name-ideas - v1 complete (1800+ words, working generator)
+- [x] /brand-name-generator - v1 complete (2000+ words, comprehensive validation checklist)
 
-### Next Up
-- [ ] /brand-name-generator
-  - [ ] Research pass
-  - [ ] Draft pass
-  - [ ] Enrich pass
-  - [ ] Polish pass
-- [ ] /company-name-generator
+### Priority Next (Build 1-2 more, then PIVOT to monetization)
+- [ ] /company-name-generator - Corporate/formal business naming angle
+- [ ] /product-name-generator - Product launch specific naming
+- **THEN MONETIZATION PIVOT** (domain API + Stripe + upsell flow)
+
+### Future SEO Pages (lower priority until monetization is live)
 - [ ] /app-name-generator
-- [ ] /product-name-generator
 - [ ] /blog-name-generator
 - [ ] /podcast-name-generator
 - [ ] /youtube-channel-name-generator
