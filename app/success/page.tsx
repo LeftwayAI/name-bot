@@ -15,6 +15,25 @@ function SuccessContent() {
 
     if (nameParam) setNameName(nameParam);
     if (domainParam) setDomain(domainParam);
+
+    // Google Ads Conversion Tracking
+    // Replace AW-XXXXXXXXX/XXXXXXX with your actual conversion ID from Google Ads
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'conversion', {
+        'send_to': 'AW-XXXXXXXXX/XXXXXXX', // TODO: Replace with your Google Ads conversion ID
+        'value': 49.0,
+        'currency': 'USD',
+        'transaction_id': nameParam || ''
+      });
+    }
+
+    // Facebook Pixel (optional - for Meta Ads if you decide to run them)
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'Purchase', {
+        value: 49.0,
+        currency: 'USD'
+      });
+    }
   }, [searchParams]);
 
   return (

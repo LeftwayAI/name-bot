@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -21,7 +22,40 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {/* Google Ads Global Site Tag - Replace AW-XXXXXXXXX with your actual Google Ads ID */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXX"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-XXXXXXXXX'); // TODO: Replace with your Google Ads ID
+          `}
+        </Script>
+
+        {/* Facebook Pixel - Optional, for Meta Ads (Replace XXXXXXXXXXXXXXX with your pixel ID) */}
+        <Script id="facebook-pixel" strategy="afterInteractive">
+          {`
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', 'XXXXXXXXXXXXXXX'); // TODO: Replace with your Facebook Pixel ID (optional)
+            fbq('track', 'PageView');
+          `}
+        </Script>
+
+        {children}
+      </body>
     </html>
   );
 }
