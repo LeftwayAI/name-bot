@@ -207,7 +207,12 @@ export default function Home() {
 
         {names.length > 0 && !loading && (
           <div className="glass-card rounded-3xl p-8 md:p-10">
-            <h2 className="text-3xl md:text-4xl font-bold mb-2 text-gray-800 dark:text-white/90">Your Names</h2>
+            <div className="mb-6">
+              <p className="text-sm font-light tracking-wide text-rose-gradient uppercase mb-2">
+                Generated Names
+              </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white/90">Your Perfect Matches</h2>
+            </div>
             {checkingDomains && (
               <p className="text-sm text-gray-600 dark:text-white/40 mb-6">Checking domain availability...</p>
             )}
@@ -275,9 +280,14 @@ export default function Home() {
 
         {/* Pricing */}
         <div id="pricing" className="scroll-mt-24 mt-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-900 dark:text-white/90 tracking-tight">
-            Simple, transparent pricing
-          </h2>
+          <div className="text-center mb-8">
+            <p className="text-sm font-light tracking-wide text-rose-gradient uppercase mb-3">
+              Pricing
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white/90 tracking-tight">
+              Simple, transparent pricing
+            </h2>
+          </div>
           <PricingTransparency />
         </div>
 
@@ -286,12 +296,17 @@ export default function Home() {
 
         {/* Features section */}
         <div className="mt-32 mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-gray-900 dark:text-white/90 tracking-tight">
-            Everything you need to launch
-          </h2>
-          <p className="text-center text-lg md:text-xl text-gray-600 dark:text-white/60 mb-16 max-w-2xl mx-auto">
-            Professional naming and brand strategy without the agency price tag
-          </p>
+          <div className="text-center mb-16">
+            <p className="text-sm font-light tracking-wide text-rose-gradient uppercase mb-3">
+              What You Get
+            </p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white/90 tracking-tight">
+              Everything you need to launch
+            </h2>
+            <p className="text-lg md:text-xl text-gray-600 dark:text-white/60 max-w-2xl mx-auto">
+              Professional naming and brand strategy without the agency price tag
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             <div className="glass-card rounded-3xl p-10 hover:shadow-xl hover:bg-white/[0.04] transition-all duration-300 group">
               <div className="text-6xl mb-6 transform group-hover:scale-110 transition-transform duration-300">✨</div>
