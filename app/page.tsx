@@ -149,15 +149,15 @@ export default function Home() {
           <div className="flex flex-wrap items-center justify-center gap-4 mb-8 hero-fade-in relative z-10" style={{animationDelay: '0.3s'}}>
             <div className="flex items-center gap-2 px-5 py-2.5 glass-card rounded-full">
               <span className="text-lg">✨</span>
-              <span className="text-sm font-semibold text-white/70">Free to generate</span>
+              <span className="text-sm font-medium text-white/60">Free to generate</span>
             </div>
             <div className="flex items-center gap-2 px-5 py-2.5 glass-card rounded-full">
               <span className="text-lg">⚡</span>
-              <span className="text-sm font-semibold text-white/70">Instant domains</span>
+              <span className="text-sm font-medium text-white/60">Instant domains</span>
             </div>
             <div className="flex items-center gap-2 px-5 py-2.5 glass-card rounded-full">
               <span className="text-lg">🛡️</span>
-              <span className="text-sm font-semibold text-white/70">Money-back guarantee</span>
+              <span className="text-sm font-medium text-white/60">Money-back guarantee</span>
             </div>
           </div>
         </div>
@@ -188,7 +188,7 @@ export default function Home() {
           <button
             onClick={handleGenerate}
             disabled={loading}
-            className="w-full glass-button text-white font-bold py-4 px-8 rounded-full text-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all hover:scale-[1.02] active:scale-[0.98]"
+            className="w-full glass-button text-white font-medium py-4 px-8 rounded-full text-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all hover:scale-[1.02] active:scale-[0.98]"
           >
             {loading ? 'Generating...' : '✨ Generate Names'}
           </button>
@@ -251,7 +251,7 @@ export default function Home() {
                         <button
                           onClick={() => handleClaimName(name, availableDomain.domain)}
                           disabled={checkoutLoading === name}
-                          className="glass-button px-8 py-4 text-white font-bold rounded-full text-base disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap transition-all hover:scale-[1.02] active:scale-[0.98]"
+                          className="glass-button px-8 py-4 text-white font-medium rounded-full text-base disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap transition-all hover:scale-[1.02] active:scale-[0.98]"
                         >
                           {checkoutLoading === name ? 'Loading...' : '🥂 Claim for $49'}
                         </button>

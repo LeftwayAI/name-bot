@@ -167,7 +167,7 @@ export default function BrandNameGenerator() {
           <button
             onClick={handleGenerate}
             disabled={loading}
-            className="w-full glass-button text-white font-bold py-4 px-8 rounded-2xl text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full glass-button text-white font-medium py-4 px-8 rounded-2xl text-lg disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {loading ? 'Generating Brand Names...' : '✨ Generate Brand Names'}
           </button>
@@ -209,7 +209,7 @@ export default function BrandNameGenerator() {
                         <button
                           onClick={() => handleClaimName(name, availableDomain.domain)}
                           disabled={checkoutLoading === name}
-                          className="glass-button px-8 py-4 text-white font-bold rounded-xl text-base disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+                          className="glass-button px-8 py-4 text-white font-medium rounded-xl text-base disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
                         >
                           {checkoutLoading === name ? 'Loading...' : '🥂 Claim for $49'}
                         </button>
@@ -753,7 +753,7 @@ export default function BrandNameGenerator() {
           </p>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="glass-button px-8 py-4 text-white font-bold rounded-2xl text-lg hover:shadow-xl transition-all"
+            className="glass-button px-8 py-4 text-white font-medium rounded-2xl text-lg hover:shadow-xl transition-all"
           >
             ✨ Generate Brand Names Now
           </button>

@@ -167,7 +167,7 @@ export default function BusinessNameGenerator() {
           <button
             onClick={handleGenerate}
             disabled={loading}
-            className="w-full glass-button text-white font-bold py-4 px-8 rounded-2xl text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full glass-button text-white font-medium py-4 px-8 rounded-2xl text-lg disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {loading ? 'Generating...' : '✨ Generate Business Names'}
           </button>
@@ -209,7 +209,7 @@ export default function BusinessNameGenerator() {
                         <button
                           onClick={() => handleClaimName(name, availableDomain.domain)}
                           disabled={checkoutLoading === name}
-                          className="glass-button px-8 py-4 text-white font-bold rounded-xl text-base disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+                          className="glass-button px-8 py-4 text-white font-medium rounded-xl text-base disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
                         >
                           {checkoutLoading === name ? 'Loading...' : '🥂 Claim for $49'}
                         </button>
