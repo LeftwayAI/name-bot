@@ -136,11 +136,11 @@ export default function Home() {
               rose.glass
             </h1>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white/90 mb-6 leading-tight tracking-tight px-4 hero-fade-in relative z-10" style={{animationDelay: '0.1s'}}>
+          <h2 className="text-4xl md:text-6xl font-bold text-white/90 mb-6 leading-tight tracking-tight px-4 hero-fade-in relative z-10" style={{animationDelay: '0.1s'}}>
             Perfect names for <br className="hidden md:block" />
             <span className="text-rose-gradient">exceptional brands</span>
           </h2>
-          <p className="text-xl md:text-2xl text-gray-700 dark:text-white/60 max-w-3xl mx-auto font-light leading-relaxed mb-10 px-6 hero-fade-in relative z-10" style={{animationDelay: '0.2s'}}>
+          <p className="text-xl md:text-2xl text-white/60 max-w-3xl mx-auto font-light leading-relaxed mb-10 px-6 hero-fade-in relative z-10" style={{animationDelay: '0.2s'}}>
             AI-powered naming with instant domain availability.<br className="hidden md:block" />
             Get your complete brand identity package in minutes, not weeks.
           </p>
@@ -149,15 +149,15 @@ export default function Home() {
           <div className="flex flex-wrap items-center justify-center gap-4 mb-8 hero-fade-in relative z-10" style={{animationDelay: '0.3s'}}>
             <div className="flex items-center gap-2 px-5 py-2.5 glass-card rounded-full">
               <span className="text-lg">✨</span>
-              <span className="text-sm font-semibold text-gray-700 dark:text-white/70">Free to generate</span>
+              <span className="text-sm font-semibold text-white/70">Free to generate</span>
             </div>
             <div className="flex items-center gap-2 px-5 py-2.5 glass-card rounded-full">
               <span className="text-lg">⚡</span>
-              <span className="text-sm font-semibold text-gray-700 dark:text-white/70">Instant domains</span>
+              <span className="text-sm font-semibold text-white/70">Instant domains</span>
             </div>
             <div className="flex items-center gap-2 px-5 py-2.5 glass-card rounded-full">
               <span className="text-lg">🛡️</span>
-              <span className="text-sm font-semibold text-gray-700 dark:text-white/70">Money-back guarantee</span>
+              <span className="text-sm font-semibold text-white/70">Money-back guarantee</span>
             </div>
           </div>
         </div>
@@ -165,7 +165,7 @@ export default function Home() {
         {/* Generator card with glassmorphism */}
         <div id="generator" className="glass-card rounded-3xl p-8 md:p-10 mb-8 scroll-mt-24">
           <div className="mb-6">
-            <label htmlFor="description" className="block text-sm font-semibold mb-3 text-gray-700 dark:text-white/60">
+            <label htmlFor="description" className="block text-sm font-semibold mb-3 text-white/60">
               Describe your vision
             </label>
             <textarea
@@ -215,10 +215,10 @@ export default function Home() {
               <p className="text-sm font-light tracking-wide text-rose-gradient uppercase mb-2">
                 Generated Names
               </p>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white/90">Your Perfect Matches</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-white/90">Your Perfect Matches</h2>
             </div>
             {checkingDomains && (
-              <p className="text-sm text-gray-600 dark:text-white/40 mb-6">Checking domain availability...</p>
+              <p className="text-sm text-white/40 mb-6">Checking domain availability...</p>
             )}
             <div className="grid grid-cols-1 gap-5 mt-6">
               {names.map((name, index) => {
@@ -235,7 +235,7 @@ export default function Home() {
                   >
                     <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                       <div className="flex-1">
-                        <p className="name-mono text-3xl md:text-4xl font-bold mb-3 text-gray-900 dark:text-white/90">
+                        <p className="name-mono text-3xl md:text-4xl font-bold mb-3 text-white/90">
                           {name}
                         </p>
                         {availableDomain && (
@@ -288,7 +288,7 @@ export default function Home() {
             <p className="text-sm font-light tracking-wide text-rose-gradient uppercase mb-3">
               Pricing
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white/90 tracking-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-white/90 tracking-tight">
               Simple, transparent pricing
             </h2>
           </div>
@@ -304,32 +304,32 @@ export default function Home() {
             <p className="text-sm font-light tracking-wide text-rose-gradient uppercase mb-3">
               What You Get
             </p>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white/90 tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white/90 tracking-tight">
               Everything you need to launch
             </h2>
-            <p className="text-lg md:text-xl text-gray-600 dark:text-white/60 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto">
               Professional naming and brand strategy without the agency price tag
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             <div className="glass-card rounded-3xl p-10 hover:shadow-xl hover:bg-white/[0.04] transition-all duration-300 group">
               <div className="text-6xl mb-6 transform group-hover:scale-110 transition-transform duration-300">✨</div>
-              <h3 className="font-bold text-2xl mb-4 text-gray-900 dark:text-white/90">AI-Powered Names</h3>
-              <p className="text-gray-700 dark:text-white/60 leading-relaxed text-base">
+              <h3 className="font-bold text-2xl mb-4 text-white/90">AI-Powered Names</h3>
+              <p className="text-white/60 leading-relaxed text-base">
                 Advanced AI creates unique, memorable names tailored to your brand vision and values. Every suggestion is crafted for maximum impact.
               </p>
             </div>
             <div className="glass-card rounded-3xl p-10 hover:shadow-xl hover:bg-white/[0.04] transition-all duration-300 group">
               <div className="text-6xl mb-6 transform group-hover:scale-110 transition-transform duration-300">⚡</div>
-              <h3 className="font-bold text-2xl mb-4 text-gray-900 dark:text-white/90">Instant Domains</h3>
-              <p className="text-gray-700 dark:text-white/60 leading-relaxed text-base">
+              <h3 className="font-bold text-2xl mb-4 text-white/90">Instant Domains</h3>
+              <p className="text-white/60 leading-relaxed text-base">
                 Real-time domain availability across .com, .io, .app, and more. Find your perfect match instantly with live verification.
               </p>
             </div>
             <div className="glass-card rounded-3xl p-10 hover:shadow-xl hover:bg-white/[0.04] transition-all duration-300 group">
               <div className="text-6xl mb-6 transform group-hover:scale-110 transition-transform duration-300">🎁</div>
-              <h3 className="font-bold text-2xl mb-4 text-gray-900 dark:text-white/90">Premium Package</h3>
-              <p className="text-gray-700 dark:text-white/60 leading-relaxed text-base">
+              <h3 className="font-bold text-2xl mb-4 text-white/90">Premium Package</h3>
+              <p className="text-white/60 leading-relaxed text-base">
                 Complete brand strategy guide with every name purchase. Launch-ready identity package delivered in minutes, not weeks.
               </p>
             </div>
@@ -341,25 +341,25 @@ export default function Home() {
               <svg className="w-8 h-8 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white/90">100% Satisfaction Guaranteed</h3>
+              <h3 className="text-2xl md:text-3xl font-bold text-white/90">100% Satisfaction Guaranteed</h3>
             </div>
-            <p className="text-lg text-gray-700 dark:text-white/60 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-white/60 max-w-3xl mx-auto leading-relaxed">
               Not happy with your name? Get a full refund within 7 days, no questions asked. We're committed to helping you find the perfect name for your brand.
             </p>
           </div>
         </div>
 
         {/* Footer */}
-        <footer className="mt-20 pt-12 pb-8 border-t border-gray-200 dark:border-white/[0.06]">
+        <footer className="mt-20 pt-12 pb-8 border-t border-white/[0.06]">
           <div className="text-center">
             <div className="flex items-center justify-center gap-2 mb-4">
               <span className="text-2xl">🌹</span>
               <span className="text-xl font-bold text-rose-gradient">rose.glass</span>
             </div>
-            <p className="text-base text-gray-600 dark:text-white/40 mb-6">
+            <p className="text-base text-white/40 mb-6">
               Premium AI-powered naming for exceptional brands
             </p>
-            <div className="flex items-center justify-center gap-6 text-sm text-gray-500 dark:text-white/40">
+            <div className="flex items-center justify-center gap-6 text-sm text-white/40">
               <span>Made with precision and care</span>
               <span>·</span>
               <a href="mailto:hello@rose.glass" className="hover:text-rose-red transition-colors">Contact</a>
