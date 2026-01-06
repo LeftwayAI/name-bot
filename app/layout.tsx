@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import Navigation from "./components/Navigation";
+import { satoshi } from "./fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -23,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={satoshi.variable}>
       <body>
         {/* Google Ads Global Site Tag - Replace AW-XXXXXXXXX with your actual Google Ads ID */}
         <Script
