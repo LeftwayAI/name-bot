@@ -128,14 +128,14 @@ export default function BrandNameGenerator() {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-3 mb-6">
             <span className="text-6xl">🌹</span>
-            <h1 className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-rose-accent">
+            <h1 className="text-5xl md:text-6xl font-light bg-clip-text text-transparent bg-rose-accent">
               rose.glass
             </h1>
           </div>
-          <p className="text-3xl md:text-4xl font-bold mb-4 text-gray-800 dark:text-gray-100">
+          <p className="text-3xl md:text-4xl font-light mb-4 text-white/90">
             AI Brand Name Generator
           </p>
-          <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto font-light">
+          <p className="text-lg md:text-xl text-white/60 max-w-3xl mx-auto font-light">
             Create memorable, impactful brand names that resonate with your audience.
             Our AI-powered generator helps you find the perfect name that captures your brand's essence.
           </p>
@@ -144,7 +144,7 @@ export default function BrandNameGenerator() {
         {/* Generator Tool */}
         <div className="glass-card rounded-3xl p-8 md:p-10 mb-16">
           <div className="mb-6">
-            <label htmlFor="description" className="block text-sm font-semibold mb-3 text-gray-700 dark:text-gray-300">
+            <label htmlFor="description" className="block text-sm font-medium mb-3 text-white/60">
               Describe your brand
             </label>
             <textarea
@@ -159,7 +159,7 @@ export default function BrandNameGenerator() {
           </div>
 
           {error && (
-            <div className="mb-4 p-4 bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-300 rounded-xl text-sm">
+            <div className="mb-4 p-4 rounded-xl border border-red-500/20 bg-red-500/[0.04] text-red-400/90 text-sm">
               {error}
             </div>
           )}
@@ -167,7 +167,7 @@ export default function BrandNameGenerator() {
           <button
             onClick={handleGenerate}
             disabled={loading}
-            className="w-full glass-button text-white font-medium py-4 px-8 rounded-2xl text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full glass-button text-white font-medium py-4 px-8 rounded-full text-lg disabled:opacity-50 disabled:cursor-not-allowed hover:scale-[1.02] active:scale-[0.98] transition-all"
           >
             {loading ? 'Generating Brand Names...' : '✨ Generate Brand Names'}
           </button>
@@ -175,9 +175,9 @@ export default function BrandNameGenerator() {
 
         {names.length > 0 && (
           <div className="glass-card rounded-3xl p-8 md:p-10 mb-16">
-            <h2 className="text-3xl font-bold mb-2 text-gray-800 dark:text-gray-100">Your Brand Name Ideas</h2>
+            <h2 className="text-3xl font-light mb-2 text-white/90">Your Brand Name Ideas</h2>
             {checkingDomains && (
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">Checking domain availability...</p>
+              <p className="text-sm text-white/40 mb-6">Checking domain availability...</p>
             )}
             <div className="grid grid-cols-1 gap-5 mt-6">
               {names.map((name, index) => {
@@ -193,13 +193,13 @@ export default function BrandNameGenerator() {
                   >
                     <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                       <div className="flex-1">
-                        <p className="name-mono text-3xl md:text-4xl font-bold mb-3 text-gray-900 dark:text-white">
+                        <p className="name-mono text-3xl md:text-4xl font-light mb-3 text-white/90">
                           {name}
                         </p>
                         {availableDomain && (
                           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg mb-3 border border-emerald-500/20 bg-white/[0.02]">
                             <span className="text-emerald-400 text-lg">✓</span>
-                            <p className="text-emerald-300/90 text-sm font-semibold">
+                            <p className="text-emerald-300/90 text-sm font-medium">
                               {availableDomain.domain} available
                             </p>
                           </div>
@@ -242,9 +242,9 @@ export default function BrandNameGenerator() {
 
         {/* What Makes a Great Brand Name */}
         <section className="glass-card rounded-3xl p-8 md:p-10 mb-16">
-          <h2 className="text-3xl font-bold mb-6 text-gray-800 dark:text-gray-100">What Makes a Great Brand Name?</h2>
+          <h2 className="text-3xl font-light mb-6 text-white/90">What Makes a Great Brand Name?</h2>
           <div className="prose prose-lg dark:prose-invert max-w-none">
-            <p className="text-lg mb-6 text-gray-700 dark:text-gray-300">
+            <p className="text-lg mb-6 text-white/60">
               A powerful brand name is more than just a label—it's the foundation of your brand identity.
               The best brand names share several key characteristics that make them memorable,
               marketable, and meaningful to your target audience.
@@ -252,8 +252,8 @@ export default function BrandNameGenerator() {
 
             <div className="grid md:grid-cols-2 gap-6 mb-8">
               <div className="glass-card rounded-2xl p-6">
-                <h3 className="text-xl font-bold mb-3 text-gray-800 dark:text-gray-100">1. Memorable & Distinctive</h3>
-                <p className="text-gray-700 dark:text-gray-300">
+                <h3 className="text-xl font-medium mb-3 text-white/90">1. Memorable & Distinctive</h3>
+                <p className="text-white/60">
                   Great brand names stick in people's minds. They stand out from competitors and
                   are easy to recall when customers need your product or service. Think "Apple"
                   in tech or "Nike" in sportswear—simple, unique, and unforgettable.
@@ -261,8 +261,8 @@ export default function BrandNameGenerator() {
               </div>
 
               <div className="glass-card rounded-2xl p-6">
-                <h3 className="text-xl font-bold mb-3 text-gray-800 dark:text-gray-100">2. Easy to Pronounce</h3>
-                <p className="text-gray-700 dark:text-gray-300">
+                <h3 className="text-xl font-medium mb-3 text-white/90">2. Easy to Pronounce</h3>
+                <p className="text-white/60">
                   If people can't say your brand name, they won't talk about it. The best brand
                   names are phonetically simple and work across different languages and cultures.
                   Avoid complex spellings or confusing letter combinations.
@@ -270,8 +270,8 @@ export default function BrandNameGenerator() {
               </div>
 
               <div className="glass-card rounded-2xl p-6">
-                <h3 className="text-xl font-bold mb-3 text-gray-800 dark:text-gray-100">3. Emotionally Resonant</h3>
-                <p className="text-gray-700 dark:text-gray-300">
+                <h3 className="text-xl font-medium mb-3 text-white/90">3. Emotionally Resonant</h3>
+                <p className="text-white/60">
                   Strong brand names evoke feelings and create connections. Whether it's excitement,
                   trust, innovation, or luxury, your name should trigger the emotions you want
                   associated with your brand. "Amazon" suggests vastness and endless selection.
@@ -279,8 +279,8 @@ export default function BrandNameGenerator() {
               </div>
 
               <div className="glass-card rounded-2xl p-6">
-                <h3 className="text-xl font-bold mb-3 text-gray-800 dark:text-gray-100">4. Scalable & Future-Proof</h3>
-                <p className="text-gray-700 dark:text-gray-300">
+                <h3 className="text-xl font-medium mb-3 text-white/90">4. Scalable & Future-Proof</h3>
+                <p className="text-white/60">
                   Your brand may evolve over time. Avoid names that are too specific to one product
                   or market. "Amazon" started with books but the name allowed expansion into everything.
                   Think about where your brand will be in 5-10 years.
@@ -288,8 +288,8 @@ export default function BrandNameGenerator() {
               </div>
 
               <div className="glass-card rounded-2xl p-6">
-                <h3 className="text-xl font-bold mb-3 text-gray-800 dark:text-gray-100">5. Available & Ownable</h3>
-                <p className="text-gray-700 dark:text-gray-300">
+                <h3 className="text-xl font-medium mb-3 text-white/90">5. Available & Ownable</h3>
+                <p className="text-white/60">
                   A great name means nothing if you can't legally own it. Check trademark databases,
                   domain availability, and social media handles. You need to be able to build a
                   cohesive online presence around your brand name.
@@ -297,8 +297,8 @@ export default function BrandNameGenerator() {
               </div>
 
               <div className="glass-card rounded-2xl p-6">
-                <h3 className="text-xl font-bold mb-3 text-gray-800 dark:text-gray-100">6. Tells a Story</h3>
-                <p className="text-gray-700 dark:text-gray-300">
+                <h3 className="text-xl font-medium mb-3 text-white/90">6. Tells a Story</h3>
+                <p className="text-white/60">
                   The best brand names have meaning or origin stories that deepen customer connections.
                   Whether it's inspired by mythology (Nike), nature (Patagonia), or a vision (Virgin),
                   having a story makes your brand more relatable and shareable.
@@ -306,8 +306,8 @@ export default function BrandNameGenerator() {
               </div>
 
               <div className="glass-card rounded-2xl p-6">
-                <h3 className="text-xl font-bold mb-3 text-gray-800 dark:text-gray-100">7. Works Visually</h3>
-                <p className="text-gray-700 dark:text-gray-300">
+                <h3 className="text-xl font-medium mb-3 text-white/90">7. Works Visually</h3>
+                <p className="text-white/60">
                   Consider how your brand name will look in logos, packaging, and marketing materials.
                   Short names often work better visually. The name should be versatile enough to work
                   in different contexts—from billboards to mobile apps.
@@ -319,18 +319,18 @@ export default function BrandNameGenerator() {
 
         {/* Types of Brand Names */}
         <section className="glass-card rounded-3xl p-8 md:p-10 mb-16">
-          <h2 className="text-3xl font-bold mb-6 text-gray-800 dark:text-gray-100">Types of Brand Names (With Examples)</h2>
+          <h2 className="text-3xl font-light mb-6 text-white/90">Types of Brand Names (With Examples)</h2>
           <div className="space-y-6">
             <div className="glass-card rounded-2xl p-6">
-              <h3 className="text-2xl font-bold mb-3 text-gray-800 dark:text-gray-100">Descriptive Names</h3>
-              <p className="mb-4 text-gray-700 dark:text-gray-300">
+              <h3 className="text-2xl font-medium mb-3 text-white/90">Descriptive Names</h3>
+              <p className="mb-4 text-white/60">
                 These names clearly communicate what the company does. They're straightforward
                 and immediately convey the brand's purpose, making them easy to understand but
                 harder to trademark.
               </p>
-              <div className="bg-rose-50 dark:bg-rose-900/20 p-4 rounded-xl">
-                <p className="font-semibold mb-2 text-gray-800 dark:text-gray-100">Examples:</p>
-                <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+              <div className="rounded-xl border border-rose-500/20 bg-rose-500/[0.04] p-4">
+                <p className="font-medium mb-2 text-white/90">Examples:</p>
+                <ul className="list-disc list-inside space-y-1 text-white/60">
                   <li><strong>PayPal</strong> - Pay your pal</li>
                   <li><strong>General Motors</strong> - Makes motors/vehicles</li>
                   <li><strong>The Home Depot</strong> - Home improvement depot</li>
@@ -340,15 +340,15 @@ export default function BrandNameGenerator() {
             </div>
 
             <div className="glass-card rounded-2xl p-6">
-              <h3 className="text-2xl font-bold mb-3 text-gray-800 dark:text-gray-100">Invented/Made-Up Names</h3>
-              <p className="mb-4 text-gray-700 dark:text-gray-300">
+              <h3 className="text-2xl font-medium mb-3 text-white/90">Invented/Made-Up Names</h3>
+              <p className="mb-4 text-white/60">
                 Completely original words that didn't exist before. These offer maximum trademark
                 protection and can be molded to mean exactly what you want. They require more
                 marketing to build meaning but become powerful once established.
               </p>
-              <div className="bg-rose-50 dark:bg-rose-900/20 p-4 rounded-xl">
-                <p className="font-semibold mb-2 text-gray-800 dark:text-gray-100">Examples:</p>
-                <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+              <div className="rounded-xl border border-rose-500/20 bg-rose-500/[0.04] p-4">
+                <p className="font-medium mb-2 text-white/90">Examples:</p>
+                <ul className="list-disc list-inside space-y-1 text-white/60">
                   <li><strong>Kodak</strong> - Created to be short, memorable, and work globally</li>
                   <li><strong>Xerox</strong> - Invented name that became synonymous with copying</li>
                   <li><strong>Spotify</strong> - Blend of "spot" and "identify"</li>
@@ -358,14 +358,14 @@ export default function BrandNameGenerator() {
             </div>
 
             <div className="glass-card rounded-2xl p-6">
-              <h3 className="text-2xl font-bold mb-3 text-gray-800 dark:text-gray-100">Metaphorical Names</h3>
-              <p className="mb-4 text-gray-700 dark:text-gray-300">
+              <h3 className="text-2xl font-medium mb-3 text-white/90">Metaphorical Names</h3>
+              <p className="mb-4 text-white/60">
                 Names that use metaphors, symbols, or associations to convey brand attributes.
                 These create powerful imagery and emotions while remaining memorable and distinctive.
               </p>
-              <div className="bg-rose-50 dark:bg-rose-900/20 p-4 rounded-xl">
-                <p className="font-semibold mb-2 text-gray-800 dark:text-gray-100">Examples:</p>
-                <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+              <div className="rounded-xl border border-rose-500/20 bg-rose-500/[0.04] p-4">
+                <p className="font-medium mb-2 text-white/90">Examples:</p>
+                <ul className="list-disc list-inside space-y-1 text-white/60">
                   <li><strong>Apple</strong> - Simple, approachable, organic (vs. complex tech)</li>
                   <li><strong>Amazon</strong> - Vast, endless selection like the river/rainforest</li>
                   <li><strong>Nike</strong> - Greek goddess of victory</li>
@@ -375,15 +375,15 @@ export default function BrandNameGenerator() {
             </div>
 
             <div className="glass-card rounded-2xl p-6">
-              <h3 className="text-2xl font-bold mb-3 text-gray-800 dark:text-gray-100">Acronym Names</h3>
-              <p className="mb-4 text-gray-700 dark:text-gray-300">
+              <h3 className="text-2xl font-medium mb-3 text-white/90">Acronym Names</h3>
+              <p className="mb-4 text-white/60">
                 Abbreviated names formed from initials or first letters. These work best when
                 you already have brand recognition or when the full name is too long. They can
                 be harder to remember initially but powerful once established.
               </p>
-              <div className="bg-rose-50 dark:bg-rose-900/20 p-4 rounded-xl">
-                <p className="font-semibold mb-2 text-gray-800 dark:text-gray-100">Examples:</p>
-                <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+              <div className="rounded-xl border border-rose-500/20 bg-rose-500/[0.04] p-4">
+                <p className="font-medium mb-2 text-white/90">Examples:</p>
+                <ul className="list-disc list-inside space-y-1 text-white/60">
                   <li><strong>IBM</strong> - International Business Machines</li>
                   <li><strong>HBO</strong> - Home Box Office</li>
                   <li><strong>BMW</strong> - Bayerische Motoren Werke</li>
@@ -393,15 +393,15 @@ export default function BrandNameGenerator() {
             </div>
 
             <div className="glass-card rounded-2xl p-6">
-              <h3 className="text-2xl font-bold mb-3 text-gray-800 dark:text-gray-100">Founder Names</h3>
-              <p className="mb-4 text-gray-700 dark:text-gray-300">
+              <h3 className="text-2xl font-medium mb-3 text-white/90">Founder Names</h3>
+              <p className="mb-4 text-white/60">
                 Named after the founder or key person. These carry personal legacy and can build
                 trust, especially in luxury or craft industries. They work well when the founder
                 becomes part of the brand story.
               </p>
-              <div className="bg-rose-50 dark:bg-rose-900/20 p-4 rounded-xl">
-                <p className="font-semibold mb-2 text-gray-800 dark:text-gray-100">Examples:</p>
-                <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+              <div className="rounded-xl border border-rose-500/20 bg-rose-500/[0.04] p-4">
+                <p className="font-medium mb-2 text-white/90">Examples:</p>
+                <ul className="list-disc list-inside space-y-1 text-white/60">
                   <li><strong>Tesla</strong> - Named after Nikola Tesla</li>
                   <li><strong>Ford</strong> - Henry Ford</li>
                   <li><strong>Disney</strong> - Walt Disney</li>
@@ -411,15 +411,15 @@ export default function BrandNameGenerator() {
             </div>
 
             <div className="glass-card rounded-2xl p-6">
-              <h3 className="text-2xl font-bold mb-3 text-gray-800 dark:text-gray-100">Compound/Blend Names</h3>
-              <p className="mb-4 text-gray-700 dark:text-gray-300">
+              <h3 className="text-2xl font-medium mb-3 text-white/90">Compound/Blend Names</h3>
+              <p className="mb-4 text-white/60">
                 Created by combining two words or word parts. These can be highly descriptive
                 while remaining unique and trademarkable. They often create new meanings from
                 familiar elements.
               </p>
-              <div className="bg-rose-50 dark:bg-rose-900/20 p-4 rounded-xl">
-                <p className="font-semibold mb-2 text-gray-800 dark:text-gray-100">Examples:</p>
-                <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+              <div className="rounded-xl border border-rose-500/20 bg-rose-500/[0.04] p-4">
+                <p className="font-medium mb-2 text-white/90">Examples:</p>
+                <ul className="list-disc list-inside space-y-1 text-white/60">
                   <li><strong>Facebook</strong> - Face + book (college directories)</li>
                   <li><strong>Netflix</strong> - Net (internet) + flix (movies)</li>
                   <li><strong>Snapchat</strong> - Snap (photo) + chat (messaging)</li>
@@ -432,17 +432,17 @@ export default function BrandNameGenerator() {
 
         {/* Brand Naming Strategies for 2026 */}
         <section className="glass-card rounded-3xl p-8 md:p-10 mb-16">
-          <h2 className="text-3xl font-bold mb-6 text-gray-800 dark:text-gray-100">Brand Naming Strategies for 2026</h2>
+          <h2 className="text-3xl font-light mb-6 text-white/90">Brand Naming Strategies for 2026</h2>
           <div className="prose prose-lg dark:prose-invert max-w-none">
-            <p className="text-lg mb-6 text-gray-700 dark:text-gray-300">
+            <p className="text-lg mb-6 text-white/60">
               The branding landscape continues to evolve. Here are the naming strategies that
               are working best for new brands launching in 2026:
             </p>
 
             <div className="space-y-6">
               <div className="border-l-4 border-rose-400 dark:border-rose-500 pl-6">
-                <h3 className="text-xl font-bold mb-2 text-gray-800 dark:text-gray-100">Authenticity Over Cleverness</h3>
-                <p className="text-gray-700 dark:text-gray-300">
+                <h3 className="text-xl font-medium mb-2 text-white/90">Authenticity Over Cleverness</h3>
+                <p className="text-white/60">
                   Today's consumers value genuine brands over gimmicky ones. Names that feel honest
                   and straightforward often outperform overly clever wordplay. "Glossier" (beauty)
                   and "Everlane" (fashion) succeed by feeling authentic rather than trying too hard.
@@ -450,8 +450,8 @@ export default function BrandNameGenerator() {
               </div>
 
               <div className="border-l-4 border-rose-400 dark:border-rose-500 pl-6">
-                <h3 className="text-xl font-bold mb-2 text-gray-800 dark:text-gray-100">Global-First Thinking</h3>
-                <p className="text-gray-700 dark:text-gray-300">
+                <h3 className="text-xl font-light mb-2 text-white/90">Global-First Thinking</h3>
+                <p className="text-white/60">
                   With digital brands going global from day one, choose names that work internationally.
                   Avoid idioms, cultural references, or words that might be offensive in other languages.
                   Test pronunciation across different cultures.
@@ -459,8 +459,8 @@ export default function BrandNameGenerator() {
               </div>
 
               <div className="border-l-4 border-rose-400 dark:border-rose-500 pl-6">
-                <h3 className="text-xl font-bold mb-2 text-gray-800 dark:text-gray-100">Voice-Search Optimization</h3>
-                <p className="text-gray-700 dark:text-gray-300">
+                <h3 className="text-xl font-light mb-2 text-white/90">Voice-Search Optimization</h3>
+                <p className="text-white/60">
                   As voice assistants grow, your brand name needs to be easily spoken and understood
                   by AI. Avoid similar-sounding names to competitors. Simple phonetics win: "Stripe"
                   is easier for Alexa than "Stryphe."
@@ -468,8 +468,8 @@ export default function BrandNameGenerator() {
               </div>
 
               <div className="border-l-4 border-rose-400 dark:border-rose-500 pl-6">
-                <h3 className="text-xl font-bold mb-2 text-gray-800 dark:text-gray-100">Minimal & Modern</h3>
-                <p className="text-gray-700 dark:text-gray-300">
+                <h3 className="text-xl font-light mb-2 text-white/90">Minimal & Modern</h3>
+                <p className="text-white/60">
                   Short, clean names continue to dominate. One or two syllables work best for apps
                   and digital brands. Think "Calm," "Notion," "Linear"—these names feel contemporary
                   and are memorable in crowded app stores.
@@ -477,8 +477,8 @@ export default function BrandNameGenerator() {
               </div>
 
               <div className="border-l-4 border-rose-400 dark:border-rose-500 pl-6">
-                <h3 className="text-xl font-bold mb-2 text-gray-800 dark:text-gray-100">Purpose-Driven Names</h3>
-                <p className="text-gray-700 dark:text-gray-300">
+                <h3 className="text-xl font-light mb-2 text-white/90">Purpose-Driven Names</h3>
+                <p className="text-white/60">
                   Brands with clear missions often reflect that in their names. "Impossible Foods,"
                   "Allbirds," and "Warby Parker" all hint at their brand purpose. If your brand has
                   a strong why, consider letting it influence your name.
@@ -486,8 +486,8 @@ export default function BrandNameGenerator() {
               </div>
 
               <div className="border-l-4 border-rose-400 dark:border-rose-500 pl-6">
-                <h3 className="text-xl font-bold mb-2 text-gray-800 dark:text-gray-100">Alternative Domain Extensions</h3>
-                <p className="text-gray-700 dark:text-gray-300">
+                <h3 className="text-xl font-light mb-2 text-white/90">Alternative Domain Extensions</h3>
+                <p className="text-white/60">
                   With .com scarcity, don't force a bad .com name. Consider .io (tech), .co (business),
                   .ai (AI companies), or brand-specific extensions. Many successful brands use creative
                   domains like "get[name].com" or "[name]hq.com."
@@ -499,94 +499,94 @@ export default function BrandNameGenerator() {
 
         {/* How to Validate Your Brand Name */}
         <section className="glass-card rounded-3xl p-8 md:p-10 mb-16">
-          <h2 className="text-3xl font-bold mb-6 text-gray-800 dark:text-gray-100">How to Validate Your Brand Name</h2>
+          <h2 className="text-3xl font-light mb-6 text-white/90">How to Validate Your Brand Name</h2>
           <div className="prose prose-lg dark:prose-invert max-w-none">
-            <p className="text-lg mb-6 text-gray-700 dark:text-gray-300">
+            <p className="text-lg mb-6 text-white/60">
               Found a name you love? Don't commit until you've validated it thoroughly.
               Here's a comprehensive checklist to ensure your brand name will work:
             </p>
 
             <div className="glass-card rounded-2xl p-8">
-              <h3 className="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100">The Brand Name Validation Checklist</h3>
+              <h3 className="text-2xl font-light mb-4 text-white/90">The Brand Name Validation Checklist</h3>
 
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-rose-400 to-rose-600 text-white rounded-full flex items-center justify-center font-bold mr-4">1</div>
+                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-rose-400 to-rose-600 text-white rounded-full flex items-center justify-center font-light mr-4">1</div>
                   <div>
-                    <h4 className="font-bold text-lg text-gray-800 dark:text-gray-100">Check Trademark Availability</h4>
-                    <p className="text-gray-700 dark:text-gray-300">Search USPTO.gov (USA) and equivalent databases in your target markets. Ensure no existing trademarks conflict with your name in your industry.</p>
+                    <h4 className="font-light text-lg text-white/90">Check Trademark Availability</h4>
+                    <p className="text-white/60">Search USPTO.gov (USA) and equivalent databases in your target markets. Ensure no existing trademarks conflict with your name in your industry.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-rose-400 to-rose-600 text-white rounded-full flex items-center justify-center font-bold mr-4">2</div>
+                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-rose-400 to-rose-600 text-white rounded-full flex items-center justify-center font-light mr-4">2</div>
                   <div>
-                    <h4 className="font-bold text-lg text-gray-800 dark:text-gray-100">Verify Domain Availability</h4>
-                    <p className="text-gray-700 dark:text-gray-300">Check if .com is available (preferred) or if you're comfortable with alternatives. Also check if premium domains are for sale and their pricing.</p>
+                    <h4 className="font-light text-lg text-white/90">Verify Domain Availability</h4>
+                    <p className="text-white/60">Check if .com is available (preferred) or if you're comfortable with alternatives. Also check if premium domains are for sale and their pricing.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-rose-400 to-rose-600 text-white rounded-full flex items-center justify-center font-bold mr-4">3</div>
+                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-rose-400 to-rose-600 text-white rounded-full flex items-center justify-center font-light mr-4">3</div>
                   <div>
-                    <h4 className="font-bold text-lg text-gray-800 dark:text-gray-100">Secure Social Media Handles</h4>
-                    <p className="text-gray-700 dark:text-gray-300">Check Instagram, Twitter/X, TikTok, LinkedIn, and YouTube. Consistent handles across platforms strengthen your brand identity.</p>
+                    <h4 className="font-light text-lg text-white/90">Secure Social Media Handles</h4>
+                    <p className="text-white/60">Check Instagram, Twitter/X, TikTok, LinkedIn, and YouTube. Consistent handles across platforms strengthen your brand identity.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-rose-400 to-rose-600 text-white rounded-full flex items-center justify-center font-bold mr-4">4</div>
+                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-rose-400 to-rose-600 text-white rounded-full flex items-center justify-center font-light mr-4">4</div>
                   <div>
-                    <h4 className="font-bold text-lg text-gray-800 dark:text-gray-100">Google It Thoroughly</h4>
-                    <p className="text-gray-700 dark:text-gray-300">Search for existing companies, products, or negative associations. Check Google Images for visual conflicts. Search in multiple languages.</p>
+                    <h4 className="font-light text-lg text-white/90">Google It Thoroughly</h4>
+                    <p className="text-white/60">Search for existing companies, products, or negative associations. Check Google Images for visual conflicts. Search in multiple languages.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-rose-400 to-rose-600 text-white rounded-full flex items-center justify-center font-bold mr-4">5</div>
+                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-rose-400 to-rose-600 text-white rounded-full flex items-center justify-center font-light mr-4">5</div>
                   <div>
-                    <h4 className="font-bold text-lg text-gray-800 dark:text-gray-100">Test Pronunciation</h4>
-                    <p className="text-gray-700 dark:text-gray-300">Say it out loud 10 times. Ask friends to spell it after hearing it. Make sure it's not easily confused with similar-sounding words or competitors.</p>
+                    <h4 className="font-light text-lg text-white/90">Test Pronunciation</h4>
+                    <p className="text-white/60">Say it out loud 10 times. Ask friends to spell it after hearing it. Make sure it's not easily confused with similar-sounding words or competitors.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-rose-400 to-rose-600 text-white rounded-full flex items-center justify-center font-bold mr-4">6</div>
+                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-rose-400 to-rose-600 text-white rounded-full flex items-center justify-center font-light mr-4">6</div>
                   <div>
-                    <h4 className="font-bold text-lg text-gray-800 dark:text-gray-100">Check International Meanings</h4>
-                    <p className="text-gray-700 dark:text-gray-300">Translate to major languages (Spanish, Mandarin, French, German, etc.). Ensure no offensive or awkward meanings exist in key markets.</p>
+                    <h4 className="font-light text-lg text-white/90">Check International Meanings</h4>
+                    <p className="text-white/60">Translate to major languages (Spanish, Mandarin, French, German, etc.). Ensure no offensive or awkward meanings exist in key markets.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-rose-400 to-rose-600 text-white rounded-full flex items-center justify-center font-bold mr-4">7</div>
+                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-rose-400 to-rose-600 text-white rounded-full flex items-center justify-center font-light mr-4">7</div>
                   <div>
-                    <h4 className="font-bold text-lg text-gray-800 dark:text-gray-100">Test Visual Appeal</h4>
-                    <p className="text-gray-700 dark:text-gray-300">Sketch potential logos. Type it in different fonts. See how it looks in all caps, lowercase, and title case. Ensure it's aesthetically versatile.</p>
+                    <h4 className="font-light text-lg text-white/90">Test Visual Appeal</h4>
+                    <p className="text-white/60">Sketch potential logos. Type it in different fonts. See how it looks in all caps, lowercase, and title case. Ensure it's aesthetically versatile.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-rose-400 to-rose-600 text-white rounded-full flex items-center justify-center font-bold mr-4">8</div>
+                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-rose-400 to-rose-600 text-white rounded-full flex items-center justify-center font-light mr-4">8</div>
                   <div>
-                    <h4 className="font-bold text-lg text-gray-800 dark:text-gray-100">Get Target Audience Feedback</h4>
-                    <p className="text-gray-700 dark:text-gray-300">Show it to 10-20 people in your target market. Ask for immediate reactions, what it makes them think of, and how memorable it is.</p>
+                    <h4 className="font-light text-lg text-white/90">Get Target Audience Feedback</h4>
+                    <p className="text-white/60">Show it to 10-20 people in your target market. Ask for immediate reactions, what it makes them think of, and how memorable it is.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-rose-400 to-rose-600 text-white rounded-full flex items-center justify-center font-bold mr-4">9</div>
+                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-rose-400 to-rose-600 text-white rounded-full flex items-center justify-center font-light mr-4">9</div>
                   <div>
-                    <h4 className="font-bold text-lg text-gray-800 dark:text-gray-100">Consider Long-Term Scalability</h4>
-                    <p className="text-gray-700 dark:text-gray-300">Imagine the name in 5-10 years. Will it still work if you expand categories? Does it limit your growth potential?</p>
+                    <h4 className="font-light text-lg text-white/90">Consider Long-Term Scalability</h4>
+                    <p className="text-white/60">Imagine the name in 5-10 years. Will it still work if you expand categories? Does it limit your growth potential?</p>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-rose-400 to-rose-600 text-white rounded-full flex items-center justify-center font-bold mr-4">10</div>
+                  <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-rose-400 to-rose-600 text-white rounded-full flex items-center justify-center font-light mr-4">10</div>
                   <div>
-                    <h4 className="font-bold text-lg text-gray-800 dark:text-gray-100">Trust Your Gut</h4>
-                    <p className="text-gray-700 dark:text-gray-300">After all analysis, does it feel right? Are you excited to build a brand around it? Your enthusiasm matters—you'll be saying this name thousands of times.</p>
+                    <h4 className="font-light text-lg text-white/90">Trust Your Gut</h4>
+                    <p className="text-white/60">After all analysis, does it feel right? Are you excited to build a brand around it? Your enthusiasm matters—you'll be saying this name thousands of times.</p>
                   </div>
                 </div>
               </div>
@@ -596,11 +596,11 @@ export default function BrandNameGenerator() {
 
         {/* Common Mistakes to Avoid */}
         <section className="glass-card rounded-3xl p-8 md:p-10 mb-16">
-          <h2 className="text-3xl font-bold mb-6 text-gray-800 dark:text-gray-100">Common Brand Naming Mistakes to Avoid</h2>
+          <h2 className="text-3xl font-light mb-6 text-white/90">Common Brand Naming Mistakes to Avoid</h2>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="glass-card rounded-2xl border-l-4 border-red-500 p-6">
-              <h3 className="text-xl font-bold mb-3 text-red-700 dark:text-red-400">Being Too Generic</h3>
-              <p className="text-gray-700 dark:text-gray-300">
+              <h3 className="text-xl font-light mb-3 text-red-700 dark:text-red-400">Being Too Generic</h3>
+              <p className="text-white/60">
                 Names like "Quality Products Inc." or "Best Services Co." say nothing distinctive.
                 They're forgettable and nearly impossible to rank for in search engines. Be specific
                 or be unique—never be both generic AND vague.
@@ -608,8 +608,8 @@ export default function BrandNameGenerator() {
             </div>
 
             <div className="glass-card rounded-2xl border-l-4 border-red-500 p-6">
-              <h3 className="text-xl font-bold mb-3 text-red-700 dark:text-red-400">Ignoring SEO from Day One</h3>
-              <p className="text-gray-700 dark:text-gray-300">
+              <h3 className="text-xl font-light mb-3 text-red-700 dark:text-red-400">Ignoring SEO from Day One</h3>
+              <p className="text-white/60">
                 If your brand name is a common word, you'll struggle with search visibility.
                 "Pixel" might be memorable but try ranking for it. Invented names or unique
                 combinations give you better chances of owning search results.
@@ -617,8 +617,8 @@ export default function BrandNameGenerator() {
             </div>
 
             <div className="glass-card rounded-2xl border-l-4 border-red-500 p-6">
-              <h3 className="text-xl font-bold mb-3 text-red-700 dark:text-red-400">Following Fads Too Closely</h3>
-              <p className="text-gray-700 dark:text-gray-300">
+              <h3 className="text-xl font-light mb-3 text-red-700 dark:text-red-400">Following Fads Too Closely</h3>
+              <p className="text-white/60">
                 Naming trends come and go. Ending everything in "-ly" or "-ify" was popular but
                 now feels dated. Choose timeless over trendy. Your brand should feel fresh in 5
                 years, not like a time capsule of 2026.
@@ -626,8 +626,8 @@ export default function BrandNameGenerator() {
             </div>
 
             <div className="glass-card rounded-2xl border-l-4 border-red-500 p-6">
-              <h3 className="text-xl font-bold mb-3 text-red-700 dark:text-red-400">Making It Too Complex</h3>
-              <p className="text-gray-700 dark:text-gray-300">
+              <h3 className="text-xl font-light mb-3 text-red-700 dark:text-red-400">Making It Too Complex</h3>
+              <p className="text-white/60">
                 If customers can't spell, pronounce, or remember your name, you've already lost.
                 "Xzylophyx" might be unique, but is it smart? Every time someone can't find you
                 because they misspelled your name, that's a lost customer.
@@ -635,8 +635,8 @@ export default function BrandNameGenerator() {
             </div>
 
             <div className="glass-card rounded-2xl border-l-4 border-red-500 p-6">
-              <h3 className="text-xl font-bold mb-3 text-red-700 dark:text-red-400">Limiting Your Future</h3>
-              <p className="text-gray-700 dark:text-gray-300">
+              <h3 className="text-xl font-light mb-3 text-red-700 dark:text-red-400">Limiting Your Future</h3>
+              <p className="text-white/60">
                 "Seattle's Best Coffee Shop" works until you expand to Portland. "iPhone Cases R Us"
                 fails when you want to sell Android accessories. Think bigger than your first product
                 or location.
@@ -644,8 +644,8 @@ export default function BrandNameGenerator() {
             </div>
 
             <div className="glass-card rounded-2xl border-l-4 border-red-500 p-6">
-              <h3 className="text-xl font-bold mb-3 text-red-700 dark:text-red-400">Skipping Legal Due Diligence</h3>
-              <p className="text-gray-700 dark:text-gray-300">
+              <h3 className="text-xl font-light mb-3 text-red-700 dark:text-red-400">Skipping Legal Due Diligence</h3>
+              <p className="text-white/60">
                 Falling in love with a name before checking trademarks is heartbreak waiting to happen.
                 You might rebrand later (expensive) or face legal issues (worse). Always check trademarks
                 BEFORE you get attached to a name.
@@ -672,11 +672,11 @@ export default function BrandNameGenerator() {
 
         {/* FAQs */}
         <section className="glass-card rounded-3xl p-8 md:p-10 mb-16">
-          <h2 className="text-3xl font-bold mb-6 text-gray-800 dark:text-gray-100">Frequently Asked Questions</h2>
+          <h2 className="text-3xl font-light mb-6 text-white/90">Frequently Asked Questions</h2>
           <div className="space-y-6">
             <div className="glass-card rounded-2xl p-6">
-              <h3 className="text-xl font-bold mb-3 text-gray-800 dark:text-gray-100">How much does it cost to trademark a brand name?</h3>
-              <p className="text-gray-700 dark:text-gray-300">
+              <h3 className="text-xl font-light mb-3 text-white/90">How much does it cost to trademark a brand name?</h3>
+              <p className="text-white/60">
                 In the United States, filing a trademark application costs $250-$350 per class of goods/services
                 through USPTO. Many brands start with one class and expand later. Factor in potential attorney
                 fees ($500-$2,000) if you want professional help ensuring your application is solid. Total cost
@@ -685,8 +685,8 @@ export default function BrandNameGenerator() {
             </div>
 
             <div className="glass-card rounded-2xl p-6">
-              <h3 className="text-xl font-bold mb-3 text-gray-800 dark:text-gray-100">Should I choose a .com domain or are alternatives okay?</h3>
-              <p className="text-gray-700 dark:text-gray-300">
+              <h3 className="text-xl font-light mb-3 text-white/90">Should I choose a .com domain or are alternatives okay?</h3>
+              <p className="text-white/60">
                 .com remains the gold standard and customer expectation, especially for established brands.
                 However, modern alternatives like .io (tech), .ai (AI companies), .co (business), or creative
                 solutions like "get[name].com" or "[name]app.com" work well if your ideal .com is unavailable
@@ -696,8 +696,8 @@ export default function BrandNameGenerator() {
             </div>
 
             <div className="glass-card rounded-2xl p-6">
-              <h3 className="text-xl font-bold mb-3 text-gray-800 dark:text-gray-100">Can I use AI to generate my brand name?</h3>
-              <p className="text-gray-700 dark:text-gray-300">
+              <h3 className="text-xl font-light mb-3 text-white/90">Can I use AI to generate my brand name?</h3>
+              <p className="text-white/60">
                 Absolutely! AI brand name generators (like this one) are excellent for brainstorming and
                 discovering naming directions you might not have considered. They're particularly useful for
                 generating large volumes of ideas quickly, finding creative combinations, and exploring different
@@ -708,8 +708,8 @@ export default function BrandNameGenerator() {
             </div>
 
             <div className="glass-card rounded-2xl p-6">
-              <h3 className="text-xl font-bold mb-3 text-gray-800 dark:text-gray-100">What if my ideal brand name is already taken?</h3>
-              <p className="text-gray-700 dark:text-gray-300">
+              <h3 className="text-xl font-light mb-3 text-white/90">What if my ideal brand name is already taken?</h3>
+              <p className="text-white/60">
                 You have several options: (1) Try variations—add a prefix/suffix, use a different domain
                 extension, or combine with another word. (2) Purchase the domain—many are for sale, though
                 premium ones can cost $1,000-$100,000+. (3) Choose a different name—sometimes a "second choice"
@@ -720,8 +720,8 @@ export default function BrandNameGenerator() {
             </div>
 
             <div className="glass-card rounded-2xl p-6">
-              <h3 className="text-xl font-bold mb-3 text-gray-800 dark:text-gray-100">How long should a brand name be?</h3>
-              <p className="text-gray-700 dark:text-gray-300">
+              <h3 className="text-xl font-light mb-3 text-white/90">How long should a brand name be?</h3>
+              <p className="text-white/60">
                 Shorter is generally better. One to two syllables (Stripe, Slack, Calm) are ideal for memorability
                 and modern branding. Three syllables (Amazon, Patagonia, Instagram) still work well. Beyond that,
                 you risk being forgettable or requiring abbreviation. There are exceptions—Four Seasons Hotel works
@@ -731,8 +731,8 @@ export default function BrandNameGenerator() {
             </div>
 
             <div className="glass-card rounded-2xl p-6">
-              <h3 className="text-xl font-bold mb-3 text-gray-800 dark:text-gray-100">Should my brand name describe what I do?</h3>
-              <p className="text-gray-700 dark:text-gray-300">
+              <h3 className="text-xl font-light mb-3 text-white/90">Should my brand name describe what I do?</h3>
+              <p className="text-white/60">
                 There's no single right answer—it depends on your strategy. Descriptive names (PayPal, Whole Foods)
                 communicate clearly but are harder to trademark and less distinctive. Abstract names (Apple, Nike)
                 offer maximum flexibility and differentiation but require more marketing to build meaning. Many
@@ -746,14 +746,14 @@ export default function BrandNameGenerator() {
 
         {/* CTA Section */}
         <section className="glass-card rounded-3xl p-8 md:p-10 text-center">
-          <h2 className="text-3xl font-bold mb-4 text-gray-800 dark:text-gray-100">Ready to Find Your Perfect Brand Name?</h2>
-          <p className="text-xl mb-6 max-w-2xl mx-auto text-gray-700 dark:text-gray-300">
+          <h2 className="text-3xl font-light mb-4 text-white/90">Ready to Find Your Perfect Brand Name?</h2>
+          <p className="text-xl mb-6 max-w-2xl mx-auto text-white/60">
             Use our AI-powered brand name generator above to discover unique, memorable names
             that capture your brand's essence and resonate with your audience.
           </p>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="glass-button px-8 py-4 text-white font-medium rounded-2xl text-lg hover:shadow-xl transition-all"
+            className="glass-button px-8 py-4 text-white font-medium rounded-full text-lg hover:scale-[1.02] active:scale-[0.98] hover:shadow-xl transition-all"
           >
             ✨ Generate Brand Names Now
           </button>
