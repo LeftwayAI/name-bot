@@ -228,7 +228,7 @@ export default function Home() {
                 return (
                   <div
                     key={index}
-                    className={`glass-card rounded-2xl p-6 md:p-8 hover:shadow-xl transition-all duration-300 fade-in-up ${
+                    className={`glass-card rounded-2xl p-6 md:p-8 transition-all duration-300 fade-in-up hover:bg-white/[0.06] hover:border-white/[0.12] hover:shadow-2xl hover:shadow-black/30 hover:-translate-y-1 ${
                       celebrating === name ? 'celebrate' : ''
                     }`}
                     style={{ animationDelay: `${index * 100}ms` }}
@@ -312,21 +312,21 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            <div className="glass-card rounded-3xl p-10 hover:shadow-xl hover:bg-white/[0.04] transition-all duration-300 group">
+            <div className="glass-card rounded-3xl p-10 hover:bg-white/[0.06] hover:border-white/[0.12] hover:shadow-2xl hover:shadow-black/30 hover:-translate-y-1 transition-all duration-300 group">
               <div className="text-6xl mb-6 transform group-hover:scale-110 transition-transform duration-300">✨</div>
               <h3 className="font-satoshi text-2xl mb-4 text-white/90">AI-Powered Names</h3>
               <p className="text-white/60 leading-relaxed text-base">
                 Advanced AI creates unique, memorable names tailored to your brand vision and values. Every suggestion is crafted for maximum impact.
               </p>
             </div>
-            <div className="glass-card rounded-3xl p-10 hover:shadow-xl hover:bg-white/[0.04] transition-all duration-300 group">
+            <div className="glass-card rounded-3xl p-10 hover:bg-white/[0.06] hover:border-white/[0.12] hover:shadow-2xl hover:shadow-black/30 hover:-translate-y-1 transition-all duration-300 group">
               <div className="text-6xl mb-6 transform group-hover:scale-110 transition-transform duration-300">⚡</div>
               <h3 className="font-satoshi text-2xl mb-4 text-white/90">Instant Domains</h3>
               <p className="text-white/60 leading-relaxed text-base">
                 Real-time domain availability across .com, .io, .app, and more. Find your perfect match instantly with live verification.
               </p>
             </div>
-            <div className="glass-card rounded-3xl p-10 hover:shadow-xl hover:bg-white/[0.04] transition-all duration-300 group">
+            <div className="glass-card rounded-3xl p-10 hover:bg-white/[0.06] hover:border-white/[0.12] hover:shadow-2xl hover:shadow-black/30 hover:-translate-y-1 transition-all duration-300 group">
               <div className="text-6xl mb-6 transform group-hover:scale-110 transition-transform duration-300">🎁</div>
               <h3 className="font-satoshi text-2xl mb-4 text-white/90">Premium Package</h3>
               <p className="text-white/60 leading-relaxed text-base">
