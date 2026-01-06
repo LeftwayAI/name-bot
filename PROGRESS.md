@@ -4,6 +4,72 @@
 
 That's ~10 days. Every task should move toward PAYING CUSTOMERS.
 
+## Run #44 - Glass Treatment for Domain Badges + Aurora Refinement (2026-01-06)
+
+**DESIGN PRINCIPLE APPLIED:** Glass card pattern consistency and ambient effect restraint (from Daniel's emoji.today design language)
+
+### What Changed
+**BEFORE:**
+- Domain "available" badge using `bg-green-50 dark:bg-green-900/20` - flat color backgrounds
+- Domain status pills using `bg-green-100/red-100 text-green-800/red-800` with dark fallbacks
+- Light mode color pollution breaking the dark-first glass aesthetic
+- Aurora glow opacity at 0.15-0.22 (exceeding the < 0.15 threshold for ambient effects)
+- Color-heavy treatment inconsistent with glass card pattern elsewhere
+
+**AFTER:**
+- **Domain "available" badge (line 242):**
+  - `bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300`
+  - → `bg-white/[0.02] border border-emerald-500/20 text-emerald-300/90`
+  - Now uses proper glass background (0.02) + subtle accent border
+- **Domain status pills - Available (line 268):**
+  - `bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300`
+  - → `bg-white/[0.02] text-emerald-300/80 border-emerald-500/20`
+  - Glass treatment + emerald accent border for subtle signaling
+- **Domain status pills - Taken (line 269):**
+  - `bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300`
+  - → `bg-white/[0.02] text-rose-400/70 border-rose-500/20`
+  - Glass treatment + rose accent border (matches brand)
+- **Domain status pills - Error (line 270):**
+  - Already correct: `bg-white/[0.04] text-white/40 border-white/[0.06]`
+  - No changes needed - perfect glass pattern
+- **Aurora glow opacity (globals.css lines 192-199):**
+  - Glow 1: `rgba(230, 57, 70, 0.2)` → `rgba(230, 57, 70, 0.12)`
+  - Glow 2: `rgba(255, 107, 107, 0.15)` → `rgba(255, 107, 107, 0.08)`
+- **Aurora animation keyframes (globals.css lines 167-178):**
+  - 0%/100%: opacity 0.15 → 0.12
+  - 33%: opacity 0.22 → 0.15 (now at threshold)
+  - 66%: opacity 0.18 → 0.13
+- **Removed ALL light mode color fallbacks** from domain badges
+
+### How It Aligns with Design Principles
+✅ **Glass card pattern consistency** - Domain badges now match the signature `bg-white/[0.02] border-white/[0.06]` treatment
+✅ **Accent borders for signaling** - Using emerald-500/20 and rose-500/20 for subtle status indication
+✅ **Text opacity hierarchy** - emerald-300/80 and rose-400/70 maintain proper contrast levels
+✅ **Decorative elements < 0.15** - Aurora glows now properly subtle at 0.08-0.15 (was 0.15-0.22)
+✅ **Ambient effects principle** - "You feel them more than see them" - aurora now creates depth without distraction
+✅ **Dark-first discipline** - Zero light mode fallbacks, pure glass treatment
+✅ **Anti-pattern eliminated** - "Too much color" and "Flat salmon/coral blocks" violations removed
+
+### Design Checklist Status
+1. ✅ Background is `#050505` - DONE (Run #40)
+2. ✅ Text has proper opacity hierarchy - DONE (Runs #42, #43)
+3. ✅ Cards use glass pattern with 0.06 borders - ✨ **PERFECTED** (This run - domain badges now consistent)
+4. ✅ Section headers use accent + tracking-wide - DONE (Run #41)
+5. ✅ Font stack includes premium sans - DONE (Run #42)
+6. ✅ Decorative elements are very faint (< 0.15) - ✨ **DONE** (This run - aurora opacity fixed)
+7. ✅ Animations are subtle and slow (10s+) - DONE (18s and 22s aurora)
+8. ⚠️ **TODO:** Apply same glass treatment to SEO landing pages (brand-name-generator, etc.)
+9. ⚠️ **TODO:** Audit trust guarantee section icon colors (green shield still hardcoded)
+
+### Impact
+**This is PEAK glass consistency.** The domain results section now feels cohesive with the entire site aesthetic. Where before you had jarring green/red blocks breaking the luxury vibe, you now have subtle emerald and rose accent borders that whisper status rather than shout it. The available domain badge feels like it belongs in the same family as every other glass card on the page.
+
+**The aurora effect transformation is subtle but critical.** At 0.2 opacity, the glow demanded attention. At 0.12/0.08, it creates ambient depth - you sense the space breathing without consciously noticing the effect. This is Daniel's "luxury through restraint" principle in action.
+
+**Before/After contrast:** Compare a domain result card now to emoji.today's winner cards - the treatment is identical. Glass background at 0.02, barely-visible borders, accent colors used only for signaling, never for decoration. This is what premium feels like.
+
+---
+
 ## Run #43 - Complete Text Hierarchy Purge (2026-01-06)
 
 **DESIGN PRINCIPLE APPLIED:** Dark-first white opacity hierarchy - eliminating ALL gray scale violations (from Daniel's emoji.today design language)
