@@ -81,8 +81,11 @@ function SuccessContent() {
   }, [searchParams]);
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center p-8 bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
-      <div className="max-w-2xl w-full bg-white dark:bg-gray-800 rounded-lg shadow-xl p-8 md:p-12">
+    <main className="min-h-screen flex flex-col items-center justify-center p-8 bg-[#050505] relative overflow-hidden">
+      {/* Ambient glow effect */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full blur-[120px] opacity-20 bg-emerald-500 animate-pulse pointer-events-none" />
+
+      <div className="max-w-2xl w-full rounded-xl border border-white/[0.06] bg-white/[0.02] backdrop-blur-xl p-8 md:p-12 relative z-10">
         {/* Success Icon */}
         <div className="flex justify-center mb-6">
           <div className="w-20 h-20 bg-white/[0.04] border border-emerald-500/20 rounded-full flex items-center justify-center">
@@ -103,34 +106,34 @@ function SuccessContent() {
         </div>
 
         {/* Success Message */}
-        <h1 className="text-3xl md:text-4xl font-bold text-center mb-4">
+        <h1 className="text-3xl md:text-4xl font-light tracking-tight text-white/90 text-center mb-4">
           Payment Successful!
         </h1>
-        <p className="text-lg text-center text-gray-600 dark:text-gray-400 mb-8">
+        <p className="text-lg text-center text-white/60 mb-8">
           Thank you for your purchase. Your Premium Name Package is ready!
         </p>
 
         {/* Order Details */}
         {nameName && domain && (
-          <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6 mb-8">
-            <h2 className="font-semibold text-lg mb-3">Your Purchase:</h2>
+          <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-6 mb-8">
+            <h2 className="font-medium text-lg mb-3 text-white/90">Your Purchase:</h2>
             <div className="space-y-2">
               <p className="flex justify-between">
-                <span className="text-gray-600 dark:text-gray-400">Name:</span>
-                <span className="font-bold">{nameName}</span>
+                <span className="text-white/40">Name:</span>
+                <span className="font-medium text-white/90">{nameName}</span>
               </p>
               <p className="flex justify-between">
-                <span className="text-gray-600 dark:text-gray-400">Domain:</span>
-                <span className="font-bold">{domain}</span>
+                <span className="text-white/40">Domain:</span>
+                <span className="font-medium text-white/90">{domain}</span>
               </p>
               <p className="flex justify-between">
-                <span className="text-gray-600 dark:text-gray-400">Package:</span>
-                <span className="font-bold">Premium Name Package</span>
+                <span className="text-white/40">Package:</span>
+                <span className="font-medium text-white/90">Premium Name Package</span>
               </p>
-              <div className="border-t border-gray-200 dark:border-gray-600 pt-2 mt-2">
+              <div className="border-t border-white/[0.06] pt-2 mt-2">
                 <p className="flex justify-between text-lg">
-                  <span className="font-semibold">Total:</span>
-                  <span className="font-bold">$49.00</span>
+                  <span className="font-medium text-white/90">Total:</span>
+                  <span className="font-medium text-white/90">$49.00</span>
                 </p>
               </div>
             </div>
@@ -139,17 +142,17 @@ function SuccessContent() {
 
         {/* Test Mode Notice (only visible when testing) */}
         {typeof window !== 'undefined' && !process.env.NEXT_PUBLIC_RESEND_CONFIGURED && (
-          <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-6 mb-6">
+          <div className="rounded-xl border border-yellow-500/20 bg-yellow-500/[0.04] backdrop-blur-xl p-6 mb-6">
             <div className="flex items-start">
               <span className="text-2xl mr-3">⚙️</span>
               <div>
-                <h3 className="font-semibold text-lg mb-2 text-yellow-900 dark:text-yellow-100">Test Mode Active</h3>
-                <p className="text-sm text-yellow-800 dark:text-yellow-200 mb-3">
+                <h3 className="font-medium text-lg mb-2 text-yellow-400/90">Test Mode Active</h3>
+                <p className="text-sm text-white/60 mb-3">
                   Your payment was successful! However, email delivery is not yet configured.
-                  <strong> Open browser console (F12)</strong> to see what email the customer would receive.
+                  <strong className="text-white/90"> Open browser console (F12)</strong> to see what email the customer would receive.
                 </p>
-                <p className="text-xs text-yellow-700 dark:text-yellow-300">
-                  To enable automatic email delivery, see <strong>LAUNCH-CHECKLIST.md</strong> (25 min setup)
+                <p className="text-xs text-white/40">
+                  To enable automatic email delivery, see <strong className="text-white/60">LAUNCH-CHECKLIST.md</strong> (25 min setup)
                 </p>
               </div>
             </div>
@@ -157,25 +160,25 @@ function SuccessContent() {
         )}
 
         {/* What's Next */}
-        <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6 mb-8">
-          <h2 className="font-semibold text-lg mb-3">What's Next?</h2>
+        <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-6 mb-8">
+          <h2 className="font-medium text-lg mb-3 text-white/90">What's Next?</h2>
           <div className="space-y-3 text-sm">
             <div className="flex items-start">
-              <span className="text-blue-600 dark:text-blue-400 mr-2">✓</span>
-              <p>
-                <strong>Check your email</strong> - We've sent your Premium Name Package to the email address you provided during checkout.
+              <span className="text-emerald-400/90 mr-2">✓</span>
+              <p className="text-white/60">
+                <strong className="text-white/90">Check your email</strong> - We've sent your Premium Name Package to the email address you provided during checkout.
               </p>
             </div>
             <div className="flex items-start">
-              <span className="text-blue-600 dark:text-blue-400 mr-2">✓</span>
-              <p>
-                <strong>Review your package</strong> - You'll receive a comprehensive branding guide including domain purchase instructions, social media strategy, and visual identity recommendations.
+              <span className="text-emerald-400/90 mr-2">✓</span>
+              <p className="text-white/60">
+                <strong className="text-white/90">Review your package</strong> - You'll receive a comprehensive branding guide including domain purchase instructions, social media strategy, and visual identity recommendations.
               </p>
             </div>
             <div className="flex items-start">
-              <span className="text-blue-600 dark:text-blue-400 mr-2">✓</span>
-              <p>
-                <strong>Secure your domain</strong> - Follow the step-by-step guide to claim your domain before someone else does!
+              <span className="text-emerald-400/90 mr-2">✓</span>
+              <p className="text-white/60">
+                <strong className="text-white/90">Secure your domain</strong> - Follow the step-by-step guide to claim your domain before someone else does!
               </p>
             </div>
           </div>
@@ -185,20 +188,20 @@ function SuccessContent() {
         <div className="flex flex-col sm:flex-row gap-4">
           <Link
             href="/"
-            className="flex-1 text-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
+            className="flex-1 text-center px-8 py-3.5 bg-emerald-500 hover:bg-emerald-600 text-white font-medium rounded-full transition-all hover:scale-[1.02] active:scale-[0.98]"
           >
             Generate More Names
           </Link>
           <a
             href="mailto:support@rose.glass"
-            className="flex-1 text-center px-6 py-3 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 font-medium rounded-lg transition-colors"
+            className="flex-1 text-center px-8 py-3.5 border border-white/[0.06] bg-transparent text-white/70 hover:text-white hover:bg-white/[0.04] hover:border-white/[0.10] font-medium rounded-full transition-all active:scale-[0.98]"
           >
             Contact Support
           </a>
         </div>
 
         {/* Fine Print */}
-        <p className="text-xs text-center text-gray-500 dark:text-gray-500 mt-8">
+        <p className="text-xs text-center text-white/40 mt-8">
           If you don't receive your email within 10 minutes, please check your spam folder or contact us at support@rose.glass
         </p>
       </div>
