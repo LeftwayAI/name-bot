@@ -267,7 +267,7 @@ export default function Home() {
                                 ? domain.available
                                   ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300'
                                   : 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300'
-                                : 'bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-400'
+                                : 'bg-white/[0.04] text-white/40 border border-white/[0.06]'
                             }`}
                           >
                             {domain.domain}: {domain.checked ? (domain.available ? 'Available' : 'Taken') : 'Error'}

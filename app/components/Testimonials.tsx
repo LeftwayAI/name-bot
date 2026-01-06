@@ -26,10 +26,10 @@ export default function Testimonials() {
         <p className="text-sm font-light tracking-wide text-rose-gradient uppercase mb-3">
           Social Proof
         </p>
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white/90 tracking-tight">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white/90 tracking-tight">
           Trusted by founders
         </h2>
-        <p className="text-gray-700 dark:text-white/60 text-xl max-w-2xl mx-auto">
+        <p className="text-white/60 text-xl max-w-2xl mx-auto">
           Join hundreds of brands who found their perfect name
         </p>
       </div>
@@ -44,19 +44,19 @@ export default function Testimonials() {
             {/* Quote icon */}
             <div className="text-rose-coral text-4xl mb-4 opacity-50">"</div>
 
-            <p className="text-gray-800 dark:text-white/60 leading-relaxed text-base mb-6">
+            <p className="text-white/60 leading-relaxed text-base mb-6">
               {testimonial.quote}
             </p>
 
-            <div className="flex items-center gap-3 pt-4 border-t border-gray-200 dark:border-white/[0.06]">
+            <div className="flex items-center gap-3 pt-4 border-t border-white/[0.06]">
               <div className="w-12 h-12 rounded-full bg-gradient-to-br from-rose-accent to-rose-coral flex items-center justify-center text-white font-bold text-lg shadow-lg">
                 {testimonial.initial}
               </div>
               <div>
-                <p className="font-bold text-gray-900 dark:text-white/90">
+                <p className="font-bold text-white/90">
                   {testimonial.author}
                 </p>
-                <p className="text-sm text-gray-600 dark:text-white/40">
+                <p className="text-sm text-white/40">
                   {testimonial.role}
                 </p>
               </div>
@@ -68,25 +68,25 @@ export default function Testimonials() {
       {/* Trust badges */}
       <div className="mt-16 flex flex-wrap items-center justify-center gap-12 text-center">
         <div className="flex flex-col items-center gap-2">
-          <div className="w-12 h-12 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
+          <div className="w-12 h-12 rounded-full bg-green-900/30 flex items-center justify-center">
             <span className="text-2xl">🔒</span>
           </div>
-          <span className="text-sm font-semibold text-gray-800 dark:text-white/70">Secure Payment</span>
-          <span className="text-xs text-gray-600 dark:text-white/40">SSL encrypted</span>
+          <span className="text-sm font-semibold text-white/70">Secure Payment</span>
+          <span className="text-xs text-white/40">SSL encrypted</span>
         </div>
         <div className="flex flex-col items-center gap-2">
-          <div className="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+          <div className="w-12 h-12 rounded-full bg-blue-900/30 flex items-center justify-center">
             <span className="text-2xl">⚡</span>
           </div>
-          <span className="text-sm font-semibold text-gray-800 dark:text-white/70">Instant Delivery</span>
-          <span className="text-xs text-gray-600 dark:text-white/40">Email within minutes</span>
+          <span className="text-sm font-semibold text-white/70">Instant Delivery</span>
+          <span className="text-xs text-white/40">Email within minutes</span>
         </div>
         <div className="flex flex-col items-center gap-2">
-          <div className="w-12 h-12 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center">
+          <div className="w-12 h-12 rounded-full bg-purple-900/30 flex items-center justify-center">
             <span className="text-2xl">💯</span>
           </div>
-          <span className="text-sm font-semibold text-gray-800 dark:text-white/70">Money-Back Guarantee</span>
-          <span className="text-xs text-gray-600 dark:text-white/40">7-day refund policy</span>
+          <span className="text-sm font-semibold text-white/70">Money-Back Guarantee</span>
+          <span className="text-xs text-white/40">7-day refund policy</span>
         </div>
       </div>
     </section>

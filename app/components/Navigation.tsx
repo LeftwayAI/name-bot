@@ -20,19 +20,19 @@ export default function Navigation() {
           <div className="hidden md:flex items-center gap-8">
             <Link
               href="/#generator"
-              className="text-sm font-medium text-gray-700 dark:text-white/60 hover:text-gray-900 dark:hover:text-white/90 transition-colors"
+              className="text-sm font-medium text-white/60 hover:text-white/90 transition-colors"
             >
               Generate
             </Link>
             <Link
               href="/#pricing"
-              className="text-sm font-medium text-gray-700 dark:text-white/60 hover:text-gray-900 dark:hover:text-white/90 transition-colors"
+              className="text-sm font-medium text-white/60 hover:text-white/90 transition-colors"
             >
               Pricing
             </Link>
             <Link
               href="/account"
-              className="text-sm font-medium text-gray-700 dark:text-white/60 hover:text-gray-900 dark:hover:text-white/90 transition-colors"
+              className="text-sm font-medium text-white/60 hover:text-white/90 transition-colors"
             >
               Account
             </Link>
@@ -50,7 +50,7 @@ export default function Navigation() {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2 text-gray-700 dark:text-white/60"
+            className="md:hidden p-2 text-white/60"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -71,21 +71,21 @@ export default function Navigation() {
           <div className="md:hidden mt-2 glass-card rounded-2xl p-4 space-y-3">
             <Link
               href="/#generator"
-              className="block px-4 py-2 text-sm font-medium text-gray-700 dark:text-white/60 hover:text-gray-900 dark:hover:text-white/90"
+              className="block px-4 py-2 text-sm font-medium text-white/60 hover:text-white/90"
               onClick={() => setMobileMenuOpen(false)}
             >
               Generate
             </Link>
             <Link
               href="/#pricing"
-              className="block px-4 py-2 text-sm font-medium text-gray-700 dark:text-white/60 hover:text-gray-900 dark:hover:text-white/90"
+              className="block px-4 py-2 text-sm font-medium text-white/60 hover:text-white/90"
               onClick={() => setMobileMenuOpen(false)}
             >
               Pricing
             </Link>
             <Link
               href="/account"
-              className="block px-4 py-2 text-sm font-medium text-gray-700 dark:text-white/60 hover:text-gray-900 dark:hover:text-white/90"
+              className="block px-4 py-2 text-sm font-medium text-white/60 hover:text-white/90"
               onClick={() => setMobileMenuOpen(false)}
             >
               Account
