@@ -185,13 +185,13 @@ function SuccessContent() {
         <div className="flex flex-col sm:flex-row gap-4">
           <Link
             href="/"
-            className="flex-1 text-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors"
+            className="flex-1 text-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
           >
             Generate More Names
           </Link>
           <a
             href="mailto:support@rose.glass"
-            className="flex-1 text-center px-6 py-3 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 font-semibold rounded-lg transition-colors"
+            className="flex-1 text-center px-6 py-3 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 font-medium rounded-lg transition-colors"
           >
             Contact Support
           </a>

@@ -42,7 +42,7 @@ export default function Navigation() {
           <div className="hidden md:block">
             <Link
               href="/#generator"
-              className="glass-button px-6 py-2.5 rounded-full text-white text-sm font-semibold transition-all hover:scale-[1.02] active:scale-[0.98]"
+              className="glass-button px-6 py-2.5 rounded-full text-white text-sm font-medium transition-all hover:scale-[1.02] active:scale-[0.98]"
             >
               Get Started
             </Link>
@@ -92,7 +92,7 @@ export default function Navigation() {
             </Link>
             <Link
               href="/#generator"
-              className="block glass-button px-4 py-2 rounded-full text-white text-sm font-semibold text-center transition-all hover:scale-[1.02] active:scale-[0.98]"
+              className="block glass-button px-4 py-2 rounded-full text-white text-sm font-medium text-center transition-all hover:scale-[1.02] active:scale-[0.98]"
               onClick={() => setMobileMenuOpen(false)}
             >
               Get Started
