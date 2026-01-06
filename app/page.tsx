@@ -180,7 +180,7 @@ export default function Home() {
           </div>
 
           {error && (
-            <div className="mb-4 p-4 bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-300 rounded-xl text-sm">
+            <div className="mb-4 p-4 bg-white/[0.02] border border-rose-500/20 text-rose-400/90 rounded-xl text-sm">
               {error}
             </div>
           )}

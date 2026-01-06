@@ -68,24 +68,24 @@ export default function Testimonials() {
       {/* Trust badges */}
       <div className="mt-16 flex flex-wrap items-center justify-center gap-12 text-center">
         <div className="flex flex-col items-center gap-2">
-          <div className="w-12 h-12 rounded-full bg-green-900/30 flex items-center justify-center">
+          <div className="w-12 h-12 rounded-full bg-white/[0.02] border border-white/[0.06] flex items-center justify-center">
             <span className="text-2xl">🔒</span>
           </div>
-          <span className="text-sm font-semibold text-white/70">Secure Payment</span>
+          <span className="text-sm font-medium text-white/70">Secure Payment</span>
           <span className="text-xs text-white/40">SSL encrypted</span>
         </div>
         <div className="flex flex-col items-center gap-2">
-          <div className="w-12 h-12 rounded-full bg-blue-900/30 flex items-center justify-center">
+          <div className="w-12 h-12 rounded-full bg-white/[0.02] border border-white/[0.06] flex items-center justify-center">
             <span className="text-2xl">⚡</span>
           </div>
-          <span className="text-sm font-semibold text-white/70">Instant Delivery</span>
+          <span className="text-sm font-medium text-white/70">Instant Delivery</span>
           <span className="text-xs text-white/40">Email within minutes</span>
         </div>
         <div className="flex flex-col items-center gap-2">
-          <div className="w-12 h-12 rounded-full bg-purple-900/30 flex items-center justify-center">
+          <div className="w-12 h-12 rounded-full bg-white/[0.02] border border-white/[0.06] flex items-center justify-center">
             <span className="text-2xl">💯</span>
           </div>
-          <span className="text-sm font-semibold text-white/70">Money-Back Guarantee</span>
+          <span className="text-sm font-medium text-white/70">Money-Back Guarantee</span>
           <span className="text-xs text-white/40">7-day refund policy</span>
         </div>
       </div>
