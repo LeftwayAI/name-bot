@@ -167,7 +167,7 @@ export default function BrandNameGenerator() {
           <button
             onClick={handleGenerate}
             disabled={loading}
-            className="w-full glass-button text-white font-medium py-4 px-8 rounded-full text-lg disabled:opacity-50 disabled:cursor-not-allowed hover:scale-[1.02] active:scale-[0.98] transition-all"
+            className="w-full glass-button text-white font-medium py-4 px-8 rounded-full text-lg disabled:opacity-50 disabled:cursor-not-allowed hover:scale-[1.02] active:scale-[0.98] transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505]"
           >
             {loading ? 'Generating Brand Names...' : '✨ Generate Brand Names'}
           </button>
@@ -209,7 +209,7 @@ export default function BrandNameGenerator() {
                         <button
                           onClick={() => handleClaimName(name, availableDomain.domain)}
                           disabled={checkoutLoading === name}
-                          className="glass-button px-8 py-4 text-white font-medium rounded-xl text-base disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+                          className="glass-button px-8 py-4 text-white font-medium rounded-xl text-base disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505]"
                         >
                           {checkoutLoading === name ? 'Loading...' : '🥂 Claim for $49'}
                         </button>
@@ -753,7 +753,7 @@ export default function BrandNameGenerator() {
           </p>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="glass-button px-8 py-4 text-white font-medium rounded-full text-lg hover:scale-[1.02] active:scale-[0.98] hover:shadow-xl transition-all"
+            className="glass-button px-8 py-4 text-white font-medium rounded-full text-lg hover:scale-[1.02] active:scale-[0.98] hover:shadow-xl transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505]"
           >
             ✨ Generate Brand Names Now
           </button>

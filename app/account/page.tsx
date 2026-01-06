@@ -40,7 +40,7 @@ export default function AccountPage() {
           </ul>
           <Link
             href="/"
-            className="glass-button inline-block px-6 py-3 rounded-xl text-white font-medium"
+            className="glass-button inline-block px-6 py-3 rounded-xl text-white font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505]"
           >
             ← Back to Generator
           </Link>

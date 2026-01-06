@@ -118,10 +118,22 @@ body {
   }
 
   .glass-input:focus {
-    border-color: var(--rose-coral);
+    border-color: rgba(255, 255, 255, 0.10);
     background: rgba(255, 255, 255, 0.04);
+    outline: none;
     box-shadow:
-      0 0 0 2px rgba(255, 107, 107, 0.15),
+      0 0 0 2px rgba(255, 255, 255, 0.15),
+      inset 0 1px 3px rgba(0, 0, 0, 0.2),
+      inset 0 1px 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-input:focus-visible {
+    border-color: rgba(255, 255, 255, 0.10);
+    background: rgba(255, 255, 255, 0.04);
+    outline: none;
+    box-shadow:
+      0 0 0 2px rgba(255, 255, 255, 0.5),
+      0 0 0 4px rgba(255, 255, 255, 0.1),
       inset 0 1px 3px rgba(0, 0, 0, 0.2),
       inset 0 1px 1px 0 rgba(255, 255, 255, 0.05);
   }
@@ -292,11 +304,9 @@ body {
     animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
 
-  /* Focus styles for accessibility */
-  *:focus-visible {
-    outline: 2px solid var(--rose-coral);
-    outline-offset: 2px;
-  }
+  /* Focus styles for accessibility - Premium pattern from Design Principle #5 */
+  /* Note: Individual elements should apply focus-visible styles directly */
+  /* This global rule is removed to allow per-element premium focus rings */
 
   /* Reduce motion for accessibility */
   @media (prefers-reduced-motion: reduce) {

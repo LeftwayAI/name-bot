@@ -188,7 +188,7 @@ export default function Home() {
           <button
             onClick={handleGenerate}
             disabled={loading}
-            className="w-full glass-button text-white font-medium py-4 px-8 rounded-full text-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all hover:scale-[1.02] active:scale-[0.98]"
+            className="w-full glass-button text-white font-medium py-4 px-8 rounded-full text-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505]"
           >
             {loading ? 'Generating...' : '✨ Generate Names'}
           </button>
@@ -251,7 +251,7 @@ export default function Home() {
                         <button
                           onClick={() => handleClaimName(name, availableDomain.domain)}
                           disabled={checkoutLoading === name}
-                          className="glass-button px-8 py-4 text-white font-medium rounded-full text-base disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap transition-all hover:scale-[1.02] active:scale-[0.98]"
+                          className="glass-button px-8 py-4 text-white font-medium rounded-full text-base disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap transition-all hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505]"
                         >
                           {checkoutLoading === name ? 'Loading...' : '🥂 Claim for $49'}
                         </button>
@@ -362,7 +362,7 @@ export default function Home() {
             <div className="flex items-center justify-center gap-6 text-sm text-white/40">
               <span>Made with precision and care</span>
               <span>·</span>
-              <a href="mailto:hello@rose.glass" className="hover:text-rose-red transition-colors">Contact</a>
+              <a href="mailto:hello@rose.glass" className="hover:text-rose-red transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505] rounded-sm">Contact</a>
               <span>·</span>
               <span>© 2026 rose.glass</span>
             </div>

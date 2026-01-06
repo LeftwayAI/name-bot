@@ -149,7 +149,7 @@ export default function CompanyNameGenerator() {
             <button
               type="submit"
               disabled={loading}
-              className="glass-button w-full py-4 rounded-2xl text-lg font-medium text-white transition-all duration-300"
+              className="glass-button w-full py-4 rounded-2xl text-lg font-medium text-white transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505]"
             >
               {loading ? 'Generating...' : 'Generate Company Names'}
             </button>
@@ -203,7 +203,7 @@ export default function CompanyNameGenerator() {
                           {d.available && (
                             <button
                               onClick={() => handleClaimName(item.name, d.domain)}
-                              className="glass-button w-full py-2 px-4 rounded-xl text-sm font-medium text-white transition-all duration-300"
+                              className="glass-button w-full py-2 px-4 rounded-xl text-sm font-medium text-white transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505]"
                             >
                               🥂 Claim for $49
                             </button>
@@ -803,7 +803,7 @@ export default function CompanyNameGenerator() {
                 e.preventDefault()
                 window.scrollTo({ top: 0, behavior: 'smooth' })
               }}
-              className="glass-button inline-block px-8 py-4 rounded-2xl text-lg font-medium text-white transition-all duration-300"
+              className="glass-button inline-block px-8 py-4 rounded-2xl text-lg font-medium text-white transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050505]"
             >
               Generate Company Names Now
             </a>
