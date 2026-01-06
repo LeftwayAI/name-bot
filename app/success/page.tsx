@@ -85,9 +85,9 @@ function SuccessContent() {
       <div className="max-w-2xl w-full bg-white dark:bg-gray-800 rounded-lg shadow-xl p-8 md:p-12">
         {/* Success Icon */}
         <div className="flex justify-center mb-6">
-          <div className="w-20 h-20 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center">
+          <div className="w-20 h-20 bg-white/[0.04] border border-emerald-500/20 rounded-full flex items-center justify-center">
             <svg
-              className="w-12 h-12 text-green-600 dark:text-green-400"
+              className="w-12 h-12 text-emerald-400/90"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

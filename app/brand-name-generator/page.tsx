@@ -197,9 +197,9 @@ export default function BrandNameGenerator() {
                           {name}
                         </p>
                         {availableDomain && (
-                          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-green-50 dark:bg-green-900/20 rounded-lg mb-3">
-                            <span className="text-green-600 dark:text-green-400 text-lg">✓</span>
-                            <p className="text-green-700 dark:text-green-300 text-sm font-semibold">
+                          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg mb-3 border border-emerald-500/20 bg-white/[0.02]">
+                            <span className="text-emerald-400 text-lg">✓</span>
+                            <p className="text-emerald-300/90 text-sm font-semibold">
                               {availableDomain.domain} available
                             </p>
                           </div>
@@ -220,12 +220,12 @@ export default function BrandNameGenerator() {
                         {nameData.domains.map((domain, idx) => (
                           <span
                             key={idx}
-                            className={`text-xs px-3 py-1.5 rounded-lg font-medium ${
+                            className={`text-xs px-3 py-1.5 rounded-lg font-medium border ${
                               domain.checked
                                 ? domain.available
-                                  ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300'
-                                  : 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300'
-                                : 'bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-400'
+                                  ? 'bg-white/[0.02] text-emerald-300/80 border-emerald-500/20'
+                                  : 'bg-white/[0.02] text-rose-400/70 border-rose-500/20'
+                                : 'bg-white/[0.04] text-white/40 border-white/[0.06]'
                             }`}
                           >
                             {domain.domain}: {domain.checked ? (domain.available ? 'Available' : 'Taken') : 'Error'}

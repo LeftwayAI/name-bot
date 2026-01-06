@@ -15,7 +15,7 @@ export default function PricingTransparency() {
 
       <div className="grid md:grid-cols-2 gap-6 mb-6">
         <div className="flex items-start gap-3">
-          <span className="text-green-600 text-xl flex-shrink-0">✓</span>
+          <span className="text-emerald-400/90 text-xl flex-shrink-0">✓</span>
           <div>
             <p className="font-semibold text-white/90">Domain Registration Guide</p>
             <p className="text-sm text-white/60">Step-by-step instructions for claiming your domain</p>
@@ -23,7 +23,7 @@ export default function PricingTransparency() {
         </div>
 
         <div className="flex items-start gap-3">
-          <span className="text-green-600 text-xl flex-shrink-0">✓</span>
+          <span className="text-emerald-400/90 text-xl flex-shrink-0">✓</span>
           <div>
             <p className="font-semibold text-white/90">Brand Strategy Guide</p>
             <p className="text-sm text-white/60">Professional branding tips customized for your name</p>
@@ -31,7 +31,7 @@ export default function PricingTransparency() {
         </div>
 
         <div className="flex items-start gap-3">
-          <span className="text-green-600 text-xl flex-shrink-0">✓</span>
+          <span className="text-emerald-400/90 text-xl flex-shrink-0">✓</span>
           <div>
             <p className="font-semibold text-white/90">Logo Design Ideas</p>
             <p className="text-sm text-white/60">AI-generated logo concepts to kickstart your brand</p>
@@ -39,7 +39,7 @@ export default function PricingTransparency() {
         </div>
 
         <div className="flex items-start gap-3">
-          <span className="text-green-600 text-xl flex-shrink-0">✓</span>
+          <span className="text-emerald-400/90 text-xl flex-shrink-0">✓</span>
           <div>
             <p className="font-semibold text-white/90">Social Media Username Checker</p>
             <p className="text-sm text-white/60">Ensure consistent branding across platforms</p>
@@ -47,7 +47,7 @@ export default function PricingTransparency() {
         </div>
 
         <div className="flex items-start gap-3">
-          <span className="text-green-600 text-xl flex-shrink-0">✓</span>
+          <span className="text-emerald-400/90 text-xl flex-shrink-0">✓</span>
           <div>
             <p className="font-semibold text-white/90">Trademark Search Report</p>
             <p className="text-sm text-white/60">Preliminary trademark availability check</p>
@@ -55,7 +55,7 @@ export default function PricingTransparency() {
         </div>
 
         <div className="flex items-start gap-3">
-          <span className="text-green-600 text-xl flex-shrink-0">✓</span>
+          <span className="text-emerald-400/90 text-xl flex-shrink-0">✓</span>
           <div>
             <p className="font-semibold text-white/90">Instant Email Delivery</p>
             <p className="text-sm text-white/60">Get everything sent to your inbox immediately</p>
@@ -63,7 +63,7 @@ export default function PricingTransparency() {
         </div>
       </div>
 
-      <div className="glass-card rounded-2xl p-4 bg-green-900/20 border border-white/[0.06]">
+      <div className="glass-card rounded-2xl p-4 bg-white/[0.02] border border-emerald-500/20">
         <div className="flex items-center gap-2">
           <span className="text-2xl">🛡️</span>
           <p className="text-sm font-semibold text-white/90">

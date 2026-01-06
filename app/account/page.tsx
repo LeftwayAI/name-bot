@@ -22,19 +22,19 @@ export default function AccountPage() {
           </p>
           <ul className="text-left space-y-3 mb-8">
             <li className="flex items-start gap-3">
-              <span className="text-green-600">✓</span>
+              <span className="text-emerald-400/90">✓</span>
               <span className="text-gray-700 dark:text-white/70">View your generated names history</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-green-600">✓</span>
+              <span className="text-emerald-400/90">✓</span>
               <span className="text-gray-700 dark:text-white/70">Download purchased brand packages</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-green-600">✓</span>
+              <span className="text-emerald-400/90">✓</span>
               <span className="text-gray-700 dark:text-white/70">Save favorite names for later</span>
             </li>
             <li className="flex items-start gap-3">
-              <span className="text-green-600">✓</span>
+              <span className="text-emerald-400/90">✓</span>
               <span className="text-gray-700 dark:text-white/70">Manage your subscription</span>
             </li>
           </ul>

@@ -190,10 +190,10 @@ export default function CompanyNameGenerator() {
                           <div className="flex items-center justify-between">
                             <span className="text-sm font-medium text-gray-700">{d.domain}</span>
                             <span
-                              className={`text-xs px-2 py-1 rounded-full ${
+                              className={`text-xs px-2 py-1 rounded-full border ${
                                 d.available
-                                  ? 'bg-green-100 text-green-700'
-                                  : 'bg-red-100 text-red-700'
+                                  ? 'bg-white/[0.02] text-emerald-300/80 border-emerald-500/20'
+                                  : 'bg-white/[0.02] text-rose-400/70 border-rose-500/20'
                               }`}
                             >
                               {d.available ? 'Available' : 'Taken'}
