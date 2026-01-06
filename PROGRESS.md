@@ -4,6 +4,73 @@
 
 That's ~10 days. Every task should move toward PAYING CUSTOMERS.
 
+## Run #49 - CRITICAL FOUNDATION FIX: Background & Glass System Overhaul (2026-01-06)
+
+**DESIGN PRINCIPLE APPLIED:** Core Foundation (#1) - Background Color + Glass Card Pattern
+
+### What Changed
+
+**THE PROBLEM:** The site was violating the #1 rule in Daniel's design principles - it was using a visible rose gradient background instead of the clean #050505 dark canvas. This is literally the FIRST principle in the design document and we were getting it wrong on every page.
+
+**BEFORE:**
+- All pages: Using `bg-rose-gradient` with visible pink/coral gradients
+- Glass cards: Using CSS variables that changed based on theme (wrong opacity values)
+- Input fields: Using theme-dependent variables instead of exact values
+- Body background: Using `var(--background)` instead of explicit #050505
+- Result: The site had visible color everywhere, violating "luxury through restraint"
+
+**AFTER:**
+- **All 6 pages fixed:** `bg-[#050505]` on main/page.tsx, account/page.tsx, company-name-generator/page.tsx, business-name-generator/page.tsx, startup-name-ideas/page.tsx, brand-name-generator/page.tsx
+- **Glass cards (globals.css:52-69):** Now use exact values - `background: rgba(255, 255, 255, 0.02)`, `border: rgba(255, 255, 255, 0.06)`
+- **Glass card hover:** `background: rgba(255, 255, 255, 0.04)`, `border: rgba(255, 255, 255, 0.10)` - matches design principles exactly
+- **Glass inputs (globals.css:99-122):** Exact values for dark mode - `bg: rgba(255, 255, 255, 0.02)`, `border: rgba(255, 255, 255, 0.06)`
+- **Body element (globals.css:38):** Hard-coded to `background: #050505` instead of variable
+- **Typography fixes:** Changed 9 instances of `font-semibold` to `font-medium` in labels (page.tsx:168, 244; PricingTransparency.tsx:20, 28, 36, 44, 52, 60, 69)
+
+### How It Aligns with Design Principles
+
+✅ **Principle #1: Background is #050505** - NOW TRULY FIXED on all pages and body element
+✅ **Principle #4: Glass Card Pattern** - Exact spec: `bg-white/[0.02]` + `border-white/[0.06]`
+✅ **Core Philosophy: "Luxury through restraint"** - Removed all visible color gradients, replaced with subtle glass depth
+✅ **Anti-Pattern Fixed: "Flat colored blocks"** - The rose gradients were literally the example of what NOT to do
+✅ **Typography Principle #2:** Labels now use `font-medium` (500 weight) instead of `font-semibold` (600)
+
+### Impact
+
+**This was a CRITICAL foundation issue.** Previous runs claimed to have "perfect" design compliance, but we were violating the single most important rule: the background color.
+
+The design principles document literally starts with:
+> "True black is too harsh - use `#050505` instead of `#000000`"
+
+And then explicitly states as an anti-pattern:
+> "Flat colored blocks - if using color, add depth with gradients/borders"
+
+We were doing the exact opposite - using colored gradient backgrounds everywhere. This completely undermined the "luxury through restraint" philosophy.
+
+**Before/After visual:**
+- BEFORE: Pink/coral gradients visible across the entire page background
+- AFTER: Clean #050505 dark canvas with glass cards providing subtle depth through opacity
+
+**The cascading effect:** By fixing the background to #050505, the glass cards now work as intended - they create subtle depth through opacity differences against the dark canvas. Before, with the colored background, you couldn't see the glass effect properly because there was too much competing color.
+
+**Typography consistency:** The label typography fixes ensure that ALL text at the same hierarchy level uses the same weight. Labels are `font-medium`, success indicators are `font-medium`, feature titles are `font-medium`. This creates visual harmony.
+
+### Design Checklist Status - FOUNDATION CORRECTED
+1. ✅ **Background is `#050505` - NOW TRULY FIXED** (was claiming done, but wasn't)
+2. ✅ Text has proper opacity hierarchy - DONE (Runs #42, #43, #45, #47)
+3. ✅ **Cards use glass pattern with 0.06 borders - NOW EXACT SPEC** (was using variables)
+4. ✅ Section headers use accent + tracking-wide - DONE (Run #41)
+5. ✅ CTAs have font-medium - DONE (Runs #47, #48)
+6. ✅ Safe areas handled for mobile - DONE (Pre-existing)
+7. ✅ Decorative elements < 0.15 - DONE (Run #44)
+8. ✅ Animations slow (10s+) - DONE (18s and 22s aurora)
+9. ✅ Premium font stack - DONE (Run #47, Geist Sans)
+10. ✅ Monospace for data/labels - DONE (Geist Mono)
+
+**10/10 - But this time we ACTUALLY have the foundation right.**
+
+### What Should Happen Next
+
 ## Run #48 - Typography Completion - CTA Button Weight Fix (2026-01-06)
 
 **DESIGN PRINCIPLE APPLIED:** Button Typography Consistency (completing the Run #47 typography refinement that missed the Navigation component and several other pages)

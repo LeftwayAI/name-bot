@@ -108,7 +108,7 @@ export default function CompanyNameGenerator() {
   }
 
   return (
-    <div className="min-h-screen bg-rose-gradient">
+    <div className="min-h-screen bg-[#050505]">
       {/* Header */}
       <header className="py-8 px-4 text-center">
         <a href="/" className="inline-block mb-4 text-6xl">🌹</a>

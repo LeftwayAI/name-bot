@@ -122,7 +122,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-rose-gradient flex flex-col items-center justify-center p-6 md:p-12">
+    <main className="min-h-screen bg-[#050505] flex flex-col items-center justify-center p-6 md:p-12">
       <div className="max-w-5xl w-full">
         {/* Header with rose logo */}
         <div className="text-center mb-20 pt-24 relative">
@@ -165,7 +165,7 @@ export default function Home() {
         {/* Generator card with glassmorphism */}
         <div id="generator" className="glass-card rounded-3xl p-8 md:p-10 mb-8 scroll-mt-24">
           <div className="mb-6">
-            <label htmlFor="description" className="block text-sm font-semibold mb-3 text-white/60">
+            <label htmlFor="description" className="block text-sm font-medium mb-3 text-white/60">
               Describe your vision
             </label>
             <textarea
@@ -241,7 +241,7 @@ export default function Home() {
                         {availableDomain && (
                           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg mb-3 border border-emerald-500/20 bg-white/[0.02]">
                             <span className="text-emerald-400 text-lg">✓</span>
-                            <p className="text-emerald-300/90 text-sm font-semibold">
+                            <p className="text-emerald-300/90 text-sm font-medium">
                               {availableDomain.domain} available
                             </p>
                           </div>

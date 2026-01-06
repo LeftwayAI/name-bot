@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function AccountPage() {
   return (
-    <main className="min-h-screen bg-rose-gradient flex flex-col items-center justify-center p-6 md:p-12">
+    <main className="min-h-screen bg-[#050505] flex flex-col items-center justify-center p-6 md:p-12">
       <div className="max-w-md w-full pt-24">
         <div className="text-center mb-8">
           <span className="text-6xl mb-6 block">🌹</span>

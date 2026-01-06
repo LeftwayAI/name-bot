@@ -122,7 +122,7 @@ export default function BrandNameGenerator() {
   };
 
   return (
-    <main className="min-h-screen bg-rose-gradient p-6 md:p-12">
+    <main className="min-h-screen bg-[#050505] p-6 md:p-12">
       <div className="max-w-6xl mx-auto">
         {/* Header with rose logo */}
         <div className="text-center mb-12">

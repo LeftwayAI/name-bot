@@ -122,7 +122,7 @@ export default function StartupNameIdeas() {
   };
 
   return (
-    <main className="min-h-screen bg-rose-gradient flex flex-col items-center p-6 md:p-12">
+    <main className="min-h-screen bg-[#050505] flex flex-col items-center p-6 md:p-12">
       <div className="max-w-5xl w-full">
         {/* Header with rose logo */}
         <div className="text-center mb-12">
