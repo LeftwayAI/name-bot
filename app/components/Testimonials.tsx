@@ -49,7 +49,20 @@ export default function Testimonials() {
             </p>
 
             <div className="flex items-center gap-3 pt-4 border-t border-white/[0.06]">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-rose-accent to-rose-coral flex items-center justify-center text-white font-medium text-lg shadow-lg">
+              <div
+                className="w-12 h-12 rounded-full flex items-center justify-center text-white font-medium text-lg relative"
+                style={{
+                  background: `
+                    linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, transparent 100%),
+                    linear-gradient(135deg, #e63946, #ff6b6b)
+                  `,
+                  border: '1px solid rgba(255, 255, 255, 0.15)',
+                  boxShadow: `
+                    0 2px 12px rgba(230, 57, 70, 0.12),
+                    inset 0 1px 1px 0 rgba(255, 255, 255, 0.25)
+                  `
+                }}
+              >
                 {testimonial.initial}
               </div>
               <div>
