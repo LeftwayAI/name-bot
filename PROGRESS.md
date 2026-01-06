@@ -4,6 +4,57 @@
 
 That's ~10 days. Every task should move toward PAYING CUSTOMERS.
 
+## Run #41 - Text Opacity Hierarchy & Glass Treatment Consistency (2026-01-06)
+
+**DESIGN PRINCIPLE APPLIED:** Proper white opacity hierarchy and consistent glass card borders (from Daniel's emoji.today design language)
+
+### What Changed
+**BEFORE:**
+- Testimonials using generic gray scale (`text-gray-300`, `text-gray-400`, etc.) instead of white opacity
+- PricingTransparency had overly visible border (`border-rose-red/20`) breaking glass aesthetic
+- Inconsistent text opacity - mixing gray-X with white/X patterns
+- Borders using `border-gray-700` instead of `border-white/[0.06]`
+- Missing section header accent treatment on Testimonials
+
+**AFTER:**
+- **Testimonials component fully transformed:**
+  - Added section header: `text-sm font-light tracking-wide text-rose-gradient uppercase` ("SOCIAL PROOF")
+  - Title: `dark:text-white/90` (primary text)
+  - Subtitle: `dark:text-white/60` (secondary text)
+  - Testimonial quote: `dark:text-white/60` (secondary text)
+  - Author name: `dark:text-white/90` (primary text)
+  - Author role: `dark:text-white/40` (tertiary/labels)
+  - Trust badge labels: `dark:text-white/70` and `dark:text-white/40`
+  - Borders: `dark:border-white/[0.06]` (proper glass treatment)
+- **PricingTransparency component refined:**
+  - Removed heavy border (`border-rose-red/20`), now uses standard glass card border
+  - All headings: `dark:text-white/90` (primary text)
+  - All descriptions: `dark:text-white/60` (secondary text)
+  - Footer text: `dark:text-white/40` (tertiary)
+  - Guarantee card border: `dark:border-white/[0.06]` (subtle)
+
+### How It Aligns with Design Principles
+✅ Proper text opacity hierarchy: white/90 → white/60 → white/40
+✅ All borders at 0.06 opacity (barely visible glass treatment)
+✅ Section headers with accent color + font-light tracking-wide
+✅ No more generic gray scale mixing with premium white opacity system
+✅ Consistent glass card pattern throughout all components
+✅ "Luxury through restraint" - subtle, not shouty
+
+### Next Steps (Add to task list)
+1. Apply same opacity fixes to SEO landing pages (brand-name-generator, company-name-generator, etc.)
+2. Review main page.tsx for any remaining gray scale usage
+3. Consider adding subtle hover effects to testimonial cards
+4. Test mobile experience to ensure opacity hierarchy is readable
+5. Audit footer and other minor components for consistency
+
+### Impact
+The components now feel **cohesive and premium**. The text hierarchy is crystal clear - you can instantly tell what's primary, secondary, and tertiary information. The Testimonials section now has the same polish as the hero and features sections. The PricingTransparency component no longer has that heavy border that broke the glass aesthetic. Everything whispers luxury instead of shouting.
+
+This is exactly the kind of **disciplined design consistency** that makes emoji.today feel premium. When you enforce these rules everywhere, the whole site elevates together.
+
+---
+
 ## Run #40 - Ambient Aurora Effects & Background Refinement (2026-01-06)
 
 **DESIGN PRINCIPLE APPLIED:** "Luxury through restraint" - subtle ambient effects and proper opacity discipline (from Daniel's emoji.today design language)
