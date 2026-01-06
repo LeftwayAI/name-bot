@@ -4,6 +4,54 @@
 
 That's ~10 days. Every task should move toward PAYING CUSTOMERS.
 
+## Run #40 - Ambient Aurora Effects & Background Refinement (2026-01-06)
+
+**DESIGN PRINCIPLE APPLIED:** "Luxury through restraint" - subtle ambient effects and proper opacity discipline (from Daniel's emoji.today design language)
+
+### What Changed
+**BEFORE:**
+- Background gradients too vibrant (0.08, 0.06, 0.04, 0.03 opacities stacked = too bright)
+- Glass card hover border at 0.25 opacity (too visible, not subtle enough)
+- No aurora glow effects in hero section
+- Hero felt flat and static
+
+**AFTER:**
+- **Background gradients drastically reduced:**
+  - Dark mode rose gradients now: 0.03, 0.025, 0.02, 0.015 opacities
+  - Reduced by ~60% to achieve true "ambient" feel
+  - Background now whispers instead of shouts
+- **Glass card hover border fixed:**
+  - Changed from rgba(255, 255, 255, 0.25) → rgba(255, 255, 255, 0.10)
+  - Aligns with Daniel's principle: "keep borders barely visible"
+- **Aurora glow effects added to hero:**
+  - Two overlapping radial gradients with heavy blur (80px)
+  - Slow animations (18s, 22s) with offset timing
+  - Opacity range: 0.15-0.22 (subtle, not overpowering)
+  - Creates dimensional depth without distraction
+  - Positioned behind hero content with proper z-index layering
+
+### How It Aligns with Design Principles
+✅ Decorative elements now very faint (< 0.15 opacity base, < 0.03 for backgrounds)
+✅ Borders at proper subtlety (0.06 default, 0.10 hover)
+✅ Animations are slow and ambient (18s+ for aurora effects)
+✅ "Luxury through restraint" - effects enhance without overwhelming
+✅ Proper z-index layering maintains content hierarchy
+✅ Background is truly ambient, not dominant
+
+### Next Steps (Add to task list)
+1. Test aurora effects on mobile devices
+2. Consider adding one more floating element (very faint) in features section
+3. Review Testimonials component for glass treatment consistency
+4. Apply same aurora treatment to SEO landing pages
+5. Audit all components for opacity discipline
+
+### Impact
+The site now feels **dramatically more premium and refined**. The background has transformed from "colorful" to "atmospheric" - it creates mood without competing for attention. The aurora glow effects add luxurious depth to the hero section, making it feel alive and dimensional. The hover states are now properly subtle, reinforcing the "glass on dark" aesthetic rather than breaking it. This is exactly the "luxury through restraint" philosophy Daniel uses on emoji.today.
+
+**The difference is night and day** - quite literally. The dark mode now has the sophisticated, whisper-quiet elegance of a premium product.
+
+---
+
 ## Run #39 - Premium Typography & Section Header Refinement (2026-01-05)
 
 **DESIGN PRINCIPLE APPLIED:** Premium typography and section header hierarchy (from Daniel's emoji.today design language)

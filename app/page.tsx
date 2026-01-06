@@ -125,24 +125,28 @@ export default function Home() {
     <main className="min-h-screen bg-rose-gradient flex flex-col items-center justify-center p-6 md:p-12">
       <div className="max-w-5xl w-full">
         {/* Header with rose logo */}
-        <div className="text-center mb-20 pt-24">
-          <div className="inline-flex items-center gap-4 mb-10 hero-logo-entrance">
+        <div className="text-center mb-20 pt-24 relative">
+          {/* Subtle aurora glow effects */}
+          <div className="aurora-glow aurora-glow-1" />
+          <div className="aurora-glow aurora-glow-2" />
+
+          <div className="inline-flex items-center gap-4 mb-10 hero-logo-entrance relative z-10">
             <span className="text-7xl md:text-8xl filter drop-shadow-xl">🌹</span>
             <h1 className="text-7xl md:text-9xl font-bold text-rose-gradient tracking-tight">
               rose.glass
             </h1>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white/90 mb-6 leading-tight tracking-tight px-4 hero-fade-in" style={{animationDelay: '0.1s'}}>
+          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white/90 mb-6 leading-tight tracking-tight px-4 hero-fade-in relative z-10" style={{animationDelay: '0.1s'}}>
             Perfect names for <br className="hidden md:block" />
             <span className="text-rose-gradient">exceptional brands</span>
           </h2>
-          <p className="text-xl md:text-2xl text-gray-700 dark:text-white/60 max-w-3xl mx-auto font-light leading-relaxed mb-10 px-6 hero-fade-in" style={{animationDelay: '0.2s'}}>
+          <p className="text-xl md:text-2xl text-gray-700 dark:text-white/60 max-w-3xl mx-auto font-light leading-relaxed mb-10 px-6 hero-fade-in relative z-10" style={{animationDelay: '0.2s'}}>
             AI-powered naming with instant domain availability.<br className="hidden md:block" />
             Get your complete brand identity package in minutes, not weeks.
           </p>
 
           {/* Value props - honest framing */}
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-8 hero-fade-in" style={{animationDelay: '0.3s'}}>
+          <div className="flex flex-wrap items-center justify-center gap-4 mb-8 hero-fade-in relative z-10" style={{animationDelay: '0.3s'}}>
             <div className="flex items-center gap-2 px-5 py-2.5 glass-card rounded-full">
               <span className="text-lg">✨</span>
               <span className="text-sm font-semibold text-gray-700 dark:text-white/70">Free to generate</span>
