@@ -760,8 +760,8 @@ export default function BrandNameGenerator() {
         </section>
 
         {/* Footer */}
-        <div className="mt-12 text-center text-sm text-gray-500">
-          <p>Made with precision and care · <a href="https://rose.glass" className="hover:text-rose-red transition-colors">rose.glass</a></p>
+        <div className="mt-12 text-center text-sm text-white/40">
+          <p>Made with precision and care · <a href="https://rose.glass" className="hover:text-rose-coral transition-colors">rose.glass</a></p>
         </div>
       </div>
     </main>

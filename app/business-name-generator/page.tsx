@@ -299,19 +299,19 @@ export default function BusinessNameGenerator() {
           <div className="glass-card rounded-2xl p-6 mb-8">
             <ul className="space-y-3">
               <li className="flex items-start">
-                <span className="text-rose-red mr-2 text-lg">✓</span>
+                <span className="text-rose-coral mr-2 text-lg">✓</span>
                 <span className="text-white/60"><strong>Save Time:</strong> Generate hundreds of creative names in seconds instead of brainstorming for hours</span>
               </li>
               <li className="flex items-start">
-                <span className="text-rose-red mr-2 text-lg">✓</span>
+                <span className="text-rose-coral mr-2 text-lg">✓</span>
                 <span className="text-white/60"><strong>AI-Powered Creativity:</strong> Our advanced AI understands your business concept and creates relevant, unique names</span>
               </li>
               <li className="flex items-start">
-                <span className="text-rose-red mr-2 text-lg">✓</span>
+                <span className="text-rose-coral mr-2 text-lg">✓</span>
                 <span className="text-white/60"><strong>Industry-Specific:</strong> Get names tailored to your specific industry and target market</span>
               </li>
               <li className="flex items-start">
-                <span className="text-rose-red mr-2 text-lg">✓</span>
+                <span className="text-rose-coral mr-2 text-lg">✓</span>
                 <span className="text-white/60"><strong>100% Free:</strong> No hidden fees, no signup required - just enter your description and get instant results</span>
               </li>
             </ul>
@@ -325,7 +325,7 @@ export default function BusinessNameGenerator() {
               <p className="text-sm text-white/40 mb-3">
                 Names that clearly describe what your business does
               </p>
-              <p className="text-xs text-gray-500">Examples: PayPal, Facebook, General Motors</p>
+              <p className="text-xs text-white/40">Examples: PayPal, Facebook, General Motors</p>
             </div>
 
             <div className="glass-card rounded-2xl p-6">
@@ -333,7 +333,7 @@ export default function BusinessNameGenerator() {
               <p className="text-sm text-white/40 mb-3">
                 Unique made-up words that are brand new
               </p>
-              <p className="text-xs text-gray-500">Examples: Google, Kodak, Xerox</p>
+              <p className="text-xs text-white/40">Examples: Google, Kodak, Xerox</p>
             </div>
 
             <div className="glass-card rounded-2xl p-6">
@@ -341,7 +341,7 @@ export default function BusinessNameGenerator() {
               <p className="text-sm text-white/40 mb-3">
                 Two words combined to create something new
               </p>
-              <p className="text-xs text-gray-500">Examples: Microsoft, YouTube, Snapchat</p>
+              <p className="text-xs text-white/40">Examples: Microsoft, YouTube, Snapchat</p>
             </div>
           </div>
 
@@ -376,8 +376,8 @@ export default function BusinessNameGenerator() {
         </div>
 
         {/* Footer */}
-        <div className="mt-12 text-center text-sm text-gray-500">
-          <p>Made with precision and care · <a href="https://rose.glass" className="hover:text-rose-red transition-colors">rose.glass</a></p>
+        <div className="mt-12 text-center text-sm text-white/40">
+          <p>Made with precision and care · <a href="https://rose.glass" className="hover:text-rose-coral transition-colors">rose.glass</a></p>
         </div>
       </div>
     </main>

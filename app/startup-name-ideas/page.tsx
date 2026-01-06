@@ -132,10 +132,10 @@ export default function StartupNameIdeas() {
               rose.glass
             </h1>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800 dark:text-gray-100">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white/90 dark:text-gray-100">
             Startup Name Ideas Generator
           </h2>
-          <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto font-light">
+          <p className="text-xl text-white/60 dark:text-gray-300 max-w-3xl mx-auto font-light">
             Get creative, memorable startup name ideas powered by AI. Perfect for tech startups,
             SaaS companies, and innovative ventures looking to make their mark.
           </p>
@@ -144,7 +144,7 @@ export default function StartupNameIdeas() {
         {/* Generator card with glassmorphism */}
         <div className="glass-card rounded-3xl p-8 md:p-10 mb-8">
           <div className="mb-6">
-            <label htmlFor="description" className="block text-sm font-semibold mb-3 text-gray-700 dark:text-gray-300">
+            <label htmlFor="description" className="block text-sm font-semibold mb-3 text-white/60 dark:text-gray-300">
               Describe your startup idea
             </label>
             <textarea
@@ -175,9 +175,9 @@ export default function StartupNameIdeas() {
 
         {names.length > 0 && (
           <div className="glass-card rounded-3xl p-8 md:p-10 mb-8">
-            <h2 className="text-3xl font-bold mb-2 text-gray-800 dark:text-gray-100">Your Startup Names</h2>
+            <h2 className="text-3xl font-bold mb-2 text-white/90 dark:text-gray-100">Your Startup Names</h2>
             {checkingDomains && (
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">Checking domain availability...</p>
+              <p className="text-sm text-white/50 dark:text-gray-400 mb-6">Checking domain availability...</p>
             )}
             <div className="grid grid-cols-1 gap-5 mt-6">
               {names.map((name, index) => {
@@ -258,9 +258,9 @@ export default function StartupNameIdeas() {
 
         {/* SEO Content - Keeping existing content with glass styling */}
         <div className="glass-card rounded-3xl p-8 md:p-10 mb-8">
-          <h2 className="text-3xl font-bold mb-6 text-gray-800 dark:text-gray-100">What Makes a Great Startup Name?</h2>
+          <h2 className="text-3xl font-bold mb-6 text-white/90 dark:text-gray-100">What Makes a Great Startup Name?</h2>
 
-          <div className="space-y-6 mb-8 text-gray-700 dark:text-gray-300">
+          <div className="space-y-6 mb-8 text-white/60 dark:text-gray-300">
             <p className="leading-relaxed">
               Your startup's name is often the first impression potential customers, investors, and partners
               will have of your company. A great startup name should be memorable, pronounceable, and
@@ -268,60 +268,60 @@ export default function StartupNameIdeas() {
             </p>
 
             <div className="glass-card rounded-2xl p-6">
-              <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-100">Key Characteristics</h3>
+              <h3 className="text-xl font-semibold mb-4 text-white/90 dark:text-gray-100">Key Characteristics</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
-                  <span className="text-rose-red mr-2 text-lg">✓</span>
+                  <span className="text-rose-coral mr-2 text-lg">✓</span>
                   <span><strong>Short and Simple:</strong> Easy to spell, say, and remember</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-rose-red mr-2 text-lg">✓</span>
+                  <span className="text-rose-coral mr-2 text-lg">✓</span>
                   <span><strong>Unique:</strong> Stands out from competitors and avoids trademark issues</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-rose-red mr-2 text-lg">✓</span>
+                  <span className="text-rose-coral mr-2 text-lg">✓</span>
                   <span><strong>Scalable:</strong> Works as your startup grows and potentially pivots</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-rose-red mr-2 text-lg">✓</span>
+                  <span className="text-rose-coral mr-2 text-lg">✓</span>
                   <span><strong>Domain Available:</strong> Matching .com or modern TLD is available</span>
                 </li>
               </ul>
             </div>
           </div>
 
-          <h2 className="text-3xl font-bold mb-6 text-gray-800 dark:text-gray-100">Why Use AI for Startup Naming?</h2>
+          <h2 className="text-3xl font-bold mb-6 text-white/90 dark:text-gray-100">Why Use AI for Startup Naming?</h2>
 
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             <div className="glass-card rounded-2xl p-6">
-              <h3 className="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-100">Speed</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
+              <h3 className="text-lg font-semibold mb-2 text-white/90 dark:text-gray-100">Speed</h3>
+              <p className="text-sm text-white/50 dark:text-gray-400">
                 Generate hundreds of creative options in seconds instead of weeks of brainstorming
               </p>
             </div>
             <div className="glass-card rounded-2xl p-6">
-              <h3 className="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-100">Creativity</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
+              <h3 className="text-lg font-semibold mb-2 text-white/90 dark:text-gray-100">Creativity</h3>
+              <p className="text-sm text-white/50 dark:text-gray-400">
                 AI explores naming patterns and combinations you might never think of
               </p>
             </div>
             <div className="glass-card rounded-2xl p-6">
-              <h3 className="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-100">Data-Driven</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
+              <h3 className="text-lg font-semibold mb-2 text-white/90 dark:text-gray-100">Data-Driven</h3>
+              <p className="text-sm text-white/50 dark:text-gray-400">
                 Trained on successful startup names across industries and markets
               </p>
             </div>
             <div className="glass-card rounded-2xl p-6">
-              <h3 className="text-lg font-semibold mb-2 text-gray-800 dark:text-gray-100">Context-Aware</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
+              <h3 className="text-lg font-semibold mb-2 text-white/90 dark:text-gray-100">Context-Aware</h3>
+              <p className="text-sm text-white/50 dark:text-gray-400">
                 Understands your industry, target market, and brand positioning
               </p>
             </div>
           </div>
 
           <div className="glass-card rounded-2xl p-6 bg-gradient-to-br from-rose-pink/30 to-white/30 dark:from-rose-red/10 dark:to-gray-800/30">
-            <h3 className="text-xl font-semibold mb-3 text-gray-800 dark:text-gray-100">Ready to Launch?</h3>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+            <h3 className="text-xl font-semibold mb-3 text-white/90 dark:text-gray-100">Ready to Launch?</h3>
+            <p className="text-white/60 dark:text-gray-300 leading-relaxed">
               Our AI analyzes your startup concept and generates names that resonate with your vision.
               Start generating above and find the perfect name that will help your startup stand out
               and succeed in 2026 and beyond.
@@ -330,8 +330,8 @@ export default function StartupNameIdeas() {
         </div>
 
         {/* Footer */}
-        <div className="mt-12 text-center text-sm text-gray-500">
-          <p>Made with precision and care · <a href="https://rose.glass" className="hover:text-rose-red transition-colors">rose.glass</a></p>
+        <div className="mt-12 text-center text-sm text-white/40">
+          <p>Made with precision and care · <a href="https://rose.glass" className="hover:text-rose-coral transition-colors">rose.glass</a></p>
         </div>
       </div>
     </main>

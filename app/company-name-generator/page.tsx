@@ -123,7 +123,7 @@ export default function CompanyNameGenerator() {
           <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-rose-red to-rose-coral bg-clip-text text-transparent leading-tight">
             Company Name Generator
           </h1>
-          <p className="text-xl text-gray-700 max-w-2xl mx-auto">
+          <p className="text-xl text-white/60 max-w-2xl mx-auto">
             Create professional, credible company names that inspire trust and command respect in the corporate world.
           </p>
         </div>
@@ -132,7 +132,7 @@ export default function CompanyNameGenerator() {
         <div className="glass-card rounded-3xl p-8 mb-12">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="description" className="block text-sm font-medium text-white/70 mb-2">
                 Describe your company
               </label>
               <input
@@ -156,7 +156,7 @@ export default function CompanyNameGenerator() {
           </form>
 
           {error && (
-            <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-xl text-red-600">
+            <div className="mt-4 p-4 bg-white/[0.02] border border-rose-500/20 rounded-xl text-rose-400/80">
               {error}
             </div>
           )}
@@ -165,7 +165,7 @@ export default function CompanyNameGenerator() {
         {/* Results */}
         {names.length > 0 && (
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-800">Your Company Names</h2>
+            <h2 className="text-2xl font-bold text-white/90">Your Company Names</h2>
 
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {names.map((item, idx) => (
@@ -175,12 +175,12 @@ export default function CompanyNameGenerator() {
                     celebratingName === item.name ? 'celebrate' : ''
                   }`}
                 >
-                  <div className="name-mono text-3xl md:text-4xl font-bold text-gray-800 mb-4 break-words">
+                  <div className="name-mono text-3xl md:text-4xl font-bold text-white/90 mb-4 break-words">
                     {item.name}
                   </div>
 
                   {checkingDomains && item.domains.length === 0 && (
-                    <p className="text-sm text-gray-500">Checking availability...</p>
+                    <p className="text-sm text-white/40">Checking availability...</p>
                   )}
 
                   {item.domains.length > 0 && (
@@ -188,7 +188,7 @@ export default function CompanyNameGenerator() {
                       {item.domains.map((d, i) => (
                         <div key={i} className="space-y-2">
                           <div className="flex items-center justify-between">
-                            <span className="text-sm font-medium text-gray-700">{d.domain}</span>
+                            <span className="text-sm font-medium text-white/70">{d.domain}</span>
                             <span
                               className={`text-xs px-2 py-1 rounded-full border ${
                                 d.available
@@ -238,11 +238,11 @@ export default function CompanyNameGenerator() {
         <div className="mt-16 space-y-12">
           {/* What Makes Great Company Names */}
           <section className="glass-card rounded-3xl p-8">
-            <h2 className="text-3xl font-bold mb-6 text-gray-800">
+            <h2 className="text-3xl font-bold mb-6 text-white/90">
               What Makes a Great Company Name?
             </h2>
 
-            <div className="prose max-w-none text-gray-700 space-y-6">
+            <div className="prose max-w-none text-white/60 space-y-6">
               <p className="text-lg">
                 Choosing a company name is one of the most important decisions you'll make as a founder.
                 Unlike casual business names, company names need to convey professionalism, credibility,
@@ -252,62 +252,62 @@ export default function CompanyNameGenerator() {
               </p>
 
               <div className="grid md:grid-cols-2 gap-6 my-8">
-                <div className="bg-rose-pink/30 rounded-2xl p-6">
-                  <h3 className="text-xl font-bold mb-3 text-rose-red flex items-center gap-2">
+                <div className="bg-white/[0.02] border border-rose-500/10 rounded-2xl p-6">
+                  <h3 className="text-xl font-bold mb-3 text-rose-coral flex items-center gap-2">
                     <span>✓</span> Professional & Credible
                   </h3>
-                  <p className="text-gray-700">
+                  <p className="text-white/60">
                     Your company name should inspire trust with clients, investors, and partners.
                     It should sound established and professional, not overly casual or gimmicky.
                   </p>
                 </div>
 
-                <div className="bg-rose-pink/30 rounded-2xl p-6">
-                  <h3 className="text-xl font-bold mb-3 text-rose-red flex items-center gap-2">
+                <div className="bg-white/[0.02] border border-rose-500/10 rounded-2xl p-6">
+                  <h3 className="text-xl font-bold mb-3 text-rose-coral flex items-center gap-2">
                     <span>✓</span> Legally Available
                   </h3>
-                  <p className="text-gray-700">
+                  <p className="text-white/60">
                     Before incorporating, ensure the name is available in your state/country
                     and doesn't infringe on existing trademarks. Check USPTO, state registries,
                     and trademark databases.
                   </p>
                 </div>
 
-                <div className="bg-rose-pink/30 rounded-2xl p-6">
-                  <h3 className="text-xl font-bold mb-3 text-rose-red flex items-center gap-2">
+                <div className="bg-white/[0.02] border border-rose-500/10 rounded-2xl p-6">
+                  <h3 className="text-xl font-bold mb-3 text-rose-coral flex items-center gap-2">
                     <span>✓</span> Scalable & Timeless
                   </h3>
-                  <p className="text-gray-700">
+                  <p className="text-white/60">
                     Choose a name that can grow with your company. Avoid trendy terms or
                     overly specific references that might limit future expansion or become dated.
                   </p>
                 </div>
 
-                <div className="bg-rose-pink/30 rounded-2xl p-6">
-                  <h3 className="text-xl font-bold mb-3 text-rose-red flex items-center gap-2">
+                <div className="bg-white/[0.02] border border-rose-500/10 rounded-2xl p-6">
+                  <h3 className="text-xl font-bold mb-3 text-rose-coral flex items-center gap-2">
                     <span>✓</span> Easy to Pronounce & Spell
                   </h3>
-                  <p className="text-gray-700">
+                  <p className="text-white/60">
                     In the corporate world, your name will be spoken in meetings, investor pitches,
                     and phone calls. It should be easy to say and spell, without requiring explanation.
                   </p>
                 </div>
 
-                <div className="bg-rose-pink/30 rounded-2xl p-6">
-                  <h3 className="text-xl font-bold mb-3 text-rose-red flex items-center gap-2">
+                <div className="bg-white/[0.02] border border-rose-500/10 rounded-2xl p-6">
+                  <h3 className="text-xl font-bold mb-3 text-rose-coral flex items-center gap-2">
                     <span>✓</span> Memorable & Distinctive
                   </h3>
-                  <p className="text-gray-700">
+                  <p className="text-white/60">
                     Stand out in your industry without being weird. The best company names are
                     memorable enough to recall after one meeting but professional enough for a boardroom.
                   </p>
                 </div>
 
-                <div className="bg-rose-pink/30 rounded-2xl p-6">
-                  <h3 className="text-xl font-bold mb-3 text-rose-red flex items-center gap-2">
+                <div className="bg-white/[0.02] border border-rose-500/10 rounded-2xl p-6">
+                  <h3 className="text-xl font-bold mb-3 text-rose-coral flex items-center gap-2">
                     <span>✓</span> Domain Available
                   </h3>
-                  <p className="text-gray-700">
+                  <p className="text-white/60">
                     Secure a matching .com domain (or industry-appropriate TLD like .io for tech,
                     .law for legal). Your digital presence is crucial for corporate credibility.
                   </p>
@@ -318,20 +318,20 @@ export default function CompanyNameGenerator() {
 
           {/* Types of Company Names */}
           <section className="glass-card rounded-3xl p-8">
-            <h2 className="text-3xl font-bold mb-6 text-gray-800">
+            <h2 className="text-3xl font-bold mb-6 text-white/90">
               Types of Company Names (with Examples)
             </h2>
 
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-bold mb-3 text-rose-red">1. Descriptive Names</h3>
-                <p className="text-gray-700 mb-4">
+                <h3 className="text-2xl font-bold mb-3 text-rose-coral">1. Descriptive Names</h3>
+                <p className="text-white/60 mb-4">
                   Names that clearly describe what the company does. Professional and straightforward,
                   ideal for B2B and professional services.
                 </p>
-                <div className="bg-gray-50 rounded-xl p-4">
-                  <p className="font-medium text-gray-800">Examples:</p>
-                  <ul className="mt-2 space-y-1 text-gray-700">
+                <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-4">
+                  <p className="font-medium text-white/80">Examples:</p>
+                  <ul className="mt-2 space-y-1 text-white/60">
                     <li>• <strong>American Airlines</strong> - Clearly an airline based in America</li>
                     <li>• <strong>General Motors</strong> - General manufacturer of motors/vehicles</li>
                     <li>• <strong>Bank of America</strong> - Banking services for America</li>
@@ -341,14 +341,14 @@ export default function CompanyNameGenerator() {
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold mb-3 text-rose-red">2. Founder Names</h3>
-                <p className="text-gray-700 mb-4">
+                <h3 className="text-2xl font-bold mb-3 text-rose-coral">2. Founder Names</h3>
+                <p className="text-white/60 mb-4">
                   Named after the founder(s) or key individuals. Common in law firms, consulting,
                   and established corporations. Conveys heritage and personal accountability.
                 </p>
-                <div className="bg-gray-50 rounded-xl p-4">
-                  <p className="font-medium text-gray-800">Examples:</p>
-                  <ul className="mt-2 space-y-1 text-gray-700">
+                <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-4">
+                  <p className="font-medium text-white/90">Examples:</p>
+                  <ul className="mt-2 space-y-1 text-white/60">
                     <li>• <strong>McKinsey & Company</strong> - Named after founder James McKinsey</li>
                     <li>• <strong>Goldman Sachs</strong> - Marcus Goldman and Samuel Sachs</li>
                     <li>• <strong>Johnson & Johnson</strong> - The Johnson brothers</li>
@@ -358,14 +358,14 @@ export default function CompanyNameGenerator() {
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold mb-3 text-rose-red">3. Acronyms</h3>
-                <p className="text-gray-700 mb-4">
+                <h3 className="text-2xl font-bold mb-3 text-rose-coral">3. Acronyms</h3>
+                <p className="text-white/60 mb-4">
                   Shortened versions of longer names, often used after rebranding or to modernize.
                   Professional and concise, though may require brand recognition to be effective.
                 </p>
-                <div className="bg-gray-50 rounded-xl p-4">
-                  <p className="font-medium text-gray-800">Examples:</p>
-                  <ul className="mt-2 space-y-1 text-gray-700">
+                <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-4">
+                  <p className="font-medium text-white/90">Examples:</p>
+                  <ul className="mt-2 space-y-1 text-white/60">
                     <li>• <strong>IBM</strong> - International Business Machines</li>
                     <li>• <strong>GE</strong> - General Electric</li>
                     <li>• <strong>HP</strong> - Hewlett-Packard</li>
@@ -375,14 +375,14 @@ export default function CompanyNameGenerator() {
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold mb-3 text-rose-red">4. Invented/Abstract Names</h3>
-                <p className="text-gray-700 mb-4">
+                <h3 className="text-2xl font-bold mb-3 text-rose-coral">4. Invented/Abstract Names</h3>
+                <p className="text-white/60 mb-4">
                   Made-up words or unique combinations that are highly brandable. Allows for
                   complete trademark ownership and domain availability, popular with tech companies.
                 </p>
-                <div className="bg-gray-50 rounded-xl p-4">
-                  <p className="font-medium text-gray-800">Examples:</p>
-                  <ul className="mt-2 space-y-1 text-gray-700">
+                <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-4">
+                  <p className="font-medium text-white/90">Examples:</p>
+                  <ul className="mt-2 space-y-1 text-white/60">
                     <li>• <strong>Accenture</strong> - Invented name suggesting "accent on the future"</li>
                     <li>• <strong>Verizon</strong> - Combination of "veritas" (truth) + "horizon"</li>
                     <li>• <strong>Novartis</strong> - From Latin "novae artes" (new skills)</li>
@@ -392,14 +392,14 @@ export default function CompanyNameGenerator() {
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold mb-3 text-rose-red">5. Metaphorical Names</h3>
-                <p className="text-gray-700 mb-4">
+                <h3 className="text-2xl font-bold mb-3 text-rose-coral">5. Metaphorical Names</h3>
+                <p className="text-white/60 mb-4">
                   Names that use metaphor or symbolism to convey company values or aspirations.
                   More creative while maintaining professionalism.
                 </p>
-                <div className="bg-gray-50 rounded-xl p-4">
-                  <p className="font-medium text-gray-800">Examples:</p>
-                  <ul className="mt-2 space-y-1 text-gray-700">
+                <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-4">
+                  <p className="font-medium text-white/90">Examples:</p>
+                  <ul className="mt-2 space-y-1 text-white/60">
                     <li>• <strong>Oracle</strong> - Source of wisdom and insight (database company)</li>
                     <li>• <strong>Salesforce</strong> - A force in sales/CRM</li>
                     <li>• <strong>BlackRock</strong> - Solid, stable foundation (investment firm)</li>
@@ -409,14 +409,14 @@ export default function CompanyNameGenerator() {
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold mb-3 text-rose-red">6. Geographic Names</h3>
-                <p className="text-gray-700 mb-4">
+                <h3 className="text-2xl font-bold mb-3 text-rose-coral">6. Geographic Names</h3>
+                <p className="text-white/60 mb-4">
                   Named after locations, conveying heritage, local roots, or global reach.
                   Common in banking, real estate, and established corporations.
                 </p>
-                <div className="bg-gray-50 rounded-xl p-4">
-                  <p className="font-medium text-gray-800">Examples:</p>
-                  <ul className="mt-2 space-y-1 text-gray-700">
+                <div className="bg-white/[0.02] border border-white/[0.06] rounded-xl p-4">
+                  <p className="font-medium text-white/90">Examples:</p>
+                  <ul className="mt-2 space-y-1 text-white/60">
                     <li>• <strong>Deutsche Bank</strong> - "German Bank"</li>
                     <li>• <strong>Pacific Gas & Electric</strong> - Pacific region utility</li>
                     <li>• <strong>Texas Instruments</strong> - Founded in Texas</li>
@@ -429,11 +429,11 @@ export default function CompanyNameGenerator() {
 
           {/* Legal Considerations */}
           <section className="glass-card rounded-3xl p-8">
-            <h2 className="text-3xl font-bold mb-6 text-gray-800">
+            <h2 className="text-3xl font-bold mb-6 text-white/90">
               Legal Considerations for Company Names
             </h2>
 
-            <div className="prose max-w-none text-gray-700 space-y-6">
+            <div className="prose max-w-none text-white/60 space-y-6">
               <p className="text-lg">
                 Before you fall in love with a name, ensure it's legally available. Unlike casual
                 business names, company names are registered legal entities that must comply with
@@ -441,12 +441,12 @@ export default function CompanyNameGenerator() {
               </p>
 
               <div className="bg-rose-pink/20 rounded-2xl p-6 my-6">
-                <h3 className="text-xl font-bold mb-4 text-gray-800">
+                <h3 className="text-xl font-bold mb-4 text-white/90">
                   Company Name Legal Checklist
                 </h3>
-                <ol className="space-y-3 text-gray-700">
+                <ol className="space-y-3 text-white/60">
                   <li className="flex gap-3">
-                    <span className="font-bold text-rose-red min-w-[24px]">1.</span>
+                    <span className="font-bold text-rose-coral min-w-[24px]">1.</span>
                     <div>
                       <strong>State Availability Search</strong>
                       <p className="text-sm mt-1">
@@ -456,17 +456,17 @@ export default function CompanyNameGenerator() {
                     </div>
                   </li>
                   <li className="flex gap-3">
-                    <span className="font-bold text-rose-red min-w-[24px]">2.</span>
+                    <span className="font-bold text-rose-coral min-w-[24px]">2.</span>
                     <div>
                       <strong>Federal Trademark Search (USPTO)</strong>
                       <p className="text-sm mt-1">
-                        Search the USPTO TESS database at <a href="https://www.uspto.gov/trademarks" className="text-rose-red hover:underline">uspto.gov/trademarks</a> to
+                        Search the USPTO TESS database at <a href="https://www.uspto.gov/trademarks" className="text-rose-coral hover:underline">uspto.gov/trademarks</a> to
                         ensure your name doesn't infringe on existing federal trademarks.
                       </p>
                     </div>
                   </li>
                   <li className="flex gap-3">
-                    <span className="font-bold text-rose-red min-w-[24px]">3.</span>
+                    <span className="font-bold text-rose-coral min-w-[24px]">3.</span>
                     <div>
                       <strong>Common Law Trademark Search</strong>
                       <p className="text-sm mt-1">
@@ -476,7 +476,7 @@ export default function CompanyNameGenerator() {
                     </div>
                   </li>
                   <li className="flex gap-3">
-                    <span className="font-bold text-rose-red min-w-[24px]">4.</span>
+                    <span className="font-bold text-rose-coral min-w-[24px]">4.</span>
                     <div>
                       <strong>Domain Availability</strong>
                       <p className="text-sm mt-1">
@@ -486,7 +486,7 @@ export default function CompanyNameGenerator() {
                     </div>
                   </li>
                   <li className="flex gap-3">
-                    <span className="font-bold text-rose-red min-w-[24px]">5.</span>
+                    <span className="font-bold text-rose-coral min-w-[24px]">5.</span>
                     <div>
                       <strong>Restricted/Prohibited Words</strong>
                       <p className="text-sm mt-1">
@@ -496,7 +496,7 @@ export default function CompanyNameGenerator() {
                     </div>
                   </li>
                   <li className="flex gap-3">
-                    <span className="font-bold text-rose-red min-w-[24px]">6.</span>
+                    <span className="font-bold text-rose-coral min-w-[24px]">6.</span>
                     <div>
                       <strong>Required Designators</strong>
                       <p className="text-sm mt-1">
@@ -506,7 +506,7 @@ export default function CompanyNameGenerator() {
                     </div>
                   </li>
                   <li className="flex gap-3">
-                    <span className="font-bold text-rose-red min-w-[24px]">7.</span>
+                    <span className="font-bold text-rose-coral min-w-[24px]">7.</span>
                     <div>
                       <strong>International Considerations</strong>
                       <p className="text-sm mt-1">
@@ -516,7 +516,7 @@ export default function CompanyNameGenerator() {
                     </div>
                   </li>
                   <li className="flex gap-3">
-                    <span className="font-bold text-rose-red min-w-[24px]">8.</span>
+                    <span className="font-bold text-rose-coral min-w-[24px]">8.</span>
                     <div>
                       <strong>Reserve Your Name</strong>
                       <p className="text-sm mt-1">
@@ -528,9 +528,9 @@ export default function CompanyNameGenerator() {
                 </ol>
               </div>
 
-              <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 rounded-r-xl">
-                <p className="font-bold text-yellow-800 mb-2">⚠️ Legal Disclaimer</p>
-                <p className="text-sm text-yellow-700">
+              <div className="bg-white/[0.02] border-l-4 border-yellow-500/40 p-6 rounded-r-xl">
+                <p className="font-bold text-yellow-400/90 mb-2">⚠️ Legal Disclaimer</p>
+                <p className="text-sm text-yellow-300/70">
                   This information is for general guidance only and does not constitute legal advice.
                   Consult with a business attorney or trademark attorney before finalizing your company
                   name, especially for complex situations or high-value brands.
@@ -541,81 +541,81 @@ export default function CompanyNameGenerator() {
 
           {/* Industry-Specific Naming Strategies */}
           <section className="glass-card rounded-3xl p-8">
-            <h2 className="text-3xl font-bold mb-6 text-gray-800">
+            <h2 className="text-3xl font-bold mb-6 text-white/90">
               Industry-Specific Naming Strategies
             </h2>
 
             <div className="space-y-6">
-              <div className="bg-gray-50 rounded-2xl p-6">
-                <h3 className="text-xl font-bold mb-3 text-rose-red">Technology Companies</h3>
-                <p className="text-gray-700 mb-3">
+              <div className="bg-white/[0.02] border border-white/[0.06] rounded-2xl p-6">
+                <h3 className="text-xl font-bold mb-3 text-rose-coral">Technology Companies</h3>
+                <p className="text-white/60 mb-3">
                   Tech companies often use invented names (Google, Nvidia, Uber) or metaphorical names
                   (Oracle, Salesforce). Aim for modern, scalable names that work globally. Consider
                   .io or .ai domains for instant tech credibility.
                 </p>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-white/50">
                   <strong>Avoid:</strong> Overly technical jargon, dated tech terms (e.g., "Cyber", "Net"),
                   or names that imply you only do one thing you might outgrow.
                 </p>
               </div>
 
-              <div className="bg-gray-50 rounded-2xl p-6">
-                <h3 className="text-xl font-bold mb-3 text-rose-red">Professional Services (Law, Consulting, Accounting)</h3>
-                <p className="text-gray-700 mb-3">
+              <div className="bg-white/[0.02] border border-white/[0.06] rounded-2xl p-6">
+                <h3 className="text-xl font-bold mb-3 text-rose-coral">Professional Services (Law, Consulting, Accounting)</h3>
+                <p className="text-white/60 mb-3">
                   Professional services typically use founder names (McKinsey & Company, Deloitte) or
                   descriptive names (Boston Consulting Group). This conveys heritage, expertise, and
                   personal accountability—key trust signals for B2B clients.
                 </p>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-white/50">
                   <strong>Avoid:</strong> Overly creative or playful names that undermine credibility.
                   Stick with professional, established-sounding names.
                 </p>
               </div>
 
-              <div className="bg-gray-50 rounded-2xl p-6">
-                <h3 className="text-xl font-bold mb-3 text-rose-red">Financial Services (Banking, Investment, Insurance)</h3>
-                <p className="text-gray-700 mb-3">
+              <div className="bg-white/[0.02] border border-white/[0.06] rounded-2xl p-6">
+                <h3 className="text-xl font-bold mb-3 text-rose-coral">Financial Services (Banking, Investment, Insurance)</h3>
+                <p className="text-white/60 mb-3">
                   Finance companies need names that convey stability, trust, and strength. Common approaches:
                   geographic names (Bank of America), metaphorical names suggesting strength (BlackRock, Fortress),
                   or founder names (Goldman Sachs, Morgan Stanley).
                 </p>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-white/50">
                   <strong>Avoid:</strong> Trendy or cutesy names. Financial services require gravitas.
                   Also be aware of regulatory restrictions on using "Bank", "Trust", "Insurance" without proper licensing.
                 </p>
               </div>
 
-              <div className="bg-gray-50 rounded-2xl p-6">
-                <h3 className="text-xl font-bold mb-3 text-rose-red">Manufacturing & Industrial</h3>
-                <p className="text-gray-700 mb-3">
+              <div className="bg-white/[0.02] border border-white/[0.06] rounded-2xl p-6">
+                <h3 className="text-xl font-bold mb-3 text-rose-coral">Manufacturing & Industrial</h3>
+                <p className="text-white/60 mb-3">
                   Manufacturing companies often use descriptive names (General Electric, U.S. Steel) or
                   founder names (Ford, Caterpillar). The name should convey reliability, scale, and industrial capability.
                 </p>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-white/50">
                   <strong>Avoid:</strong> Names that sound small-scale or artisanal unless that's your brand positioning.
                   Industrial buyers want to know you can handle large contracts.
                 </p>
               </div>
 
-              <div className="bg-gray-50 rounded-2xl p-6">
-                <h3 className="text-xl font-bold mb-3 text-rose-red">Healthcare & Biotech</h3>
-                <p className="text-gray-700 mb-3">
+              <div className="bg-white/[0.02] border border-white/[0.06] rounded-2xl p-6">
+                <h3 className="text-xl font-bold mb-3 text-rose-coral">Healthcare & Biotech</h3>
+                <p className="text-white/60 mb-3">
                   Healthcare companies often use invented/Latin-inspired names (Novartis, Pfizer) that sound
                   scientific and credible. Biotech leans toward names suggesting innovation and precision.
                 </p>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-white/50">
                   <strong>Avoid:</strong> Names that are hard to spell or pronounce—doctors and patients need
                   to say it easily. Also avoid anything that could be misconstrued as a drug name (FDA restrictions).
                 </p>
               </div>
 
-              <div className="bg-gray-50 rounded-2xl p-6">
-                <h3 className="text-xl font-bold mb-3 text-rose-red">Real Estate & Construction</h3>
-                <p className="text-gray-700 mb-3">
+              <div className="bg-white/[0.02] border border-white/[0.06] rounded-2xl p-6">
+                <h3 className="text-xl font-bold mb-3 text-rose-coral">Real Estate & Construction</h3>
+                <p className="text-white/60 mb-3">
                   Real estate/construction companies often use geographic names (Toll Brothers, Lennar) or
                   names suggesting strength and reliability (Granite Construction, Summit Properties).
                 </p>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-white/50">
                   <strong>Avoid:</strong> Overly generic names that don't differentiate you. Real estate is
                   competitive—your name should suggest quality and local expertise.
                 </p>
@@ -625,66 +625,66 @@ export default function CompanyNameGenerator() {
 
           {/* Common Mistakes */}
           <section className="glass-card rounded-3xl p-8">
-            <h2 className="text-3xl font-bold mb-6 text-gray-800">
+            <h2 className="text-3xl font-bold mb-6 text-white/90">
               Common Company Naming Mistakes to Avoid
             </h2>
 
             <div className="space-y-6">
-              <div className="border-l-4 border-red-400 pl-6 py-2">
-                <h3 className="text-xl font-bold mb-2 text-gray-800">❌ Being Too Descriptive or Generic</h3>
-                <p className="text-gray-700">
+              <div className="border-l-4 border-rose-500/40 pl-6 py-2">
+                <h3 className="text-xl font-bold mb-2 text-white/90">❌ Being Too Descriptive or Generic</h3>
+                <p className="text-white/60">
                   Names like "Best Consulting Services Inc." or "Quality Tech Solutions LLC" are unmemorable,
                   hard to trademark, and don't differentiate you. You'll also struggle to rank in search results
                   against thousands of similar names.
                 </p>
               </div>
 
-              <div className="border-l-4 border-red-400 pl-6 py-2">
-                <h3 className="text-xl font-bold mb-2 text-gray-800">❌ Limiting Future Growth</h3>
-                <p className="text-gray-700">
+              <div className="border-l-4 border-rose-500/40 pl-6 py-2">
+                <h3 className="text-xl font-bold mb-2 text-white/90">❌ Limiting Future Growth</h3>
+                <p className="text-white/60">
                   Don't name your company "San Francisco Web Design Inc." if you might expand services or
                   locations. You'll outgrow the name quickly. Think 10-20 years ahead.
                 </p>
               </div>
 
-              <div className="border-l-4 border-red-400 pl-6 py-2">
-                <h3 className="text-xl font-bold mb-2 text-gray-800">❌ Copying Competitors Too Closely</h3>
-                <p className="text-gray-700">
+              <div className="border-l-4 border-rose-500/40 pl-6 py-2">
+                <h3 className="text-xl font-bold mb-2 text-white/90">❌ Copying Competitors Too Closely</h3>
+                <p className="text-white/60">
                   If your competitor is "BlueTech Systems", don't name yours "BlueWave Systems." It's
                   confusing, legally risky (trademark infringement), and makes you look like a copycat.
                 </p>
               </div>
 
-              <div className="border-l-4 border-red-400 pl-6 py-2">
-                <h3 className="text-xl font-bold mb-2 text-gray-800">❌ Ignoring Trademark Search</h3>
-                <p className="text-gray-700">
+              <div className="border-l-4 border-rose-500/40 pl-6 py-2">
+                <h3 className="text-xl font-bold mb-2 text-white/90">❌ Ignoring Trademark Search</h3>
+                <p className="text-white/60">
                   Falling in love with a name before checking trademark availability is a recipe for
                   disaster. You could spend thousands on branding only to receive a cease-and-desist letter.
                   Always search USPTO and state databases first.
                 </p>
               </div>
 
-              <div className="border-l-4 border-red-400 pl-6 py-2">
-                <h3 className="text-xl font-bold mb-2 text-gray-800">❌ Choosing a Name That's Hard to Spell or Pronounce</h3>
-                <p className="text-gray-700">
+              <div className="border-l-4 border-rose-500/40 pl-6 py-2">
+                <h3 className="text-xl font-bold mb-2 text-white/90">❌ Choosing a Name That's Hard to Spell or Pronounce</h3>
+                <p className="text-white/60">
                   If people can't spell it after hearing it once, you'll lose customers. Avoid unusual
                   spellings ("Kwik" instead of "Quick"), silent letters, or tongue-twisters. Test it:
                   Can someone find you via Google after hearing your name in a meeting?
                 </p>
               </div>
 
-              <div className="border-l-4 border-red-400 pl-6 py-2">
-                <h3 className="text-xl font-bold mb-2 text-gray-800">❌ Settling for a Bad Domain</h3>
-                <p className="text-gray-700">
+              <div className="border-l-4 border-rose-500/40 pl-6 py-2">
+                <h3 className="text-xl font-bold mb-2 text-white/90">❌ Settling for a Bad Domain</h3>
+                <p className="text-white/60">
                   If YourCompanyName.com is taken, don't settle for YourCompanyName-inc.com or
                   GetYourCompanyName.com. It looks unprofessional and confuses customers. Either find
                   a different name or negotiate to buy the domain.
                 </p>
               </div>
 
-              <div className="border-l-4 border-red-400 pl-6 py-2">
-                <h3 className="text-xl font-bold mb-2 text-gray-800">❌ Ignoring International Implications</h3>
-                <p className="text-gray-700">
+              <div className="border-l-4 border-rose-500/40 pl-6 py-2">
+                <h3 className="text-xl font-bold mb-2 text-white/90">❌ Ignoring International Implications</h3>
+                <p className="text-white/60">
                   If you might expand globally, check that your name doesn't mean something embarrassing
                   or offensive in other languages. The Chevy Nova famously struggled in Spanish-speaking
                   markets (no va = "doesn't go").
@@ -695,16 +695,16 @@ export default function CompanyNameGenerator() {
 
           {/* FAQs */}
           <section className="glass-card rounded-3xl p-8">
-            <h2 className="text-3xl font-bold mb-6 text-gray-800">
+            <h2 className="text-3xl font-bold mb-6 text-white/90">
               Frequently Asked Questions
             </h2>
 
             <div className="space-y-6">
               <div>
-                <h3 className="text-xl font-bold mb-2 text-rose-red">
+                <h3 className="text-xl font-bold mb-2 text-rose-coral">
                   Do I need to include "Inc.", "LLC", or "Corp." in my company name?
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-white/60">
                   Your legal registered name with the state must include a designator like "Inc.", "LLC",
                   "Corp.", "Ltd.", or similar (depending on your entity type and state requirements). However,
                   you can do business under a shorter "DBA" (Doing Business As) name for marketing purposes.
@@ -713,10 +713,10 @@ export default function CompanyNameGenerator() {
               </div>
 
               <div>
-                <h3 className="text-xl font-bold mb-2 text-rose-red">
+                <h3 className="text-xl font-bold mb-2 text-rose-coral">
                   What's the difference between a company name and a trademark?
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-white/60">
                   Your company name is the legal entity registered with your state. A trademark protects
                   your brand name, logo, or slogan from being used by competitors. You should register both:
                   your company name with your state Secretary of State, and your trademark with the USPTO
@@ -725,10 +725,10 @@ export default function CompanyNameGenerator() {
               </div>
 
               <div>
-                <h3 className="text-xl font-bold mb-2 text-rose-red">
+                <h3 className="text-xl font-bold mb-2 text-rose-coral">
                   Can I change my company name later?
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-white/60">
                   Yes, but it's expensive and disruptive. You'll need to file amendments with your state,
                   update all legal documents, notify customers/vendors, rebrand all materials, and potentially
                   lose brand recognition. It's much better to invest time in choosing the right name upfront.
@@ -737,10 +737,10 @@ export default function CompanyNameGenerator() {
               </div>
 
               <div>
-                <h3 className="text-xl font-bold mb-2 text-rose-red">
+                <h3 className="text-xl font-bold mb-2 text-rose-coral">
                   Should I choose a company name before or after incorporating?
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-white/60">
                   Choose the name BEFORE incorporating. You need to verify it's available in your state and
                   doesn't infringe on trademarks before you can legally register it. Most entrepreneurs follow
                   this process: 1) Brainstorm names, 2) Check availability (state + trademark + domain),
@@ -749,10 +749,10 @@ export default function CompanyNameGenerator() {
               </div>
 
               <div>
-                <h3 className="text-xl font-bold mb-2 text-rose-red">
+                <h3 className="text-xl font-bold mb-2 text-rose-coral">
                   How long does trademark registration take?
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-white/60">
                   Federal trademark registration through USPTO typically takes 8-12 months from application
                   to approval (assuming no objections or conflicts). You can use the ™ symbol immediately
                   upon use in commerce, but you can't use the ® symbol until the trademark is officially
@@ -761,10 +761,10 @@ export default function CompanyNameGenerator() {
               </div>
 
               <div>
-                <h3 className="text-xl font-bold mb-2 text-rose-red">
+                <h3 className="text-xl font-bold mb-2 text-rose-coral">
                   What if the .com domain is taken but the name is available?
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-white/60">
                   You have three options: 1) <strong>Buy the domain</strong> - Use a domain broker or contact
                   the owner directly (can cost $500-$50,000+ depending on the domain). 2) <strong>Use an alternative TLD</strong> -
                   Consider .io (popular with tech companies), .co, .ai, .app, or industry-specific TLDs.
@@ -774,10 +774,10 @@ export default function CompanyNameGenerator() {
               </div>
 
               <div>
-                <h3 className="text-xl font-bold mb-2 text-rose-red">
+                <h3 className="text-xl font-bold mb-2 text-rose-coral">
                   Can I use my personal name as my company name?
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-white/60">
                   Yes, and it's very common in professional services (law firms, consulting, agencies).
                   For example: "Jane Smith Consulting, LLC" or "Smith & Associates, Inc." The advantage is
                   it's usually available and builds personal brand equity. The disadvantage is it's harder
@@ -790,10 +790,10 @@ export default function CompanyNameGenerator() {
 
           {/* CTA Section */}
           <section className="glass-card rounded-3xl p-8 text-center">
-            <h2 className="text-3xl font-bold mb-4 text-gray-800">
+            <h2 className="text-3xl font-bold mb-4 text-white/90">
               Ready to Name Your Company?
             </h2>
-            <p className="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
+            <p className="text-lg text-white/60 mb-6 max-w-2xl mx-auto">
               Use our AI-powered company name generator to create professional, credible names
               that inspire trust. Instantly check domain availability and secure your brand for just $49.
             </p>
@@ -812,8 +812,8 @@ export default function CompanyNameGenerator() {
       </main>
 
       {/* Footer */}
-      <footer className="py-8 text-center text-gray-600">
-        <a href="/" className="hover:text-rose-red transition-colors">
+      <footer className="py-8 text-center text-white/50">
+        <a href="/" className="hover:text-rose-coral transition-colors">
           rose.glass
         </a>
         <p className="text-sm mt-2">Professional company name generation powered by AI</p>

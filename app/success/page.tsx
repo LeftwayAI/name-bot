@@ -188,7 +188,19 @@ function SuccessContent() {
         <div className="flex flex-col sm:flex-row gap-4">
           <Link
             href="/"
-            className="flex-1 text-center px-8 py-3.5 bg-emerald-500 hover:bg-emerald-600 text-white font-medium rounded-full transition-all hover:scale-[1.02] active:scale-[0.98]"
+            className="flex-1 text-center px-8 py-3.5 font-medium rounded-full transition-all hover:scale-[1.02] active:scale-[0.98]"
+            style={{
+              background: `
+                linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, transparent 100%),
+                linear-gradient(135deg, #10b981, #059669)
+              `,
+              color: 'white',
+              border: '1px solid rgba(255, 255, 255, 0.15)',
+              boxShadow: `
+                0 2px 12px rgba(16, 185, 129, 0.12),
+                inset 0 1px 1px 0 rgba(255, 255, 255, 0.25)
+              `
+            }}
           >
             Generate More Names
           </Link>
