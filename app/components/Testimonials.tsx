@@ -23,10 +23,10 @@ export default function Testimonials() {
   return (
     <section className="mt-32 mb-20">
       <div className="text-center mb-16">
-        <p className="text-sm font-light tracking-wide text-rose-gradient uppercase mb-3">
+        <p className="text-sm font-light tracking-wide uppercase mb-3" style={{color: '#e63946'}}>
           Social Proof
         </p>
-        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white/90 tracking-tight">
+        <h2 className="text-4xl md:text-5xl font-light mb-4 text-white/90 tracking-tight">
           Trusted by founders
         </h2>
         <p className="text-white/60 text-xl max-w-2xl mx-auto">
@@ -49,11 +49,11 @@ export default function Testimonials() {
             </p>
 
             <div className="flex items-center gap-3 pt-4 border-t border-white/[0.06]">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-rose-accent to-rose-coral flex items-center justify-center text-white font-bold text-lg shadow-lg">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-rose-accent to-rose-coral flex items-center justify-center text-white font-medium text-lg shadow-lg">
                 {testimonial.initial}
               </div>
               <div>
-                <p className="font-bold text-white/90">
+                <p className="font-medium text-white/90">
                   {testimonial.author}
                 </p>
                 <p className="text-sm text-white/40">

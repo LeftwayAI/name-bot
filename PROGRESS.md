@@ -4,6 +4,77 @@
 
 That's ~10 days. Every task should move toward PAYING CUSTOMERS.
 
+## Run #52 - Typography Refinement: Font Weight Overhaul (2026-01-06)
+
+**DESIGN PRINCIPLE APPLIED:** Typography (Principle #2) - "Luxury through restraint"
+
+### What Changed
+
+**THE PROBLEM:** The site was using `font-bold` everywhere, violating a core design principle: "Use font-light for large display text" and "Hero text: `font-light tracking-tighter`". Heavy typography on dark backgrounds creates visual fatigue and feels aggressive, not luxurious. Daniel's design language from emoji.today is crystal clear: premium dark UIs achieve sophistication through LIGHT weights, not heavy ones.
+
+**FILES MODIFIED:**
+1. `app/page.tsx` (Homepage)
+2. `app/components/Testimonials.tsx`
+3. `app/components/PricingTransparency.tsx`
+4. `app/components/Navigation.tsx`
+
+**BEFORE:**
+- Hero title: `text-7xl md:text-9xl font-bold text-rose-gradient tracking-tight`
+- Hero subtitle: `text-4xl md:text-6xl font-bold text-white/90`
+- Section headers: All using `font-bold`
+- Section labels: Using `.text-rose-gradient` (gradient instead of solid accent)
+- Feature cards: `font-bold text-2xl`
+- Logo: `font-bold`
+- Testimonials: Header `font-bold`, names `font-bold`
+
+**AFTER:**
+- **Hero title:** `font-light tracking-tighter` (page.tsx:135)
+- **Hero subtitle:** `font-light tracking-tighter` (page.tsx:139)
+- **Section headers:** All now `font-light` (page.tsx:218, 291, 307, 344)
+- **Section labels:** Solid accent color `style={{color: '#e63946'}}` instead of gradient (page.tsx:215, 288, 304)
+- **Feature cards:** `font-medium` (appropriate weight for card titles)
+- **Logo:** `font-medium` across nav and footer
+- **Testimonials:** Header `font-light`, names `font-medium`
+
+### How It Aligns with Design Principles
+
+✅ **Principle #2: Typography - "Use font-light for large display text"**
+   - Hero now uses font-light (was font-bold)
+   - Section headers use font-light (were font-bold)
+   - Only card titles use font-medium (appropriate hierarchy)
+
+✅ **Principle #2: Typography - "Hero text: `font-light tracking-tighter`"**
+   - Exact pattern applied to hero title and subtitle
+   - Changed from tracking-tight to tracking-tighter for premium feel
+
+✅ **Principle #1: Section headers - "accent color + `font-light tracking-wide`"**
+   - Section labels now use solid accent `#e63946` instead of gradient
+   - Maintains font-light tracking-wide pattern
+
+✅ **Anti-Pattern Fixed: "Overuse of bold typography"**
+   - Removed font-bold from all display text
+   - Follows "DON'T: Use font-weight heavier than 500 for body text on dark"
+
+✅ **Anti-Pattern Fixed: "Too much gradient"**
+   - Section labels now use solid accent color
+   - Gradient reserved for hero title and CTA text only
+
+### Visual Impact
+
+The site now feels **noticeably more refined and premium**:
+- Large text appears elegant and sophisticated (not aggressive)
+- Visual hierarchy is clearer through opacity + weight variation
+- Matches the luxury aesthetic of emoji.today
+- Reduced visual fatigue from heavy typography on dark backgrounds
+
+### What Should Happen Next
+
+**TASK LIST ADDITIONS:**
+1. [ ] Apply same typography fixes to all generator pages (brand-name, business-name, company-name, startup-name-ideas)
+2. [ ] Consider installing Satoshi font (current premium alternative to Geist Sans)
+3. [ ] Audit all remaining uses of gradients - should be minimal
+4. [ ] Test on mobile devices to ensure font-light remains legible at smaller sizes
+
 ## Run #51 - Generator Pages Complete Luxury Overhaul (2026-01-06)
 
 **DESIGN PRINCIPLES APPLIED:** Text Hierarchy (Principle #1), Glass Treatment (Principle #4), Typography (Principle #2), CTAs (Principle #9) + Anti-Pattern fixes
